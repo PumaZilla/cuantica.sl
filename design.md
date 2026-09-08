@@ -60,3 +60,21 @@ Compilación Astro correcta. Reiniciado el servidor después de sustituir `publi
 - Documentación de ejecución actualizada en `web/README.md`. Vista previa local en http://localhost:4321.
 
 El material original permanece intacto. No se ha publicado la web. La compilación incluye el episodio original de 1,19 GB: una distribución pública debería usar una versión comprimida o alojamiento de vídeo. Los seis recursos gráficos de la experiencia pesan en conjunto unos 600 KB; el episodio solo se solicita al reproducirlo.
+
+## 10 · Revisión de identidad: Kike y CEO
+Petición: guardar la versión existente en Git y rehacer ambos personajes porque el parecido no es suficiente. No existía repositorio; inicializado Git en la raíz y creado el commit `0bbfdb8` como punto de retorno. El episodio original, dependencias, compilaciones y capturas temporales quedan excluidos de Git.
+
+Revisión de doce planos del episodio guardada en `references/identity-review.jpg`. El primer CEO se había generado desde un fotograma con los ojos cerrados; Kike se había interpretado desde una vista lateral con capucha. Nuevas referencias: CEO a 00:15 y 00:23; Kike frontal a 04:17 y en tres cuartos a 02:38. Kike aparece sin capucha, con gafas redondas finas, pelo corto oscuro, barba corta y camiseta blanca. Se prioriza conservar esos rasgos reales frente a la estética genérica de hacker.
+
+Esta revisión pide una edición del retrato fuente: cambiar fondo e iluminación manteniendo geometría facial, edad, asimetrías y gafas. No se reutilizan los rostros generados anteriores como referencias de identidad. También se revisará el CEO de cuerpo entero para mantener el parecido durante el ascenso.
+
+## 11 · Retratos corregidos e integración
+Las dos nuevas imágenes se generaron correctamente en Higgsfield a partir de dos fotogramas originales por actor:
+- Kike: `fb32ada7-2563-4c48-9f7b-273a6d6c57e2`. Sin capucha, con sus gafas de alambre, pelo corto, barba ligera y camiseta del episodio.
+- CEO: `663771c4-183f-4fe0-98e5-d93a75e88fbf`. Se conserva la inclinación natural de la cabeza, frente, gafas grandes y expresión del actor.
+
+Revisadas visualmente contra las referencias y convertidas a WebP de 900 px en el sandbox de Higgsfield. La generación adicional del cuerpo entero fue rechazada por falta de créditos. Para evitar regresar al rostro anterior durante el ascenso, se compuso el rostro nuevo sobre el cuerpo existente con una máscara ajustada al cuello y bordes suavizados, también dentro de Higgsfield. Se corrigió la máscara tras revisar el primer montaje para eliminar hombros duplicados. No se han comprado créditos ni cambiado el plan.
+
+Sustituidos `ceo.webp`, `hacker.webp` y `ascent.webp`. Añadida versión `?v=2` a sus URL y a la precarga del CEO para que el navegador no conserve los retratos anteriores. El resto de personajes y el motor de animación se mantienen.
+
+Prompts, referencias, trabajos, errores de cuota y método de composición guardados en `references/identity-v2.json`. Compilación correcta y verificación visual en 1440 × 900 y 390 × 844. Cargan ambos retratos y el ascenso, sin errores HTTP ni desbordamiento horizontal. La revisión se guarda en un segundo commit separado del punto de retorno.

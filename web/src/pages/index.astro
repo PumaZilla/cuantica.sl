@@ -21,7 +21,7 @@ const crew = [
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="preload" href="/media/portraits/ceo.webp" as="image" />
+  <link rel="preload" href="/media/portraits/ceo.webp?v=2" as="image" />
  </head>
  <body>
   <a class="skip-link" href="#episodio">Saltar al episodio</a>
@@ -36,9 +36,9 @@ const crew = [
      <div class="coordinate coordinate-top" aria-hidden="true">CUÁNTICA LABS · ESPÉCIMEN <span id="specimen">001</span><i></i> SISTEMA INESTABLE</div>
      <div class="orbital-field" aria-hidden="true"><div class="orbit orbit-a"></div><div class="orbit orbit-b"></div><div class="orbit orbit-c"></div><div class="orbit-mark">+</div><span class="orbit-label">POTENCIAL SIN DEMOSTRAR</span></div>
      <div class="portrait-stage" id="portraits" aria-hidden="true">
-      {['ceo','hacker','cientifica','redes','perro'].map((name,i)=><img class:list={['portrait',{'initial':i===0}]} data-portrait={name} src={`/media/portraits/${name}.webp`} alt="" width="900" height="1200" decoding="async" loading={i===0?'eager':'lazy'} />)}
+      {['ceo','hacker','cientifica','redes','perro'].map((name,i)=><img class:list={['portrait',{'initial':i===0}]} data-portrait={name} src={`/media/portraits/${name}.webp${['ceo','hacker'].includes(name) ? '?v=2' : ''}`} alt="" width="900" height="1200" decoding="async" loading={i===0?'eager':'lazy'} />)}
      </div>
-     <div class="ascent-visual" id="ascent-visual" aria-hidden="true"><img src="/media/portraits/ascent.webp" alt="" width="900" height="1200" loading="lazy"/></div>
+     <div class="ascent-visual" id="ascent-visual" aria-hidden="true"><img src="/media/portraits/ascent.webp?v=2" alt="" width="900" height="1200" loading="lazy"/></div>
      <div class="scene-copy">
       {crew.map((person,i)=><section class:list={['scene',{'is-active':i===0}]} data-scene={i} data-role={person.role} data-department={person.department} data-stat={person.stat} data-unit={person.unit} data-image={person.image} aria-hidden={i!==0}>
        <p class="eyebrow"><span class="status-dot"></span> {String(i+1).padStart(2,'0')} / {person.role}</p>

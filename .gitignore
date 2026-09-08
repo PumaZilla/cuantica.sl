@@ -15,3 +15,5 @@ dist/
 /references/mobile-episode.png
 /references/*.zip
 /old/previous-web/public/media/
+/references/*-generated-v2.png
+/references/identity-v2/
