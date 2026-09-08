@@ -1,0 +1,86 @@
+---
+import "../styles/global.css";
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Cuántica SL</title>
+    <meta
+      name="description"
+      content="Cuántica SL — la startup que descubrió que el futuro también se puede facturar."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="stage">
+      <video id="seg-a" src="/media/ceo/seg-a-reveal.mp4" muted playsinline preload="auto" style="opacity: 1;"></video>
+      <video id="seg-b" src="/media/ceo/seg-b-kike.mp4" muted playsinline preload="auto" style="opacity: 0;"></video>
+      <video id="seg-c" src="/media/ceo/seg-c-perro.mp4" muted playsinline preload="auto" style="opacity: 0;"></video>
+      <video id="seg-d" src="/media/ceo/seg-d-senora.mp4" muted playsinline preload="auto" style="opacity: 0;"></video>
+      <video id="seg-e" src="/media/ceo/seg-e-cientifica.mp4" muted playsinline preload="auto" style="opacity: 0;"></video>
+    </div>
+
+    <div id="nav-scrim"></div>
+    <nav>
+      <span class="wordmark">CUÁNTICA SL</span>
+      <a class="cta" href="#block-final">Invertir</a>
+    </nav>
+
+    <div id="scroll-track">
+      <div id="scroll-dot"></div>
+    </div>
+
+    <main id="scroller">
+      <div class="reveal" id="block-headline" data-reveal data-in="-0.02" data-in-end="0.02" data-out="0.14" data-out-end="0.20">
+        <h1>No inventamos el futuro. Lo cuantizamos.</h1>
+      </div>
+
+      <div class="reveal" id="block-body-1" data-reveal data-in="0.22" data-in-end="0.28" data-out="0.38" data-out-end="0.44">
+        <p class="eyebrow">Nuestra historia</p>
+        <p>
+          Fundada en un garaje que en realidad era un trastero, Cuántica SL lleva seis años
+          prometiendo un salto cuántico. Técnicamente ya lo hemos dado: seguimos en el mismo
+          sitio, pero en todas las dimensiones posibles a la vez.
+        </p>
+      </div>
+
+      <div class="reveal" id="block-body-2" data-reveal data-in="0.42" data-in-end="0.48" data-out="0.58" data-out-end="0.64">
+        <p class="eyebrow">Tecnología propia</p>
+        <p>
+          Nuestro algoritmo patentado predice el futuro del sector con un 100% de precisión,
+          siempre que el futuro sea «más reuniones». Once rondas de financiación. Cero
+          productos que hayan salido del entorno de pruebas.
+        </p>
+      </div>
+
+      <div class="reveal" id="block-closing" data-reveal data-in="0.62" data-in-end="0.68" data-out="0.78" data-out-end="0.84">
+        <p class="eyebrow">Cultura de empresa</p>
+        <p>
+          Mientras la competencia escala equipos, nuestro fundador escala directamente el
+          edificio. Es una metáfora. Probablemente.
+        </p>
+      </div>
+
+      <div class="reveal" id="block-final" data-reveal data-center="true" data-in="0.86" data-in-end="0.92" data-out="2" data-out-end="2.01">
+        <p class="wordmark-lg">CUÁNTICA SL</p>
+        <p>Disrumpiendo la industria desde un martes cualquiera.</p>
+        <p style="margin-top: 22px;">
+          <a class="cta" href="#" style="pointer-events: auto;">Habla con inversión</a>
+        </p>
+      </div>
+    </main>
+
+    <script>
+      import { initScrollEngine } from "../lib/scrollEngine";
+      initScrollEngine();
+    </script>
+  </body>
+</html>

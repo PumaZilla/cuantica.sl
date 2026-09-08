@@ -1,0 +1,84 @@
+---
+import '../styles/global.css';
+const crew = [
+ { id:'vision', role:'EL VISIONARIO', department:'DIRECCIÓN GENERAL', title:['El futuro','tiene cara.'], text:'Y unas gafas bastante grandes. Conoce al hombre que está dispuesto a cambiarlo todo. Excepto de opinión.', foot:'CEO, fundador y próximo paso de la evolución.', image:'ceo', stat:'∞', unit:'VISIÓN DE FUTURO' },
+ { id:'hacker', role:'EL HACKER', department:'SISTEMAS / O ALGO ASÍ', title:['Acceso','ilimitado.'], text:'Puede entrar en cualquier sistema. Salir de una reunión ya es otra cosa.', foot:'La única contraseña que no sabe es «vacaciones».', image:'hacker', stat:'404', unit:'LÍMITES NO ENCONTRADOS' },
+ { id:'cientifica', role:'LA CIENTÍFICA', department:'INVESTIGACIÓN Y DESARROLLO', title:['Todo tiene','una fórmula.'], text:'Incluso el desastre. Ella pone la ciencia. Los demás ponen a prueba su paciencia.', foot:'La razón en una empresa que la ha perdido.', image:'cientifica', stat:'99,9', unit:'% DE PACIENCIA AGOTADA' },
+ { id:'redes', role:'LA DE REDES', department:'COMUNICACIÓN INTERDIMENSIONAL', title:['Si no se sube,','no existe.'], text:'Convierte cada crisis en contenido. Y aquí el calendario editorial se escribe solo.', foot:'Haciendo viral lo que debería ser confidencial.', image:'redes', stat:'#1', unit:'EN GESTIÓN DE CRISIS' },
+ { id:'perro', role:'EL PERRO', department:'TALENTO NO CONVENCIONAL', title:['Un perfil','muy distinto.'], text:'No ladra a las ideas nuevas. Bueno, a algunas sí. El fichaje que nadie sabe muy bien cómo explicar.', foot:'Recursos humanos todavía está buscando la categoría.', image:'perro', stat:'100', unit:'% BUEN CHICO. EN TEORÍA.' },
+ { id:'ceo', role:'DE NUEVO, ÉL', department:'DIRECCIÓN / SIN LÍMITES', title:['Un pequeño','paso para él.'], text:'Un salto inexplicable para la empresa. Nuestro CEO siempre ha tenido los pies lejos del suelo.', foot:'Siguiente parada: fuera de la oficina. Muy fuera.', image:'ceo', stat:'3…2…1', unit:'PREPARANDO EL ASCENSO' },
+];
+---
+<!doctype html>
+<html lang="es">
+ <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#080909" />
+  <meta name="description" content="Cuántica SL. Una webserie de comedia sobre una empresa de ciencia, grandes ideas y consecuencias imprevisibles. Entra en nuestra órbita." />
+  <title>Cuántica SL — El futuro tiene cara.</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="preload" href="/media/portraits/ceo.webp" as="image" />
+ </head>
+ <body>
+  <a class="skip-link" href="#episodio">Saltar al episodio</a>
+  <header class="header">
+   <a href="#vision" class="brand" aria-label="Cuántica SL, inicio"><svg viewBox="0 0 44 44" aria-hidden="true"><ellipse cx="22" cy="22" rx="20" ry="9" transform="rotate(-45 22 22)"/><ellipse cx="22" cy="22" rx="20" ry="9" transform="rotate(45 22 22)"/><circle cx="22" cy="22" r="3"/></svg><span>cuántica<span class="sl">SL</span><small>CIENCIA. MÁS O MENOS.</small></span></a>
+   <nav aria-label="Navegación principal"><a href="#vision" class="nav-link">La visión</a><a href="#hacker" class="nav-link">El equipo</a><a href="#episodio" class="nav-episode">Ver episodio <span>↗</span></a></nav>
+  </header>
+  <main>
+   <div class="story" id="story">
+    <div class="stage" id="stage">
+     <canvas id="universe" aria-hidden="true"></canvas>
+     <div class="coordinate coordinate-top" aria-hidden="true">CUÁNTICA LABS · ESPÉCIMEN <span id="specimen">001</span><i></i> SISTEMA INESTABLE</div>
+     <div class="orbital-field" aria-hidden="true"><div class="orbit orbit-a"></div><div class="orbit orbit-b"></div><div class="orbit orbit-c"></div><div class="orbit-mark">+</div><span class="orbit-label">POTENCIAL SIN DEMOSTRAR</span></div>
+     <div class="portrait-stage" id="portraits" aria-hidden="true">
+      {['ceo','hacker','cientifica','redes','perro'].map((name,i)=><img class:list={['portrait',{'initial':i===0}]} data-portrait={name} src={`/media/portraits/${name}.webp`} alt="" width="900" height="1200" decoding="async" loading={i===0?'eager':'lazy'} />)}
+     </div>
+     <div class="ascent-visual" id="ascent-visual" aria-hidden="true"><img src="/media/portraits/ascent.webp" alt="" width="900" height="1200" loading="lazy"/></div>
+     <div class="scene-copy">
+      {crew.map((person,i)=><section class:list={['scene',{'is-active':i===0}]} data-scene={i} data-role={person.role} data-department={person.department} data-stat={person.stat} data-unit={person.unit} data-image={person.image} aria-hidden={i!==0}>
+       <p class="eyebrow"><span class="status-dot"></span> {String(i+1).padStart(2,'0')} / {person.role}</p>
+       {i===0?<h1>{person.title[0]}<br/><em>{person.title[1]}</em></h1>:<h2>{person.title[0]}<br/><em>{person.title[1]}</em></h2>}
+       <p class="scene-description">{person.text}</p>
+       <div class="scene-foot"><span>↳</span>{person.foot}</div>
+      </section>)}
+      <section class="scene scene-space" data-scene="6" aria-hidden="true"><p class="eyebrow"><span class="status-dot"></span> 07 / VISIÓN EXTRATERRESTRE</p><h2>El cielo<br/><em>se le queda corto.</em></h2><p class="scene-description">La empresa sigue en la Tierra.<br/>La dirección está por confirmar.</p><a class="text-link" href="#episodio">Volver a la realidad <span>↓</span></a></section>
+     </div>
+     <div class="portrait-caption" aria-hidden="true"><span class="cross">+</span><div><span id="department">DIRECCIÓN GENERAL</span><strong id="role">EL VISIONARIO</strong></div><span class="caption-line"></span></div>
+     <div class="stat" aria-hidden="true"><span id="stat-value">∞</span><small id="stat-unit">VISIÓN DE FUTURO</small></div>
+     <nav class="chapter-nav" aria-label="Personajes">
+      {crew.map((person,i)=><a href={`#${person.id}`} data-chapter={i} aria-label={`${i+1}. ${person.role}`} aria-current={i===0?'step':undefined}><span>{String(i+1).padStart(2,'0')}</span><i></i></a>)}
+      <a href="#orbita" data-chapter="6" aria-label="7. Ascenso espacial"><span>07</span><i></i></a>
+     </nav>
+     <div class="stage-bottom"><a href="#hacker" id="scroll-next" class="scroll-cue"><span class="down-arrow">↓</span><span>DESLIZA PARA CAMBIAR<br/>DE MENTE.</span></a><span class="series-label">UNA WEBSERIE DE COMEDIA.<br/><span>UNA EMPRESA MUY EN SERIO.</span></span><div class="progress-info"><span id="progress-number">00</span><span> / 100</span><div class="progress-track"><i id="progress-bar"></i></div></div></div>
+     <div class="edge-word" aria-hidden="true">NO HAY PLAN B. HAY I+D.</div>
+    </div>
+    <div class="story-anchors" aria-hidden="true">{crew.map((p,i)=><div id={p.id} style={`top:${i*100/7}%`}></div>)}<div id="orbita" style="top:85.714%"></div></div>
+   </div>
+   <section class="manifesto" id="empresa">
+    <div class="manifesto-top"><span class="eyebrow">I+D + UN POCO DE FE</span><span class="tiny">EST. EN ALGÚN MOMENTO DEL FUTURO</span></div>
+    <div class="manifesto-title"><h2>Ideas enormes.<br/><span>Consecuencias también.</span></h2><p>Hacemos aparatos científicos que nadie ha pedido. Con un equipo que nadie habría juntado.<br/><br/>Lo imposible es nuestro trabajo.<br/>Lo improbable, nuestro día a día.</p></div>
+    <div class="invention-list">
+     <div class="invention" tabindex="0"><span class="invention-number">PROYECTO / 001</span><h3>Conectar con el más allá.</h3><span class="invention-note">El Wi-Fi de este lado ya falla.</span><span class="invention-symbol">↗</span></div>
+     <div class="invention" tabindex="0"><span class="invention-number">PROYECTO / 002</span><h3>Entender al mejor amigo.</h3><span class="invention-note">A los compañeros, otro día.</span><span class="invention-symbol">↗</span></div>
+     <div class="invention" tabindex="0"><span class="invention-number">PROYECTO / 003</span><h3>Llegar demasiado lejos.</h3><span class="invention-note">La especialidad de la casa.</span><span class="invention-symbol">↗</span></div>
+    </div>
+   </section>
+   <section class="episode-section" id="episodio">
+    <div class="episode-top"><span class="eyebrow"><span class="status-dot"></span> AHORA EN TU DIMENSIÓN</span><span class="tiny">COMEDIA · CIENCIA · CAOS</span></div>
+    <div class="episode-grid"><div><h2>Ver para<br/><em>no creer.</em></h2><p>Bienvenido a Cuántica SL.<br/>El futuro empieza después del play.</p><button class="pill-button" data-play>Ver el episodio <span>▶</span></button></div><button class="episode-preview" data-play aria-label="Reproducir el episodio de Cuántica SL"><img src="/media/episode-poster.jpg" alt="El CEO de Cuántica SL en la oficina" width="960" height="540" loading="lazy"/><span class="play-circle">▶</span><span class="episode-meta">CUÁNTICA SL <span>06:08 / EPISODIO COMPLETO</span></span></button></div>
+    <footer><a class="footer-brand" href="#vision">cuántica<span>SL</span></a><span>© 2026 CUÁNTICA SL · UNA EMPRESA DE FICCIÓN. POR SUERTE.</span><a href="#vision">Volver a la Tierra ↑</a></footer>
+   </section>
+  </main>
+  <button id="motion-toggle" class="motion-toggle" aria-pressed="false" aria-label="Reducir animaciones"><span>◫</span> <span id="motion-label">MENOS MOVIMIENTO</span></button>
+  <dialog id="episode-dialog" aria-labelledby="player-title"><div class="player-heading"><h2 id="player-title">Cuántica SL — El episodio</h2><button id="close-player" aria-label="Cerrar reproductor">Cerrar <span>×</span></button></div><video id="episode-player" controls playsinline preload="none" poster="/media/episode-poster.jpg" data-src="/media/episode.mov"></video><p id="player-error" hidden>No se ha podido reproducir el episodio. <a href="/media/episode.mov" download>Descargar el vídeo original</a>.</p></dialog>
+  <script>
+   import { initExperience } from '../lib/experience';
+   initExperience();
+  </script>
+ </body>
+</html>

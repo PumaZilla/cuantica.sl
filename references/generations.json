@@ -1,0 +1,209 @@
+{
+  "generatedAt": "2026-09-09",
+  "referenceTimes": {
+    "ceo": 26,
+    "hacker": 37,
+    "cientifica": 268,
+    "redes": 279,
+    "perro": 312
+  },
+  "portraitRequests": [
+    {
+      "index": 0,
+      "params": {
+        "model": "nano_banana_pro",
+        "aspect_ratio": "3:4",
+        "resolution": "2k",
+        "prompt": "Create an impeccably art-directed photorealistic editorial studio portrait of the EXACT person from this film reference. Identity must closely match the actor. Subject: the middle-aged man with large black rectangular glasses, brown side-parted hair, dark navy blazer and red-and-white striped shirt. Self-assured visionary CEO, chin subtly raised, looking directly at camera. Vertical 3:4 image. Frontal, symmetrical bust portrait from upper chest to above head. Head centered horizontally, eyes at 38% image height, head fills 55% of width. Keep entire hair/hood inside frame with 10% margin above. Pure pitch black seamless background #080909, NO scenery, no props, no text or graphics, no logos. Dramatic warm white softbox key light from upper left, subtle lime-green rim light from right; natural detailed skin, subdued cinematic colors, high contrast. Clothes and lower chest dissolve naturally into pure black at bottom. Premium science-fiction corporate campaign. Sharp face, no exaggerated glamour, preserve age.",
+        "medias": [
+          {
+            "role": "image",
+            "value": "523aee1a-e9e0-4bd4-bdfa-92b5726470f8"
+          }
+        ]
+      }
+    },
+    {
+      "index": 1,
+      "params": {
+        "model": "nano_banana_pro",
+        "aspect_ratio": "3:4",
+        "resolution": "2k",
+        "prompt": "Create an impeccably art-directed photorealistic editorial studio portrait of the EXACT person from this film reference. Identity must closely match the actor. Subject: the man in the black hoodie with hood up and small glasses, preserve his exact face. Reserved hacker looking directly at camera. Vertical 3:4 image. Frontal, symmetrical bust portrait from upper chest to above head. Head centered horizontally, eyes at 38% image height, head fills 55% of width. Keep entire hair/hood inside frame with 10% margin above. Pure pitch black seamless background #080909, NO scenery, no props, no text or graphics, no logos. Dramatic warm white softbox key light from upper left, subtle lime-green rim light from right; natural detailed skin, subdued cinematic colors, high contrast. Clothes and lower chest dissolve naturally into pure black at bottom. Premium science-fiction corporate campaign. Sharp face, no exaggerated glamour, preserve age.",
+        "medias": [
+          {
+            "role": "image",
+            "value": "af7e0212-55d4-4ab6-b7d0-44319cbf8594"
+          }
+        ]
+      }
+    },
+    {
+      "index": 2,
+      "params": {
+        "model": "nano_banana_pro",
+        "aspect_ratio": "3:4",
+        "resolution": "2k",
+        "prompt": "Create an impeccably art-directed photorealistic editorial studio portrait of the EXACT person from this film reference. Identity must closely match the actor. Subject: the mature woman with short curly dark hair and large rectangular glasses, wearing her black-and-white striped shirt. Wry confident scientist, directly facing camera. Vertical 3:4 image. Frontal, symmetrical bust portrait from upper chest to above head. Head centered horizontally, eyes at 38% image height, head fills 55% of width. Keep entire hair/hood inside frame with 10% margin above. Pure pitch black seamless background #080909, NO scenery, no props, no text or graphics, no logos. Dramatic warm white softbox key light from upper left, subtle lime-green rim light from right; natural detailed skin, subdued cinematic colors, high contrast. Clothes and lower chest dissolve naturally into pure black at bottom. Premium science-fiction corporate campaign. Sharp face, no exaggerated glamour, preserve age.",
+        "medias": [
+          {
+            "role": "image",
+            "value": "aab75656-98b5-4e7a-b356-7b0e1b6ea268"
+          }
+        ]
+      }
+    },
+    {
+      "index": 3,
+      "params": {
+        "model": "nano_banana_pro",
+        "aspect_ratio": "3:4",
+        "resolution": "2k",
+        "prompt": "Create an impeccably art-directed photorealistic editorial studio portrait of the EXACT person from this film reference. Identity must closely match the actor. Subject: the young woman with clear glasses, auburn hair tied back with braids, distinctive dangling circular geometric earrings and black top. Calm social media manager, facing directly at camera. Vertical 3:4 image. Frontal, symmetrical bust portrait from upper chest to above head. Head centered horizontally, eyes at 38% image height, head fills 55% of width. Keep entire hair/hood inside frame with 10% margin above. Pure pitch black seamless background #080909, NO scenery, no props, no text or graphics, no logos. Dramatic warm white softbox key light from upper left, subtle lime-green rim light from right; natural detailed skin, subdued cinematic colors, high contrast. Clothes and lower chest dissolve naturally into pure black at bottom. Premium science-fiction corporate campaign. Sharp face, no exaggerated glamour, preserve age.",
+        "medias": [
+          {
+            "role": "image",
+            "value": "63783c72-1db8-4301-ae2d-3decb73f3c27"
+          }
+        ]
+      }
+    },
+    {
+      "index": 4,
+      "params": {
+        "model": "nano_banana_pro",
+        "aspect_ratio": "3:4",
+        "resolution": "2k",
+        "prompt": "Create an impeccably art-directed photorealistic editorial studio portrait of the EXACT person from this film reference. Identity must closely match the actor. Subject: the bearded middle-aged man wearing a shaggy gray-and-black furry dog costume with hood up. This is a HUMAN IN A DOG SUIT, not an animal. Preserve human face, beard, furry hood. Deadpan expression looking directly at camera. Vertical 3:4 image. Frontal, symmetrical bust portrait from upper chest to above head. Head centered horizontally, eyes at 38% image height, head fills 55% of width. Keep entire hair/hood inside frame with 10% margin above. Pure pitch black seamless background #080909, NO scenery, no props, no text or graphics, no logos. Dramatic warm white softbox key light from upper left, subtle lime-green rim light from right; natural detailed skin, subdued cinematic colors, high contrast. Clothes and lower chest dissolve naturally into pure black at bottom. Premium science-fiction corporate campaign. Sharp face, no exaggerated glamour, preserve age.",
+        "medias": [
+          {
+            "role": "image",
+            "value": "efe57b85-a74a-434f-bbfd-17b7223e59fd"
+          }
+        ]
+      }
+    }
+  ],
+  "ascentRequest": [
+    {
+      "index": 5,
+      "params": {
+        "model": "nano_banana_pro",
+        "aspect_ratio": "3:4",
+        "resolution": "2k",
+        "medias": [
+          {
+            "role": "image",
+            "value": "523aee1a-e9e0-4bd4-bdfa-92b5726470f8"
+          }
+        ],
+        "prompt": "Photorealistic full body portrait of the EXACT middle-aged man in the reference, same brown side-parted hair, oversized black rectangular glasses, dark navy blazer, red and white striped T-shirt, dark trousers and simple white sneakers. He is a pompous visionary CEO in a comedy. Full body visible including shoes, vertically floating straight with arms slightly away from sides, looking upward with total confidence. Centered symmetrical composition, man occupies 65 percent image height, surrounded by generous pure black negative space on all sides. Black void background #080909, no scenery, no stars, no floor, no text, no graphic. Cinematic white key light and very subtle lime rim light. Preserve exact actor identity and age."
+      }
+    }
+  ],
+  "jobs": [
+    {
+      "index": 0,
+      "job_id": "446760a0-038a-42bf-bb62-8ed53bfa1f7e",
+      "status": "completed",
+      "type": "image",
+      "model": "nano_banana_2",
+      "result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FdZUIZHraXNlHJOIPmL6Gn8X4b/hf_20260908_233058_446760a0-038a-42bf-bb62-8ed53bfa1f7e.png"
+    },
+    {
+      "index": 1,
+      "job_id": "9f9c4418-272a-4a8b-af95-f6215570457b",
+      "status": "completed",
+      "type": "image",
+      "model": "nano_banana_2",
+      "result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FdZUIZHraXNlHJOIPmL6Gn8X4b/hf_20260908_233058_9f9c4418-272a-4a8b-af95-f6215570457b.png"
+    },
+    {
+      "index": 2,
+      "job_id": "ef24202d-0fc8-43bb-8869-6e4de56cc43d",
+      "status": "completed",
+      "type": "image",
+      "model": "nano_banana_2",
+      "result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FdZUIZHraXNlHJOIPmL6Gn8X4b/hf_20260908_233058_ef24202d-0fc8-43bb-8869-6e4de56cc43d.png"
+    },
+    {
+      "index": 3,
+      "job_id": "82f9eca0-b163-4b4a-a5cf-81c594a69fb1",
+      "status": "completed",
+      "type": "image",
+      "model": "nano_banana_2",
+      "result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FdZUIZHraXNlHJOIPmL6Gn8X4b/hf_20260908_233058_82f9eca0-b163-4b4a-a5cf-81c594a69fb1.png"
+    },
+    {
+      "index": 4,
+      "job_id": "9e29efbf-b119-4ccd-8369-fa6404e0f376",
+      "status": "completed",
+      "type": "image",
+      "model": "nano_banana_2",
+      "result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FdZUIZHraXNlHJOIPmL6Gn8X4b/hf_20260908_233058_9e29efbf-b119-4ccd-8369-fa6404e0f376.png"
+    },
+    {
+      "index": 5,
+      "job_id": "d69d512e-215f-4d93-8a4f-1857dbd34de3",
+      "status": "completed",
+      "type": "image",
+      "model": "nano_banana_2",
+      "result_url": "https://d8j0ntlcm91z4.cloudfront.net/user_3FdZUIZHraXNlHJOIPmL6Gn8X4b/hf_20260908_233624_d69d512e-215f-4d93-8a4f-1857dbd34de3.png"
+    }
+  ],
+  "failedAscent": {
+    "jobs": [
+      {
+        "index": 5,
+        "job_id": "9109e021-676c-4751-afe7-b66d1e340984",
+        "status": "pending",
+        "adjustments": {
+          "medias[0].role": {
+            "requested": "image",
+            "used": "image_references",
+            "reason": "Nano Banana Pro backend expects schema-key media roles"
+          }
+        }
+      }
+    ],
+    "submitted_count": 1,
+    "failed_count": 0
+  },
+  "videoAttempts": [
+    {
+      "params": {
+        "model": "seedance_2_5",
+        "mode": "omni_reference",
+        "aspect_ratio": "3:4",
+        "duration": 5,
+        "resolution": "720p",
+        "generate_audio": false,
+        "medias": [
+          {
+            "role": "start_image",
+            "value": "d69d512e-215f-4d93-8a4f-1857dbd34de3"
+          }
+        ],
+        "prompt": "Begin exactly with this man in the reference image, full body in a dark navy blazer, red white striped shirt, glasses, white sneakers. One continuous smooth cinematic shot with no cuts. The visionary CEO slowly levitates vertically upward into pitch black deep space as camera gracefully pulls far back. He becomes smaller and rises toward the top third of frame, his jacket gently floats in zero gravity, arms relaxed. Sparse tiny distant stars gradually appear around him. Understated absurd corporate science fiction, total confidence. Preserve exact face, glasses, clothing and anatomy. Neutral white cinematic light with faint green rim. Keep background near pure black, no planets, no clouds, no flames, no text, no logos, no new people. End with his full body small and high in the frame surrounded by enormous black negative space. Smooth deliberate acceleration, elegant motion graphics pace."
+      },
+      "error": "Requires plus plan or higher."
+    },
+    {
+      "params": {
+        "model": "kling2_6",
+        "aspect_ratio": "9:16",
+        "duration": 5,
+        "sound": false,
+        "medias": [
+          {
+            "role": "start_image",
+            "value": "d69d512e-215f-4d93-8a4f-1857dbd34de3"
+          }
+        ],
+        "prompt": "Begin exactly with this man in the reference image, full body in a dark navy blazer, red white striped shirt, glasses, white sneakers. One continuous smooth cinematic shot with no cuts. The visionary CEO slowly levitates vertically upward into pitch black deep space as camera gracefully pulls far back. He becomes smaller and rises toward the top third of frame, his jacket gently floats in zero gravity, arms relaxed. Sparse tiny distant stars gradually appear around him. Understated absurd corporate science fiction, total confidence. Preserve exact face, glasses, clothing and anatomy. Neutral white cinematic light with faint green rim. Keep background near pure black, no planets, no clouds, no flames, no text, no logos, no new people. End with his full body small and high in the frame surrounded by enormous black negative space. Smooth deliberate acceleration, elegant motion graphics pace."
+      },
+      "error": "Requires basic plan or higher."
+    }
+  ],
+  "finalAnimation": "CSS transforms and canvas particles driven by native scroll; no generated video."
+}

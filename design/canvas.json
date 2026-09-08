@@ -1,0 +1,14 @@
+{
+  "artboards": [
+    { "file": "Storyboard.dc.html", "x": 0, "y": 0, "w": 1900, "h": 620 },
+    { "file": "Main.dc.html", "x": 0, "y": 760, "w": 1280, "h": 1000 },
+    { "file": "Moodboard.dc.html", "x": 1360, "y": 760, "w": 700, "h": 950 }
+  ],
+  "annotations": [
+    { "id": "how-to-read", "x": -300, "y": -110, "w": 300, "text": "HOW TO READ THIS:\ngray dashed boxes = to-be-built elements (placeholders, not final art).\nCaveat-font text = my callouts/notes.\nreal color only appears on the Moodboard — everything else stays grayscale on purpose." },
+    { "id": "fb-storyboard-glitch-timing", "x": 1650, "y": -150, "w": 260, "text": "Feedback wanted: does the 40% glitch feel like the right peak moment, or should it hit earlier/later in the scroll?" },
+    { "id": "fb-main-nav", "x": -300, "y": 900, "w": 250, "text": "Feedback wanted: nav is just a floating wordmark + text CTA, no bar. OK, or want something more substantial (menu, socials)?" },
+    { "id": "fb-moodboard-arc", "x": 1360, "y": 1740, "w": 300, "text": "Feedback wanted: warm keynote → neon cyberpunk → deep space arc, or prefer a different emotional curve (e.g. corporate blue throughout, brighter finale)?" }
+  ],
+  "launch": { "view": "canvas" }
+}
