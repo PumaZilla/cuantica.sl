@@ -1,7 +1,9 @@
 ---
 import PersonSocials from '../PersonSocials.astro';
 import type { team } from '../../content/team';
-interface Props { person: (typeof team)[number] }
+interface Props {
+  person: (typeof team)[number];
+}
 const { person } = Astro.props;
 ---
 <article class="person">

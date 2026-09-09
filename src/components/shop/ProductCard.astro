@@ -1,6 +1,8 @@
 ---
 import type { products } from '../../content/products';
-interface Props { item: (typeof products)[number] }
+interface Props {
+  item: (typeof products)[number];
+}
 const { item } = Astro.props;
 const isEpisode = item.code === 'Q–008';
 ---

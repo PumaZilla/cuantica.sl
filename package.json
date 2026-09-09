@@ -9,16 +9,23 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "check": "bun run --sequential check:deadcode check:format check:lint check:types",
+    "check:deadcode": "knip",
+    "check:format": "biome format .",
+    "check:lint": "biome lint .",
+    "check:types": "astro check"
   },
   "dependencies": {
-    "astro": "^7.3.1",
-    "three": "^0.185.1"
+    "astro": "^7.3.1"
   },
   "allowScripts": {
     "esbuild": true
   },
   "devDependencies": {
-    "@types/three": "^0.185.4"
+    "@astrojs/check": "^0.9.10",
+    "@biomejs/biome": "^2.5.12",
+    "knip": "^6.35.1",
+    "typescript": "^5"
   }
 }
