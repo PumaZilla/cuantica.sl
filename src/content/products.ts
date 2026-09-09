@@ -1,11 +1,11 @@
-import productImage1 from '../assets/products/teletransportador-no-text.webp?url';
-import productImage2 from '../assets/products/estimulador-neutral.webp?url';
-import productImage3 from '../assets/products/tostadora-reflejo-limpio.webp?url';
-import productImage4 from '../assets/products/elixir-no-text.webp?url';
-import productImage5 from '../assets/products/analizador-no-text.webp?url';
-import productImage6 from '../assets/products/planta-no-text.webp?url';
-import productImage7 from '../assets/products/genfit-particles.png?url';
-import productImage8 from '../assets/products/frankenpet-pixel-studio.png?url';
+import productImage1 from '../assets/products/teletransportador-no-text-optimized.webp?url';
+import productImage2 from '../assets/products/estimulador-neutral-optimized.webp?url';
+import productImage3 from '../assets/products/tostadora-reflejo-limpio-optimized.webp?url';
+import productImage4 from '../assets/products/elixir-no-text-optimized.webp?url';
+import productImage5 from '../assets/products/analizador-no-text-optimized.webp?url';
+import productImage6 from '../assets/products/planta-no-text-optimized.webp?url';
+import productImage7 from '../assets/products/genfit-particles-optimized.webp?url';
+import productImage8 from '../assets/products/frankenpet-pixel-studio-optimized.webp?url';
 
 export const products = [
   {

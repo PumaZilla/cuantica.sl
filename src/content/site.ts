@@ -1,5 +1,5 @@
-import heroPoster from '../assets/hero/poster.webp?url';
-import episodeVideo from '../assets/episodes/T108.mp4?url';
+import heroPoster from '../assets/hero/poster-optimized.webp?url';
+import episodeVideo from '../assets/episodes/T108-optimized.mp4?url';
 import episodePoster from '../assets/episodes/T108-poster.jpg?url';
 
 export const site = {
