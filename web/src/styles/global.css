@@ -214,3 +214,178 @@
 @media(max-width:680px){#episode-dialog{box-shadow:6px 6px 0 #fff200}#episode-dialog .player-heading{padding:14px 12px;gap:12px}#episode-dialog .player-heading h2{font-size:23px}#episode-dialog #close-player{padding:8px;font-size:12px}}
 
 #episode-dialog .player-episode-meta{margin-top:6px;font-family:var(--body);font-size:14px;font-weight:700;line-height:1.4}
+
+/* Corporate manifesto: structural lines and restrained, oversized typography. */
+.belief{padding:64px var(--pad) 30px;background:var(--surface);color:var(--paper);border-block:3px solid var(--universe)}
+.method-header{display:flex;align-items:center;justify-content:space-between;gap:20px;padding-bottom:26px;border-bottom:2px solid var(--paper)}
+.method-header h2{font:700 13px/1.4 var(--body);letter-spacing:.12em}
+.method-header>.mono{color:var(--mist);font-size:10px}
+.method-step{display:grid;grid-template-columns:90px 1fr;gap:24px;align-items:start;padding:36px 0 40px;border-bottom:1px solid var(--dust)}
+.method-number{display:grid;place-items:center;width:54px;height:54px;border:2px solid var(--paper);font:700 20px/1 monospace;margin-top:8px;box-shadow:5px 5px 0 var(--dust)}
+.belief .method-step p{margin:0;font-family:var(--display);font-size:clamp(38px,5.6vw,84px);font-weight:600;line-height:1.04;letter-spacing:-.055em}
+.method-arrow{font:400 60px/1 var(--display);text-align:right}
+.method-step-secondary{color:var(--mist)}
+.method-step-secondary .method-number{border-color:var(--mist)}
+.method-footer{display:flex;justify-content:space-between;gap:24px;padding-top:24px;font-size:9px;color:var(--mist)}
+@media(max-width:680px){.belief{padding-top:44px;padding-bottom:24px}.method-header{align-items:flex-start;flex-direction:column;gap:10px;padding-bottom:20px}.method-header h2{font-size:12px}.method-step{grid-template-columns:40px 1fr;gap:16px;padding:28px 0}.method-number{width:34px;height:34px;font-size:14px;margin-top:3px;box-shadow:3px 3px 0 var(--dust)}.belief .method-step p{font-size:clamp(30px,7.7vw,48px)}.method-arrow{display:none}.method-footer{flex-direction:column;gap:10px;font-size:8px}}
+
+/* Original supplied wordmark, cropped in its viewport without redrawing it. */
+.brand.brand-official{display:inline-flex;flex-shrink:0;width:clamp(210px,23vw,320px);padding:10px 12px;background:transparent;line-height:0}
+.brand.brand-official .brand-artwork{display:block;width:100%;height:auto;fill:initial;stroke:none;overflow:hidden}
+@media(max-width:680px){.brand.brand-official{width:210px;padding:8px 10px}}
+
+/* Compact corporate interlude. */
+.belief{padding-top:40px;padding-bottom:24px}
+.method-header{padding-bottom:18px}
+.method-step{padding:24px 0 28px}
+.belief .method-step p{font-size:clamp(34px,4.5vw,68px)}
+.method-footer{padding-top:18px}
+@media(max-width:680px){.belief{padding-top:32px;padding-bottom:20px}.method-step{padding:20px 0}.belief .method-step p{font-size:clamp(28px,7vw,42px)}}
+
+
+
+/* Team dossiers retain the portrait grid, with stronger editorial framing. */
+.team .section-label{border-bottom:2px solid var(--surface);padding-bottom:18px;font-weight:700}
+.team .section-heading h2{font-weight:700;letter-spacing:-.045em}
+.team .section-heading .serif-word{font-family:var(--display);font-style:normal;font-weight:700}
+.team-grid{gap:24px}
+.team .person{border:2px solid var(--surface);box-shadow:5px 5px 0 var(--mist);padding:0 0 16px;min-width:0}
+.team .person-photo{border-bottom:2px solid var(--surface)}
+.team .person-number{background:var(--paper);color:var(--surface);border:2px solid var(--surface);padding:6px 8px;top:10px;left:10px;font-weight:700;font-size:11px}
+.team .person-badge{bottom:0;left:0;right:0;background:var(--surface);padding:9px 8px;font-size:7px;font-weight:700;letter-spacing:.5px}
+.team .person-title,.team .person-role,.team .person-line,.team .person details{margin-left:12px;margin-right:12px}
+.team .person-title h3{font-weight:700;text-transform:uppercase;letter-spacing:-.04em}
+.team .person-title>span{display:none}
+.team .person-role{font-weight:700}
+.team .person details{border-top:2px solid var(--surface);margin-top:20px;padding-top:10px}
+.team .person summary{font-weight:700;text-transform:uppercase;letter-spacing:.02em}
+@media(max-width:680px){.team-grid{gap:24px 16px}.team .person:first-child{column-gap:4px}.team .person:first-child .person-photo{border-right:2px solid var(--surface)}.team .person-title h3{font-size:24px}.team .person-badge{font-size:6px}.team .person-title,.team .person-role,.team .person-line,.team .person details{margin-left:10px;margin-right:10px}}
+
+/* An oversized corporate statement with a dry editorial postscript. */
+.method-manifesto{display:grid;grid-template-columns:200px 1fr;gap:clamp(28px,5vw,80px);padding:64px var(--pad);background:var(--surface)}
+.method-heading{border-top:4px solid var(--paper);padding-top:18px;display:flex;flex-direction:column;justify-content:space-between;gap:32px}
+.method-heading h2{font:700 18px/1.2 var(--display);letter-spacing:-.02em}
+.method-heading>.mono{font-size:9px;color:var(--mist);max-width:150px}
+.method-composition{position:relative;padding-bottom:22px}
+.belief .method-main{margin:0;font:700 clamp(54px,7.3vw,108px)/.96 var(--display);letter-spacing:-.065em}
+.method-note{position:absolute;right:0;bottom:0;width:clamp(260px,29vw,420px);padding:22px 26px;background:var(--paper);color:var(--surface);border:3px solid var(--universe);box-shadow:8px 8px 0 var(--mist);transform:rotate(-3deg)}
+.method-note>.mono{font-size:9px;font-weight:700;letter-spacing:.12em}
+.belief .method-note p{margin:18px 0 0;font:700 clamp(24px,2.7vw,38px)/1.05 var(--display);letter-spacing:-.045em}
+@media(max-width:1050px){.method-manifesto{grid-template-columns:150px 1fr}.method-composition{padding-bottom:0}.method-note{position:relative;margin:26px 0 0 auto;width:min(100%,380px)}}
+@media(max-width:680px){.method-manifesto{grid-template-columns:1fr;padding:40px var(--pad);gap:28px}.method-heading{flex-direction:row;align-items:start;gap:20px}.method-heading h2{font-size:16px}.method-heading>.mono{max-width:110px;text-align:right}.belief .method-main{font-size:clamp(52px,13vw,80px)}.method-note{padding:20px;width:85%;margin-top:28px}.belief .method-note p{font-size:27px}}
+
+/* Let the manifesto flow into the surrounding light page. */
+.method-manifesto{background:var(--paper);color:var(--surface);border-block:0}
+.method-manifesto .method-heading{border-top-color:var(--surface)}
+.method-manifesto .method-heading>.mono{color:var(--dust)}
+.method-manifesto .method-note{background:var(--paper)}
+
+.method-manifesto{grid-template-columns:150px 1fr;gap:32px}
+.belief .method-main{font-family:Impact,'Arial Black',sans-serif;font-size:clamp(58px,7.8vw,118px);font-weight:900;text-transform:uppercase;letter-spacing:-.025em;line-height:1}
+.belief .method-note p{margin:0}
+.method-composition{padding-bottom:76px}
+@media(max-width:1050px){.method-composition{padding-bottom:0}.belief .method-main{font-size:clamp(48px,7vw,82px)}}
+@media(max-width:680px){.method-manifesto{grid-template-columns:1fr;gap:28px}.belief .method-main{font-size:clamp(44px,11.7vw,72px)}}
+
+.method-manifesto .method-heading{border-top:0;justify-content:flex-end;padding-top:0}
+
+.method-manifesto{grid-template-columns:1fr;gap:24px}
+.method-manifesto .method-composition{grid-column:1;grid-row:1}
+.method-manifesto .method-heading{grid-column:1;grid-row:2}
+.method-manifesto .method-heading>.mono{max-width:none;text-align:left}
+.method-manifesto .method-note{transform:none}
+
+.method-manifesto .method-composition{display:grid;grid-template-columns:minmax(0,1.6fr) minmax(0,1fr);align-items:center;gap:clamp(40px,6vw,100px);padding:0 clamp(0px,2vw,32px)}
+.belief .method-main{text-align:center;font-size:clamp(54px,6.3vw,96px)}
+.method-manifesto .method-note{position:static;width:100%;margin:0;text-align:center}
+.method-manifesto .method-heading>.mono{font-weight:700;text-align:center;width:100%}
+@media(max-width:680px){.method-manifesto .method-composition{grid-template-columns:1fr;gap:32px;padding:0}.belief .method-main{font-size:clamp(44px,11.7vw,72px)}.method-manifesto .method-note{width:90%;margin-inline:auto}}
+
+/* Floating instruction prompt tucked into the headline's negative space. */
+.method-manifesto .method-composition{display:block;position:relative;padding:0 0 56px}
+.belief .method-main{text-align:left;font-size:clamp(58px,7.8vw,118px)}
+.method-manifesto .method-note{position:absolute;right:8%;bottom:0;width:clamp(280px,32vw,460px);margin:0;text-align:left;z-index:2;padding:24px 28px}
+.method-manifesto .method-heading>.mono{text-align:left}
+@media(max-width:1050px){.belief .method-main{font-size:clamp(48px,7vw,82px)}.method-manifesto .method-note{right:2%;width:40%;min-width:270px}.method-manifesto .method-composition{padding-bottom:80px}}
+@media(max-width:680px){.belief .method-main{font-size:clamp(44px,11.7vw,72px)}.method-manifesto .method-composition{padding-bottom:0}.method-manifesto .method-note{position:relative;width:86%;min-width:0;right:auto;margin:18px 0 0 auto;padding:20px}.method-manifesto .method-heading>.mono{text-align:left}}
+@media(min-width:1051px){.method-manifesto .method-note{right:18%;bottom:22px}}
+
+/* Tighten the transition from the shop and frame the manifesto. */
+.tv-shop{padding-bottom:36px}
+.method-manifesto{padding-top:32px;padding-bottom:40px;row-gap:4px}
+.method-manifesto .method-heading{transform:translateY(-16px)}
+.method-manifesto .method-bottom-corner{top:auto;right:auto;bottom:26px;left:26px;transform:rotate(180deg) scale(.75)}
+@media(max-width:680px){.tv-shop{padding-bottom:26px}.method-manifesto{padding-top:26px;padding-bottom:36px;row-gap:18px}.method-manifesto .method-heading{transform:none}.method-manifesto .method-bottom-corner{bottom:16px;left:16px}}
+
+/* Keep the statement and floating note together in a centered composition. */
+.method-manifesto .method-composition,.method-manifesto .method-heading{width:min(100%,1080px);margin-inline:auto}
+@media(min-width:1051px){.belief .method-main{font-size:clamp(58px,6.7vw,102px)}.method-manifesto .method-note{right:3%;width:clamp(280px,29vw,410px)}}
+
+@media(min-width:1051px){
+ .method-manifesto .method-main{transform:translateX(70px)}
+ .method-manifesto .method-heading{transform:translate(70px,-16px)}
+ .method-manifesto .method-note{right:calc(3% + 70px)}
+}
+
+@media(min-width:1051px){
+ .method-manifesto .method-note{bottom:7px}
+}
+
+@media(min-width:1051px){
+ .method-manifesto .method-note{right:calc(3% + 100px);bottom:-3px}
+}
+
+/* Scale the approved desktop composition as a unit through laptop widths. */
+@media(min-width:681px){
+ .method-manifesto .method-composition,.method-manifesto .method-heading{container-type:inline-size}
+ .method-manifesto .method-composition{padding-bottom:min(4.708vw,56px)}
+ .belief .method-main{font-size:8.933cqw;transform:translateX(6.481%)}
+ .method-manifesto .method-note{right:12.259%;bottom:-3px;width:37.963%;min-width:0;padding:2.222cqw 2.593cqw}
+ .belief .method-note p{font-size:3.519cqw}
+ .method-manifesto .method-heading{transform:translate(6.481%,-16px)}
+}
+
+.method-peeking-cat{position:absolute;width:clamp(130px,14vw,210px);height:auto;left:-55px;top:38%;transform:scaleX(-1) rotate(-30deg);pointer-events:none;user-select:none}
+@media(max-width:680px){.method-peeking-cat{width:100px;left:-32px;top:auto;bottom:55px}.method-manifesto .method-note{width:78%}}
+
+.shop-peeking-bobby{position:absolute;width:clamp(220px,22vw,320px);max-width:none;height:auto;right:calc(-1 * var(--pad));bottom:-20px;pointer-events:none;mask-image:linear-gradient(to right,transparent 35%,black 60%),linear-gradient(to bottom,transparent,black 12%,black 86%,transparent);mask-composite:intersect}
+@media(max-width:680px){.shop-peeking-bobby{width:170px;bottom:-5px}}
+@media(max-width:680px){.shop-peeking-bobby{width:125px;bottom:-8px}}
+
+.shop-peeking-bobby{width:clamp(160px,16vw,230px);right:calc(-1 * var(--pad) - 12px);mask-image:linear-gradient(to right,transparent 10%,black 28%),linear-gradient(to bottom,transparent,black 12%,black 84%,transparent)}
+@media(max-width:680px){.shop-peeking-bobby{width:110px}}
+
+/* Preserve the approved face; move the cropped torso beyond the left edge. */
+.shop-peeking-bobby{left:calc(-1 * var(--pad) - 76px);right:auto;width:230px;bottom:-4px;transform:scaleX(-1) rotate(-35deg);mask-image:linear-gradient(to right,transparent 8%,black 26%);mask-composite:add}
+@media(max-width:680px){.shop-peeking-bobby{width:150px;left:calc(-1 * var(--pad) - 50px);bottom:-10px}}
+
+/* Bobby peeks from the shop's right edge with more shoulder visible. */
+.shop-peeking-bobby{left:auto;right:calc(-1 * var(--pad) - 48px);transform:rotate(-35deg)}
+@media(max-width:680px){.shop-peeking-bobby{left:auto;right:calc(-1 * var(--pad) - 32px)}}
+.shop-peeking-bobby{mask-image:linear-gradient(to right,transparent 8%,black 26%),linear-gradient(to bottom,transparent,black 12%,black 90%,transparent);mask-composite:intersect}
+.shop-peeking-bobby{transform:rotate(-20deg)}
+.shop-peeking-bobby{right:calc(-1 * var(--pad) - 70px)}
+@media(max-width:680px){.shop-peeking-bobby{right:calc(-1 * var(--pad) - 46px)}}
+
+/* Make room for the cat without changing the composition's internal spacing. */
+@media(min-width:681px){
+ .method-manifesto .method-composition{position:relative;left:30px}
+ .method-manifesto .method-heading{position:relative;left:30px}
+}
+@media(max-width:680px){
+ .method-manifesto .method-composition,.method-manifesto .method-heading{position:relative;left:10px;width:calc(100% - 10px)}
+}
+
+/* Match the breathing room on either side of the manifesto. */
+.team{padding-top:12px}
+.team-divider{border-top:2px solid var(--surface)}
+@media(max-width:680px){.team{padding-top:16px}}
+.team{padding-top:40px}
+@media(max-width:680px){.team{padding-top:34px}}
+
+.team .section-heading>p{font-weight:700;transform:rotate(-3deg)}
+
+.team .section-heading>p{color:#e51825;transform:translate(-40px,-18px) rotate(-3deg)}
+@media(max-width:680px){.team .section-heading>p{transform:translateY(-6px) rotate(-3deg);max-width:90%;margin-inline:auto}}
+
+.team .person-photo img{filter:none;object-position:center top}
