@@ -12,20 +12,20 @@ import { site, team, experiments } from '../content/site';
 <meta name="description" content={site.description}/><meta property="og:title" content={`${site.name} — ${site.title}`}/><meta property="og:description" content={site.description}/><meta property="og:image" content={site.hero}/>
 <link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet"/>
 <link rel="preload" href={site.hero} as="image"/>
 <noscript><style>.celestial{height:100svh}.celestial .cosmic-stage{position:relative}</style></noscript>
 </head>
 <body>
 <a class="skip-link" href="#episodio">Saltar al episodio</a>
 <main>
-<section class="celestial film-scroll" id="inicio" aria-label="El universo de Cuántica SL" data-manifest={site.heroManifest} data-mobile-manifest={site.heroMobileManifest}>
+<section class="celestial film-scroll" id="inicio" aria-label="El universo de Cuántica SL" data-manifest={site.heroManifest} data-mobile-manifest={site.heroMobileManifest} data-start-frame="9" data-release-frame="80">
 <span id="vision" class="vision-anchor" aria-hidden="true"></span>
 <div class="film-stage cosmic-stage">
 <img class="film-poster" src={site.hero} width="1920" height="1080" alt="David, CEO de Cuántica SL, asciende rodeado de los inventos de la empresa en un universo azul" fetchpriority="high"/>
 <canvas id="film-canvas" aria-hidden="true"></canvas>
 <header class="header cosmic-header"><Brand/></header>
-<h1 class="cosmic-statement"><span class="statement-left">Sociedad<br/>limitada.</span><span class="statement-right">Experimentos<br/>sin control.</span></h1>
+<h1 class="cosmic-statement"><span class="statement-left">Inventamos<br/>el futuro</span><span class="statement-right">Perdonad<br/>las molestias</span></h1>
 </div>
 </section>
 <section class="manifesto section-wrap" id="inventos">

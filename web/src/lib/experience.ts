@@ -15,6 +15,7 @@ export function initExperience() {
  let cacheLimit = 20;
  let playbackFrames: number[] = [];
  let wantedPosition = 0;
+ let releaseProgress = 1;
  const cache = new Map<number, ImageBitmap>();
  const pending = new Set<number>();
  const failures = new Map<number,number>();
@@ -32,7 +33,12 @@ export function initExperience() {
      manifest=data;
      // Bound decoded image memory as source resolution increases.
      cacheLimit=Math.max(5,Math.min(20,Math.floor(160*1024*1024/(data.width*data.height*4))));
-     playbackFrames=Array.from({length:lastFrame()+1},(_,index)=>index);
+     const firstFrame=Math.min(lastFrame(),Math.max(0,Math.floor(Number(story.dataset.startFrame)||0)));
+     playbackFrames=Array.from({length:lastFrame()-firstFrame+1},(_,index)=>index+firstFrame);
+     const releaseFrame=Number(story.dataset.releaseFrame);
+     releaseProgress=Number.isFinite(releaseFrame)&&lastFrame()>firstFrame
+       ? Math.max(.01,clamp((releaseFrame-firstFrame)/(lastFrame()-firstFrame))*.94) : 1;
+     story.style.setProperty('--release-progress',String(releaseProgress));
      schedule();
    }).catch(()=>{/* The generated still remains a usable background if media cannot load. */});
  }
@@ -81,15 +87,21 @@ export function initExperience() {
    raf=0;
    if(!alive||document.hidden)return;
    const rect=story.getBoundingClientRect();
-   const travel=Math.max(1,story.offsetHeight-stage.offsetHeight);
+   // Continue playing as the stage exits after the release frame.
+   const travel=Math.max(1,(story.offsetHeight-stage.offsetHeight)/releaseProgress);
    const progress=reduced?0:clamp(-rect.top/travel);
    stage.style.setProperty('--film-progress',String(progress));
    const smooth=(value:number)=>{const t=clamp(value);return t*t*(3-2*t);};
    stage.style.setProperty('--left-opacity',String(1-smooth((progress-.15)/.3)));
-   stage.style.setProperty('--right-opacity',String(smooth((progress-.35)/.25)));
+   stage.style.setProperty('--right-opacity',String(1-smooth((progress-.15)/.3)));
    stage.style.setProperty('--left-rise',String(clamp(progress/.6)));
-   stage.style.setProperty('--right-rise',String(clamp((progress-.35)/.65)));
-   const frameProgress=clamp(progress/.94);
+   stage.style.setProperty('--right-rise',String(clamp(progress/.6)));
+   const releaseFraction=clamp(releaseProgress/.94);
+   const releaseDistance=travel*releaseProgress;
+   // Fit the closing frames into the viewport exit so the full ending remains visible.
+   const frameProgress=releaseProgress<1 && -rect.top>releaseDistance
+     ? releaseFraction+(1-releaseFraction)*clamp((-rect.top-releaseDistance)/(stage.offsetHeight*.9))
+     : clamp(progress/.94);
    wantedPosition=Math.round(frameProgress*Math.max(0,playbackFrames.length-1));
    wanted=playbackFrames[wantedPosition]??0;
    if(reduced){canvas.style.opacity='0';return;}
