@@ -1,0 +1,19 @@
+---
+import { products } from '../../content/products';
+import ProductCard from '../shop/ProductCard.astro';
+import bobbyDecoration from '../../assets/decor/bobby-retoque.png?url';
+---
+<section class="manifesto section-wrap tv-shop" id="inventos">
+<span class="section-mark mark-plus" aria-hidden="true">+</span>
+<div class="tv-strip"><span>CUÁNTICA SHOP</span><span>★ ¡LOS INVENTOS DEL SIGLO! ★</span></div><div class="section-heading shop-heading"><img class="shop-peeking-bobby" src={bobbyDecoration} alt="" aria-hidden="true" loading="lazy" decoding="async" /><h2>Soluciones <span class="shop-word-green">extraordinarias</span><br/>a problemas que no tenías.</h2><p>En Cuántica no nos preguntamos <em>"por qué"</em>. Nos preguntamos <em>"por cuánto"</em>.</p></div>
+<div class="experiments">
+  {products.map(item => <ProductCard item={item} />)}
+  <article class="shop-placeholder" aria-label="Próximamente más productos">
+    <div class="shop-placeholder-inner">
+      <h3 class="shop-placeholder-title">Próximamente más.</h3>
+      <p class="shop-placeholder-desc">Pero seguramente no mejor.</p>
+    </div>
+  </article>
+</div><div class="tv-hype"><span class="tv-timer"><span><small>LA OFERTA CADUCA EN</small></span><b id="offer-countdown" role="timer" aria-live="off">42 días y 00:00:00 horas</b></span><strong>¡PERO ESPERA, HAY MÁS!</strong></div>
+<div class="tv-guarantee"><strong>SI NO LO NECESITAS, ES CUÁNTICA.</strong><span>*Compra ficticia. Comedia de verdad.</span></div>
+</section>

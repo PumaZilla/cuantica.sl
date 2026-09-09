@@ -1,0 +1,22 @@
+---
+import Brand from '../Brand.astro';
+import fecytLogo from '../../assets/brand/logo-fecyt.svg?url';
+import ceoAbertoLogo from '../../assets/brand/logo-ceo-aberto.svg?url';
+---
+<footer class="footer">
+  <div>
+    <Brand />
+    <p>Sociedad limitada.<br />Imaginación ilimitada.</p>
+  </div>
+  <div class="footer-collab">
+    <span class="footer-collab-label mono">Nuestros inversores</span>
+    <div class="footer-collab-logos">
+      <img src={fecytLogo} alt="FECYT — Fundación Española para la Ciencia y la Tecnología" class="footer-logo-fecyt" width="72" height="28" loading="lazy" />
+      <img src={ceoAbertoLogo} alt="Ceo Aberto" class="footer-logo-ceo" width="28" height="28" loading="lazy" />
+    </div>
+  </div>
+  <div class="footer-bottom mono">
+    <span>© 2026 CUÁNTICA SL — UNA EMPRESA DE FICCIÓN. POR SUERTE.</span>
+    <a href="#inicio" class="footer-back-top">Volver al principio <span aria-hidden="true">↑</span></a>
+  </div>
+</footer>

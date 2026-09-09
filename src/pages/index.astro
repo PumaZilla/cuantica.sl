@@ -1,0 +1,24 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import HeroSection from '../components/sections/HeroSection.astro';
+import ShopSection from '../components/sections/ShopSection.astro';
+import MethodSection from '../components/sections/MethodSection.astro';
+import TeamSection from '../components/sections/TeamSection.astro';
+import SiteFooter from '../components/layout/SiteFooter.astro';
+import EpisodeModal from '../components/episode/EpisodeModal.astro';
+---
+<SiteLayout>
+  <main>
+    <HeroSection />
+    <ShopSection />
+    <MethodSection />
+    <TeamSection />
+  </main>
+  <SiteFooter />
+  <EpisodeModal />
+</SiteLayout>
+
+<script>
+import { initExperience } from '../lib/experience';
+initExperience();
+</script>
