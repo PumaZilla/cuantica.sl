@@ -1,0 +1,49 @@
+{
+  "checkpoint": "c6e613a",
+  "image": {
+    "jobId": "4697810f-27f1-40e6-bd4f-82d25ba993a7",
+    "params": {
+      "model": "gpt_image_2",
+      "aspect_ratio": "16:9",
+      "resolution": "2k",
+      "quality": "high",
+      "medias": [
+        {
+          "role": "image",
+          "value": "d9c9e641-217b-4471-b139-27f45e24f700"
+        },
+        {
+          "role": "image",
+          "value": "ba6926e9-8e60-4f1f-820e-8577db6affc1"
+        }
+      ],
+      "prompt": "Create a cinematic photographic composite for a Spanish absurd science comedy website hero. IDENTITY IS THE PRIMARY REQUIREMENT. The two images are original photos of the SAME REAL MAN, David. Preserve his actual face from first reference EXACTLY: the tilted head pose, facial asymmetry, expression, slim elongated nose, narrow mouth, wrinkles, thinning fine brown hair, high forehead and especially the enormous square thick black glasses. Do not beautify, do not make a lookalike, do not invent a generic CEO, do not reshape his face. Photographic editorial collage is preferable to changing his likeness. Keep navy blazer and red-white striped shirt. Extend to full body in dark trousers and white sneakers. Scene: David levitates like an utterly self-important celestial inventor, hands open gently at waist height, looking at camera with the very same head tilt as reference, a restrained thin warm ivory halo behind his head. He is precisely at horizontal 50%, head at vertical 27%, feet at 73%. His body width is around 13% of entire image, face fully legible. Background: deep desaturated charcoal olive-black infinite galaxy, almost monochrome, very faint dusty nebula and tiny sparse stars. NOT busy colorful space, NOT blue-purple neon. Subtle soft amber rim and ivory face lighting, softly lit real skin. Four distinct absurd objects quietly levitating around him: retro chrome toaster at x38% y49%, ordinary ginger cat at x62% y42%, small intricate orange industrial mecha robot at x61% y64%, glass heart-shaped vial of pink love potion at x40% y68%. Objects stay near center and are much smaller than David. Elegant cinematic editorial lighting, real materials, subtle film grain, humorous contrast between mundane blazer and divine staging. Left outer 30% and right outer 25% remain dark negative space for editable website text, entire upper 17% is calm dark background for navigation, lower 20% dark for mobile headlines. No words, letters, labels, typography, logos or watermarks. Wide 16:9 frame composed to survive center 9:16 crop. Keep exact original face unmodified, no idealization."
+    },
+    "status": "completed"
+  },
+  "video": {
+    "jobId": "6cfbdbd0-94d1-450c-8e6d-688231959b17",
+    "params": {
+      "model": "seedance_2_0",
+      "aspect_ratio": "16:9",
+      "duration": 12,
+      "resolution": "1080p",
+      "mode": "std",
+      "generate_audio": false,
+      "medias": [
+        {
+          "role": "start_image",
+          "value": "4697810f-27f1-40e6-bd4f-82d25ba993a7"
+        },
+        {
+          "role": "image",
+          "value": "d9c9e641-217b-4471-b139-27f45e24f700"
+        }
+      ],
+      "prompt": "12 second ONE CONTINUOUS LOCKED OFF cinematic shot, no cuts, no camera movement, no zoom, no pan. Start exactly with the supplied celestial composition. The second reference is only the ORIGINAL face identity of the same man, keep that real actor's exact glasses, nose, forehead, thin lips, asymmetrical head tilt, hairline, age, NEVER beautify or replace. David stays perfectly anchored at x50 percent for the entire shot, with almost frozen face, same head angle and expression, no speech, no lip or jaw motion, no head turning. His whole body levitates calmly, his palms stay open like a comically self-important creator. The four EXISTING inventions are the principal moving subjects and perform clearly visible slow floating 3D ORBITS around him with changing depth, NOT just slight vibration. 0-3 sec chrome toaster rises from lower left toward x44% y40%, turns around its vertical axis, a piece of toast pops up slowly. 3-6 sec the ginger cat floats from the right toward x55% y16% above his right shoulder, gently paddles paws and curls tail, exact same single cat with normal anatomy. 6-9 sec the orange mecha moves from lower right toward x45% y60% in front of his legs, rotates 90 degrees, amber eye lights turn on and one arm articulates. 9-12 sec the heart-shaped pink potion vial rises from lower left toward x55% y45%, slowly revolves, glowing pink liquid swirls with a few tiny restrained motes. Throughout, all four inventions continue gliding gracefully along their separate elliptical orbits with clear spatial separation, occasionally in front of torso or behind shoulder, NEVER over David's face. Every object must pass through horizontal x42%-58% at some time so it can be seen in the narrow center mobile crop. Preserve each object geometry, no duplicates, no object morphing, no disappearing. David always remains x50%, same head y position and same scale as initial image. Keep entire outer left 28% and outer right 25% nearly empty charcoal black galaxy so white website typography stays readable. Sparse stars, soft warm ivory aura, subtle desaturated dust, no bright washes, no flashing or explosions, no titles or text. Finish with the four objects still visible around David, motion gracefully settles. High quality subtle photorealism, same dark neutral cinematic lighting and face throughout."
+    },
+    "status": "completed",
+    "actualDurationSeconds": 12.04,
+    "actualFrames": 289
+  }
+}

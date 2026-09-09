@@ -1,0 +1,10 @@
+{
+  "count": 289,
+  "width": 1600,
+  "height": 900,
+  "pattern": "/media/celestial/desktop/frame-{index}.webp",
+  "padding": 3,
+  "fps": 24,
+  "bytes": 9859028,
+  "poster": "/media/celestial/poster.webp"
+}

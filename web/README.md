@@ -1,6 +1,6 @@
 # Cuántica SL
 
-Rediseño editorial de la webserie. Marfil, tinta y naranja industrial; personajes y movimiento procedentes del episodio original.
+Entrada galáctica de David a pantalla completa con vídeo de Higgsfield controlado por scroll. Las secciones inferiores conservan el diseño editorial marfil, tinta y naranja industrial y los retratos originales del episodio.
 
 ## Abrir y editar
 
@@ -20,11 +20,11 @@ npm run astro -- dev stop
 npm run build
 ```
 
-- `src/content/site.ts`: nombres, roles, descripciones, inventos y rutas multimedia.
+- `src/content/site.ts`: capítulos del hero, nombres, roles, descripciones, inventos y rutas multimedia.
 - `src/pages/index.astro`: estructura y texto editorial de las secciones.
-- `src/styles/global.css`: colores, tipografías, composición y adaptación móvil.
+- `src/styles/global.css`: diseño editorial aprobado. `src/styles/celestial.css`: entrada galáctica y su adaptación móvil.
 - `src/lib/experience.ts`: scroll nativo, secuencia de imágenes y reproductor.
-- `public/media/vision-v2/manifest.json`: 60 fotogramas originales a 20 fps, 1280 × 720, extraídos de 00:23 a 00:26.
+- `public/media/celestial/manifest.json`: secuencia de escritorio del vídeo galáctico a 24 fps. Variante móvil en `public/media/celestial/mobile/manifest.json`. Original en `../references/celestial/orbit-original.mp4`.
 - `public/media/team/`: retratos de los cinco personajes extraídos del episodio; no son caras regeneradas.
 - `public/media/episode.mp4`: episodio comprimido a 720p, H.264/AAC, con inicio rápido. Se solicita al pulsar reproducir.
 
@@ -36,4 +36,4 @@ Los textos y aparatos son copy original de ficción para la web; no representan 
 
 ## Dirección y verificación
 
-Ver `../references/rebuild/production.md`. La versión anterior del código se conserva en `../references/rebuild/source-before/`, además del historial Git existente.
+Ver `../references/celestial/production.md`. La versión editorial aprobada está guardada en el commit `c6e613a`; su nota de producción permanece en `../references/rebuild/production.md`.

@@ -1,38 +1,43 @@
 ---
 import '../styles/global.css';
+import '../styles/celestial.css';
 import Brand from '../components/Brand.astro';
-import { site, team, experiments } from '../content/site';
+import { site, team, experiments, heroChapters } from '../content/site';
 ---
 <!doctype html>
 <html lang="es">
 <head>
 <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
-<meta name="theme-color" content="#f1efe8"/><title>Cuántica SL — El futuro no se inventa solo.</title>
-<meta name="description" content={site.description}/><meta property="og:title" content="Cuántica SL — El futuro no se inventa solo."/><meta property="og:description" content={site.description}/><meta property="og:image" content={site.hero}/>
+<meta name="theme-color" content="#121713"/><title>Cuántica SL — El universo de David.</title>
+<meta name="description" content={site.description}/><meta property="og:title" content="Cuántica SL — El universo de David."/><meta property="og:description" content={site.description}/><meta property="og:image" content={site.hero}/>
 <link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet"/>
 <link rel="preload" href={site.hero} as="image"/>
+<noscript><style>.celestial{height:100svh}.celestial .cosmic-stage{position:relative}</style></noscript>
 </head>
 <body>
 <a class="skip-link" href="#episodio">Saltar al episodio</a>
-<header class="header"><Brand/><nav aria-label="Navegación principal"><a href="#vision">La visión</a><a href="#inventos">Los inventos</a><a href="#equipo">El equipo</a></nav><button class="button button-small" data-play>Ver episodio <span aria-hidden="true">↗</span></button></header>
 <main>
-<section class="hero" id="inicio">
-<div class="hero-kicker"><span><i class="dot"></i> CIENCIA. AMBICIÓN. ALGÚN QUE OTRO FALLO.</span><span>UNA WEBSERIE DE COMEDIA / 01</span></div>
-<div class="hero-heading"><h1>El futuro no<br/>se inventa <span class="serif-word">solo.</span><span class="asterisk" aria-hidden="true">✳</span></h1><div class="hero-intro"><span class="small-cross" aria-hidden="true">+</span><p>Para eso está David.<br/>Y una empresa dispuesta<br/>a seguirle la corriente.</p><a href="#vision" class="underlink">Conoce la visión <span aria-hidden="true">↘</span></a></div></div>
-<div class="film-scroll" id="vision">
-<div class="film-stage">
-<img class="film-poster" src={site.hero} width="1920" height="1072" alt="David, el CEO de Cuántica SL, en un fotograma original del episodio" fetchpriority="high"/>
+<section class="celestial film-scroll" id="inicio" aria-label="El universo de David" data-manifest={site.heroManifest}>
+<span id="vision" class="vision-anchor" aria-hidden="true"></span>
+<div class="film-stage cosmic-stage">
+<img class="film-poster" src={site.hero} width="1920" height="1080" alt="David, como un inventor celestial, rodeado de una tostadora, un gato, un robot mecha y una poción del amor en un universo oscuro" fetchpriority="high"/>
 <canvas id="film-canvas" aria-hidden="true"></canvas>
-<div class="film-shade"></div>
-<div class="film-top"><span><i class="dot"></i> DENTRO DE CUÁNTICA SL</span><button class="film-play" data-play aria-label="Ver el episodio completo"><span aria-hidden="true">▶</span> VER EPISODIO</button></div>
-<div class="film-caption"><p class="mono">01 / LA VISIÓN</p><h2>Hay quien ve límites.<br/>David ve <em>posibilidades.</em></h2><p class="film-secondary">Una idea puede cambiarlo todo.<br/>Sobre todo el día de sus empleados.</p></div>
-<div class="film-foot"><span>DAVID / CEO, FUNDADOR, VISIONARIO</span><a href="#inventos">CONTINÚA EL EXPERIMENTO <span aria-hidden="true">↓</span></a></div>
+<div class="cosmic-shade" aria-hidden="true"></div>
+<header class="header cosmic-header"><Brand/><nav aria-label="Navegación principal"><a href="#vision">La visión</a><a href="#inventos">Los inventos</a><a href="#equipo">El equipo</a></nav><button class="button button-small" data-play>Ver episodio <span aria-hidden="true">↗</span></button></header>
+<div class="cosmic-kicker mono"><span><i class="dot"></i> CUÁNTICA SL / EL ORIGEN DE TODO</span><span>UNA WEBSERIE DE COMEDIA</span></div>
+<div class="cosmic-copy">
+{heroChapters.map((chapter,i)=><div class="cosmic-chapter" data-hero-chapter={i} hidden={i!==0} aria-hidden={i!==0}>
+<p class="mono chapter-eyebrow">{chapter.eyebrow}</p>
+{i===0?<h1>{chapter.title}<br/><span class="serif-word">{chapter.emphasis}</span></h1>:<h2>{chapter.title}<br/><span class="serif-word">{chapter.emphasis}</span></h2>}
+<p class="cosmic-description">{chapter.description}</p>
+</div>)}
+</div>
+<div class="cosmic-side mono" aria-hidden="true"><span>DAVID</span><span>CEO. CREADOR.<br/>MODESTIA PENDIENTE.</span><i></i></div>
+<div class="cosmic-bottom"><a href="#inventos" class="cosmic-skip"><span class="scroll-orbit" aria-hidden="true">↓</span><span>DESLIZA PARA EXPLORAR<br/><small>O SALTA A LOS INVENTOS ↘</small></span></a><span class="mono cosmic-status" aria-hidden="true"><span id="cosmic-chapter-number">01</span> / 03 <span class="cosmic-status-title">LA VISIÓN</span></span><button class="cosmic-motion mono" id="hero-motion-toggle" aria-pressed="false" aria-label="Reducir el movimiento del universo">PAUSAR MOVIMIENTO ◫</button></div>
 <div class="film-progress" aria-hidden="true"><i></i></div>
 </div>
-</div>
-<div class="hero-bottom"><span>INNOVACIÓN SIN PRECEDENTES. NI DEMASIADAS PRECAUCIONES.</span><span aria-hidden="true">↓</span><span>DESLIZA. BAJO TU RESPONSABILIDAD.</span></div>
 </section>
 <section class="manifesto section-wrap" id="inventos">
 <div class="section-label"><span>01 — INVESTIGACIÓN & DESARROLLO</span><span class="small-cross" aria-hidden="true">+</span></div>
