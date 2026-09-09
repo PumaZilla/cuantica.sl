@@ -14,6 +14,11 @@ import reverseVideo from '../../assets/hero/hero-reverse-optimized.mp4?url';
 <video id="hero-motion" class="hero-video" data-src={forwardVideo} data-src-mobile={forwardMobileVideo} muted playsinline preload="auto" disablepictureinpicture aria-hidden="true" tabindex="-1"></video>
 <video id="hero-reverse" class="hero-video" data-src={reverseVideo} data-src-mobile={reverseMobileVideo} muted playsinline preload="auto" disablepictureinpicture aria-hidden="true" tabindex="-1"></video>
 <header class="header cosmic-header"><Brand/></header>
-<h1 class="cosmic-statement"><span class="statement-left">Inventamos<br/>el futuro</span><span class="statement-right">Perdonad<br/>las molestias</span></h1>
+<h1 class="cosmic-statement">{[
+  { side: 'left', first: 'Inventamos', second: 'el futuro' },
+  { side: 'right', first: 'Perdonad', second: 'las molestias' },
+].map(statement => <span class={`statement-${statement.side}`}>
+  {[true, false].map(shadow => <span class={shadow ? 'statement-shadow' : 'statement-face'} aria-hidden={shadow ? 'true' : undefined}>{statement.first}<br/>{statement.second}</span>)}
+</span>)}</h1>
 </div>
 </section>
