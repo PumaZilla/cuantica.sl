@@ -230,9 +230,9 @@
 @media(max-width:680px){.belief{padding-top:44px;padding-bottom:24px}.method-header{align-items:flex-start;flex-direction:column;gap:10px;padding-bottom:20px}.method-header h2{font-size:12px}.method-step{grid-template-columns:40px 1fr;gap:16px;padding:28px 0}.method-number{width:34px;height:34px;font-size:14px;margin-top:3px;box-shadow:3px 3px 0 var(--dust)}.belief .method-step p{font-size:clamp(30px,7.7vw,48px)}.method-arrow{display:none}.method-footer{flex-direction:column;gap:10px;font-size:8px}}
 
 /* Original supplied wordmark, cropped in its viewport without redrawing it. */
-.brand.brand-official{display:inline-flex;flex-shrink:0;width:clamp(210px,23vw,320px);padding:10px 12px;background:transparent;line-height:0}
+.brand.brand-official{display:inline-flex;flex-shrink:0;width:clamp(210px,23vw,320px);padding:10px 0;background:transparent;line-height:0}
 .brand.brand-official .brand-artwork{display:block;width:100%;height:auto;fill:initial;stroke:none;overflow:hidden}
-@media(max-width:680px){.brand.brand-official{width:210px;padding:8px 10px}}
+@media(max-width:680px){.brand.brand-official{width:210px;padding:8px 0}}
 
 /* Compact corporate interlude. */
 .belief{padding-top:40px;padding-bottom:24px}
