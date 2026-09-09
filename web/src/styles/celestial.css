@@ -1,5 +1,5 @@
 /* Full-viewport film, centered for mobile cropping. No color overlay. */
-.celestial{height:calc(100svh + 225svh * var(--release-progress,1));position:relative;background:#0b1d2c;color:var(--paper);padding:0}
+.celestial{height:calc(100svh + 225svh * var(--release-progress,1));position:relative;background:var(--universe);color:var(--paper);padding:0}
 .vision-anchor{position:absolute;top:0;left:0}
 .celestial .cosmic-stage{position:sticky;top:0;height:100svh;max-height:none;min-height:0;margin:0;isolation:isolate}
 .celestial .film-poster,.celestial #film-canvas{object-position:50% 50%;transform:none}

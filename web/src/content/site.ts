@@ -16,7 +16,82 @@ export const team = [
   { name:'Bobby', role:'El perro', image:'bobby', line:'El mejor del equipo.', aside:'Sin saber qué es un equipo.', description:'Una incorporación difícil de explicar. Recursos Humanos sigue buscando la casilla correcta.' },
 ];
 export const experiments = [
- { code:'Q–001', name:'Tostadora cuántica', category:'DESAYUNO EXPERIMENTAL', description:'La tostada está cruda y quemada a la vez. Hasta que la miras. Entonces solo está quemada.', status:'En fase de desayuno', symbol:'toast' },
- { code:'Q–002', name:'Router del más allá', category:'TELECOMUNICACIÓN ESPIRITUAL', description:'Conecta con otra dimensión. La cobertura en la sala de reuniones sigue pendiente.', status:'Buscando señal…', symbol:'signal' },
- { code:'Q–003', name:'Traductor de ladridos', category:'INTELIGENCIA CANINA', description:'Por fin sabrás qué piensa tu perro. Puede que prefirieras no saberlo.', status:'Bobby no hace declaraciones', symbol:'dog' },
+  {
+    "code": "Q–001",
+    "name": "Transportador cuántico",
+    "category": "TRANSPORTE FELINO",
+    "description": "Una caja, unas luces y un gato. El destino ya lo decide la física.",
+    "image": "/media/products/teletransportador-no-text.webp",
+    "alt": "Caja de cartón con luces LED y un gato dentro",
+    "offer": "¡ENVÍO A OTRA DIMENSIÓN!",
+    "seal": "GATO NO INCLUIDO",
+    "promise": "¡VIAJA SIN SALIR DE LA CAJA!",
+    "oldPrice": "999 €",
+    "price": "67,67"
+  },
+  {
+    "code": "Q–002",
+    "name": "Estimulador cerebral",
+    "category": "INTELIGENCIA DE QUITA Y PON",
+    "description": "Ponte el gorro y enciende las luces. Al menos tendrás una idea brillante.",
+    "image": "/media/products/estimulador-neutral.webp",
+    "alt": "Gorro de piscina azul con luces LED y cables",
+    "offer": "¡ENCIENDE TU POTENCIAL!",
+    "seal": "AHORA CON MÁS LUCES",
+    "promise": "¡DE CERO A GENIO EN UN CHAPUZÓN!",
+    "oldPrice": "799 €",
+    "price": "24,99"
+  },
+  {
+    "code": "Q–003",
+    "name": "Tostadora perfecta",
+    "category": "DESAYUNO EXPERIMENTAL",
+    "description": "La tostada perfecta existe. Estamos intentando que salga de esta tostadora.",
+    "image": "/media/products/tostadora-reflejo-limpio.webp",
+    "alt": "Tostadora casera modificada con dos tostadas doradas",
+    "offer": "¡EL DESAYUNO DEL SIGLO!",
+    "seal": "CASI PERFECTA",
+    "promise": "¡TU PAN MERECE ESTA OPORTUNIDAD!",
+    "oldPrice": "299 €",
+    "price": "19,99"
+  },
+  {
+    "code": "Q–004",
+    "name": "Elixir del amor",
+    "category": "ATRACCIÓN UNIVERSAL",
+    "description": "Atrae a todo el mundo. A todo el mundo. Luego no digas que no avisamos.",
+    "image": "/media/products/elixir-no-text.webp",
+    "alt": "Frasco de corazón con líquido rosa y tapón de corcho",
+    "offer": "¡ÉXITO DEMASIADO ROTUNDO!",
+    "seal": "SIN FILTROS",
+    "promise": "¡EL AMOR NO ENTIENDE DE AFORO!",
+    "oldPrice": "499 €",
+    "price": "9,99"
+  },
+  {
+    "code": "Q–005",
+    "name": "Analizador de rostros",
+    "category": "EMOCIONES CON COBERTURA",
+    "description": "Una app que detecta emociones. Un palo y una cuerda que detectan la gravedad.",
+    "image": "/media/products/analizador-no-text.webp",
+    "alt": "Móvil con app de emociones colgado con una cuerda de un palo",
+    "offer": "¡TU CARA LO DICE TODO!",
+    "seal": "PALO INCLUIDO",
+    "promise": "¡TECNOLOGÍA PUNTA ATADA CON CUERDA!",
+    "oldPrice": "1499 €",
+    "price": "29,99"
+  },
+  {
+    "code": "Q–006",
+    "name": "Planta bioluminiscente",
+    "category": "BOTÁNICA ENCHUFABLE",
+    "description": "La naturaleza ilumina tu casa. Con ayuda de unas luces de Navidad.",
+    "image": "/media/products/planta-no-text.webp",
+    "alt": "Planta en maceta con luces de Navidad y cables",
+    "offer": "¡LA FOTOSÍNTESIS INVERSA!",
+    "seal": "ECOVERDE Y BRILLANTE",
+    "promise": "¡RIEGA TUS SUEÑOS CON PRECAUCIÓN!",
+    "oldPrice": "399 €",
+    "price": "14,99"
+  }
 ];

@@ -1,5 +1,23 @@
 export function initExperience() {
  const root = document.documentElement;
+ const countdown=document.querySelector<HTMLElement>('#offer-countdown');
+ const yearSeconds=365.25*24*60*60;
+ let offerDeadline=Date.now()+27.9*yearSeconds*1000;
+ try{
+   const saved=Number(localStorage.getItem('cuantica-offer-deadline-v1'));
+   if(Number.isFinite(saved)&&saved>0)offerDeadline=saved;
+   else localStorage.setItem('cuantica-offer-deadline-v1',String(offerDeadline));
+ }catch{}
+ function tickOffer(){
+   if(!countdown||document.hidden)return;
+   let remaining=Math.max(0,Math.floor((offerDeadline-Date.now())/1000));
+   const years=Math.floor(remaining/yearSeconds);remaining-=years*yearSeconds;
+   const days=Math.floor(remaining/86400);remaining%=86400;
+   const hours=Math.floor(remaining/3600),minutes=Math.floor(remaining%3600/60),seconds=Math.floor(remaining%60);
+   countdown.textContent=`${years} años · ${days} días · ${[hours,minutes,seconds].map(n=>String(n).padStart(2,'0')).join(':')}`;
+ }
+ tickOffer();
+ const offerInterval=window.setInterval(tickOffer,1000);
  const stage = document.querySelector<HTMLElement>('.film-stage')!;
  const story = document.querySelector<HTMLElement>('.film-scroll')!;
  const canvas = document.querySelector<HTMLCanvasElement>('#film-canvas')!;
@@ -134,5 +152,5 @@ export function initExperience() {
  dialog.addEventListener('click',event=>{if(event.target===dialog){const b=dialog.getBoundingClientRect();if(event.clientX<b.left||event.clientX>b.right||event.clientY<b.top||event.clientY>b.bottom)dialog.close();}});
  dialog.addEventListener('close',()=>{video.pause();opener?.focus({preventScroll:true});});
  video.addEventListener('error',()=>{error.hidden=false;});
- window.addEventListener('pagehide',event=>{if(event.persisted)return;alive=false;abort.abort();cancelAnimationFrame(raf);observer.disconnect();resize.disconnect();cache.forEach(bitmap=>bitmap.close());cache.clear();},{once:true});
+ window.addEventListener('pagehide',event=>{if(event.persisted)return;alive=false;clearInterval(offerInterval);abort.abort();cancelAnimationFrame(raf);observer.disconnect();resize.disconnect();cache.forEach(bitmap=>bitmap.close());cache.clear();},{once:true});
 }

@@ -1,6 +1,6 @@
 # Paleta Cuántica SL
 
-Propuesta derivada del hero aprobado. Vista visual: `index.html`. Tokens listos para integrar: `tokens.css`. No aplicada todavía a la web.
+Propuesta derivada del hero aprobado. Vista visual: `index.html`. Tokens listos para integrar: `tokens.css`. Aplicada a la web: inventos y equipo claros, episodio y pie oscuros, acentos azul Cuántica y botones con texto oscuro.
 
 - **Universo** `#050711`: Fondo principal y episodio.
 - **Órbita** `#121D2D`: Tarjetas y secciones oscuras.
