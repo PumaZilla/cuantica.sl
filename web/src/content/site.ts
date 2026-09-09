@@ -9,11 +9,25 @@ export const site = {
   poster: '/media/episode-poster.jpg',
 };
 export const team = [
-  { name:'David', role:'CEO & visionario', image:'david', line:'Él ve el futuro.', aside:'El presupuesto, ya si eso.', description:'Fundador. Innovador. Convencido de que la humanidad necesita exactamente lo que acaba de ocurrírsele.' },
-  { name:'Kike', role:'El hacker', image:'kike', line:'Todo bajo control.', aside:'Excepto su jefe.', description:'Si tiene una contraseña, puede entrar. Si es una reunión con David, todavía no sabe cómo salir.' },
-  { name:'Paula', role:'La de redes', image:'paula', line:'Esto va a ser viral.', aside:'Por las razones equivocadas.', description:'Transforma los accidentes de laboratorio en contenido. En esta empresa nunca le falta material.' },
-  { name:'Nati', role:'La científica', image:'nati', line:'La voz de la ciencia.', aside:'Nadie la está escuchando.', description:'Pone a prueba las ideas de David. Y David pone a prueba su paciencia. Es una relación experimental.' },
-  { name:'Bobby', role:'El perro', image:'bobby', line:'El mejor del equipo.', aside:'Sin saber qué es un equipo.', description:'Una incorporación difícil de explicar. Recursos Humanos sigue buscando la casilla correcta.' },
+  { name:'David', instagram:'https://www.instagram.com/david_ciencias/', linkedin:'https://www.linkedin.com/in/david-ballesteros-álvarez-60671833/', role:'CEO & visionario', image:'david', line:'Él ve el futuro.', aside:'El presupuesto, ya si eso.', description:'Fundador. Innovador. Convencido de que la humanidad necesita exactamente lo que acaba de ocurrírsele.' },
+  { name:'Kike', instagram:'https://www.instagram.com/cosasdepuma/', linkedin:'https://www.linkedin.com/in/kikefontan/', role:'El hacker', image:'kike', line:'Todo bajo control.', aside:'Excepto su jefe.', description:'Si tiene una contraseña, puede entrar. Si es una reunión con David, todavía no sabe cómo salir.' },
+  { name:'Iria', instagram:'https://www.instagram.com/iriaollero/', linkedin:'https://www.linkedin.com/in/iria-ollero-cadilla/', role:'La científica', image:'iria', line:'Tiene todas las respuestas.', aside:'Preferiría no saber la pregunta.', description:'' },
+  { name:'Nati', instagram:'https://www.instagram.com/marrtatrrillo/', linkedin:'https://www.linkedin.com/in/martatrillodomínguez/', role:'La científica', image:'nati', line:'La voz de la ciencia.', aside:'Nadie la está escuchando.', description:'Pone a prueba las ideas de David. Y David pone a prueba su paciencia. Es una relación experimental.' },
+  { name:'Paula', instagram:'https://www.instagram.com/neitandloulei/', linkedin:null, role:'La de redes', image:'paula', line:'Esto va a ser viral.', aside:'Por las razones equivocadas.', description:'Transforma los accidentes de laboratorio en contenido. En esta empresa nunca le falta material.' },
+  { name:'Santi', instagram:'https://www.instagram.com/antoniofigueras/', linkedin:'https://www.linkedin.com/in/antonio-figueras-7a8b6911/', role:'El becario', image:'santi', line:'Vino a hacer prácticas.', aside:'Está haciendo supervivencia.', description:'' },
+];
+const supportingSocials = {
+  instagram:'https://www.instagram.com/santivieito/',
+  linkedin:'https://www.linkedin.com/in/santiago-vieito-696360120/',
+};
+export const supportingCast = [
+  { name:'Antonio', ...supportingSocials, role:'Mantenimiento', image:null },
+  { name:'Madre de Kike', ...supportingSocials, role:'Madre', image:null },
+  { name:'Igor', instagram:'', linkedin:'', role:'Gourmet', image:null },
+  { name:'Pitonisa', ...supportingSocials, role:'Clandestina', image:null },
+  { name:'Sr. Bioverde', ...supportingSocials, role:'C.A.C.A', image:null },
+  { name:'Srta. Gerania', instagram:'', linkedin:'', role:'Secretaria', image:null },
+  { name:'Bobby 2.0', ...supportingSocials, role:'Mascota', image:'/media/team/linkedin/bobby-waist.png' },
 ];
 export const experiments = [
   {
@@ -70,7 +84,7 @@ export const experiments = [
   },
   {
     "code": "Q–005",
-    "name": "Analizador de rostros",
+    "name": "Inteligencia sentimental",
     "category": "EMOCIONES CON COBERTURA",
     "description": "Una app que detecta emociones. Un palo y una cuerda que detectan la gravedad.",
     "image": "/media/products/analizador-no-text.webp",
@@ -93,5 +107,31 @@ export const experiments = [
     "promise": "¡RIEGA TUS SUEÑOS CON PRECAUCIÓN!",
     "oldPrice": "399 €",
     "price": "14,99"
+  },
+  {
+    "code": "Q–007",
+    "name": "Genfit Quantum",
+    "category": "SUPLEMENTOS ALIMENTICIOS",
+    "description": "Botellas de agua con una etiqueta y mucha ciencia por demostrar. Nútrete con ciencia. Confunde a tu estómago.",
+    "image": "/media/products/genfit-particles.png",
+    "alt": "Botellas de líquidos rosa, transparente y amarillo con partículas de azúcar flotando en el líquido y etiquetas de Genfit Quantum escritas a mano",
+    "offer": "¡NUTRICIÓN DE OTRA DIMENSIÓN!",
+    "seal": "AHORA CON MÁS QUANTUM",
+    "promise": "Nútrete con ciencia. Confunde a tu estómago.",
+    "oldPrice": "199 €",
+    "price": "12,99"
+  },
+  {
+    "code": "Q–008",
+    "name": "Frankenpet",
+    "category": "MASCOTAS CON SEGUNDA VERSIÓN",
+    "description": "Una mascota virtual que simula a la que ya no está. Las mismas manías, ahora en píxeles.",
+    "image": "/media/products/frankenpet-pixel-studio.png",
+    "alt": "Mascota virtual en pixel art: perro con corazones y cuenco de comida",
+    "offer": "¡VUELVE A CASA. CASI COMO ANTES!",
+    "seal": "CARIÑO RECARGABLE",
+    "promise": "¡LAS MISMAS MANÍAS. OTRO CARGADOR!",
+    "oldPrice": "1999 €",
+    "price": "99,99"
   }
 ];

@@ -402,3 +402,82 @@
 @media(hover:hover){.team .person:hover .person-photo-alternate{opacity:1}}
 .team .person:focus-within .person-photo-alternate{opacity:1}
 @media(prefers-reduced-motion:reduce){.team .person-photo img{transition:none}}
+
+/* Main ensemble and supporting cast. */
+.team .team-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:32px 24px}
+.team .person-photo{background:#dce5ee}
+.supporting-cast{margin-top:72px;padding-top:32px;border-top:2px solid var(--surface)}
+.supporting-cast h3{font-family:var(--display);font-size:clamp(24px,3.2vw,44px);font-weight:800;letter-spacing:-.04em;margin:0 0 32px}
+.supporting-grid{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:16px}
+.supporting-person{min-width:0;border:2px solid var(--surface);box-shadow:4px 4px 0 var(--surface)}
+.team .supporting-person .person-photo{border-bottom:0}
+.supporting-tag{position:absolute;z-index:2;bottom:8px;left:8px;right:8px;background:var(--paper);color:var(--surface);border:2px solid var(--surface);padding:6px;line-height:1.4;font-size:10px;letter-spacing:0}
+.supporting-tag strong,.supporting-tag span{display:block;overflow-wrap:anywhere}
+@media(hover:hover){.team .supporting-person:hover .person-photo-alternate{opacity:1}}
+@media(max-width:1100px){.supporting-grid{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media(max-width:680px){
+ .team .team-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:24px 16px}
+ .team .team-grid .person:first-child{grid-column:auto;display:block}
+ .team .team-grid .person:first-child .person-photo{border-right:0}
+ .supporting-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .supporting-cast{margin-top:48px}
+}
+
+/* Slow seamless supporting-cast carousel. */
+.supporting-cast{position:relative}
+.supporting-pause{display:block;margin:-16px 0 20px auto;padding:6px 10px;border:1px solid var(--surface);background:transparent;color:var(--surface);font-size:10px;cursor:pointer}
+.supporting-viewport{overflow-x:auto;scrollbar-width:thin;padding:0 0 8px}
+.supporting-track{display:flex;width:max-content;animation:supporting-drift 85s linear infinite}
+.supporting-track .supporting-grid{display:flex;gap:16px;padding-right:16px;flex-shrink:0}
+.supporting-track .supporting-person{flex:0 0 180px;width:180px}
+@keyframes supporting-drift{to{transform:translateX(-50%)}}
+.supporting-viewport:hover .supporting-track,.supporting-viewport:focus-within .supporting-track,.is-paused .supporting-track{animation-play-state:paused}
+.reduced .supporting-track{animation:none}
+.reduced .supporting-grid[aria-hidden="true"]{display:none}
+@media(prefers-reduced-motion:reduce){.supporting-track{animation:none}.supporting-grid[aria-hidden="true"]{display:none}.supporting-pause{display:none}}
+@media(max-width:680px){.supporting-track .supporting-person{flex-basis:155px;width:155px}.team .person-number{font-size:9px;padding:5px 6px}}
+
+.supporting-heading-row{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-bottom:32px}
+.supporting-heading-row h3{margin:0}
+.supporting-heading-row .supporting-pause{flex-shrink:0;margin:0}
+
+/* Main employee cards: label, portrait, name/socials and punchline. */
+.team .team-grid .person{--frame-color:#e51825;--frame-angle:-1.3deg;position:relative;isolation:isolate;border:2px solid var(--surface);box-shadow:5px 5px 0 var(--mist);padding:0 0 20px;background:transparent}
+.team .team-grid .person:nth-child(2){--frame-color:#b5ff36;--frame-angle:1.1deg}
+.team .team-grid .person:nth-child(3){--frame-color:#2455ff;--frame-angle:-.8deg}
+.team .team-grid .person:nth-child(4){--frame-color:#ff4fa3;--frame-angle:1.5deg}
+.team .team-grid .person:nth-child(5){--frame-color:#ff9636;--frame-angle:-1.1deg}
+.team .team-grid .person:nth-child(6){--frame-color:#fff200;--frame-angle:.7deg}
+.person-frame{position:absolute;inset:-12px;width:calc(100% + 24px);height:calc(100% + 24px);overflow:visible;pointer-events:none;z-index:3;fill:none;stroke:var(--frame-color);stroke-width:5;stroke-linecap:round;stroke-linejoin:round;transform:rotate(var(--frame-angle));opacity:0;transition:opacity .18s ease}
+.person-frame path{vector-effect:non-scaling-stroke}
+.team .team-grid .person-photo{border:0;border-bottom:2px solid var(--surface)}
+.team .team-grid .person-title{display:flex;align-items:center;justify-content:space-between;gap:8px;margin:16px 14px 12px}
+.team .team-grid .person-title h3{font-size:clamp(24px,2.6vw,36px);line-height:1}
+.person-socials{display:flex;flex-shrink:0;gap:6px}
+.person-social{display:grid;place-items:center;width:36px;height:36px;padding:7px;background:transparent;border:1.5px solid var(--surface);color:var(--surface);border-radius:0}
+.person-social svg{width:100%;height:100%}
+.person-social:disabled{cursor:default;opacity:.5}
+.person-social[href]:hover{background:var(--frame-color);box-shadow:2px 2px 0 var(--surface);transform:rotate(-3deg)}
+.team .team-grid .person-line{margin:0 14px;font-size:14px;line-height:1.6}
+@media(hover:hover){.team .team-grid .person:hover .person-frame{opacity:1}}
+.team .team-grid .person:focus-within .person-frame{opacity:1}
+@media(max-width:680px){
+ .team .team-grid{gap:22px 12px}
+ .team .team-grid .person{padding:0 0 14px}
+ .team .team-grid .person-title{gap:4px;margin:12px 6px}
+ .team .team-grid .person-title h3{font-size:21px}
+ .person-socials{gap:4px}
+ .person-social{width:27px;height:29px;padding:5px}
+ .team .team-grid .person-line{margin-inline:6px;font-size:12px}
+}
+@media(max-width:380px){.team .team-grid{grid-template-columns:1fr}.person-social{width:36px;height:36px}.team .team-grid .person-title h3{font-size:28px}}
+@media(prefers-reduced-motion:reduce){.person-frame{transition:none}}
+
+.supporting-tag{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.supporting-tag>div:first-child{min-width:0}
+.supporting-socials{flex-shrink:0;--frame-color:#b5ff36}
+.supporting-socials .person-socials{gap:4px}
+.supporting-socials .person-social{width:25px;height:29px;padding:5px;background:var(--paper)}
+
+.tv-shop .experiment:nth-child(7) .tv-seal{background:#ff4fa3;transform:rotate(-9deg)}
+.tv-shop .experiment:nth-child(8) .tv-seal{background:#b5ff36;transform:rotate(12deg)}

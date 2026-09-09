@@ -1,20 +1,22 @@
 export function initExperience() {
  const root = document.documentElement;
  const countdown=document.querySelector<HTMLElement>('#offer-countdown');
- const yearSeconds=365.25*24*60*60;
- let offerDeadline=Date.now()+27.9*yearSeconds*1000;
+ const daySeconds=86400;
+ const now=new Date();
+ // 42 days plus the current clock time.
+ const clockSeconds=now.getHours()*3600+now.getMinutes()*60+now.getSeconds();
+ let offerDeadline=now.getTime()+(42*daySeconds+clockSeconds)*1000;
  try{
-   const saved=Number(localStorage.getItem('cuantica-offer-deadline-v1'));
+   const saved=Number(localStorage.getItem('cuantica-offer-deadline-v3'));
    if(Number.isFinite(saved)&&saved>0)offerDeadline=saved;
-   else localStorage.setItem('cuantica-offer-deadline-v1',String(offerDeadline));
+   else localStorage.setItem('cuantica-offer-deadline-v3',String(offerDeadline));
  }catch{}
  function tickOffer(){
    if(!countdown||document.hidden)return;
    let remaining=Math.max(0,Math.floor((offerDeadline-Date.now())/1000));
-   const years=Math.floor(remaining/yearSeconds);remaining-=years*yearSeconds;
    const days=Math.floor(remaining/86400);remaining%=86400;
    const hours=Math.floor(remaining/3600),minutes=Math.floor(remaining%3600/60),seconds=Math.floor(remaining%60);
-   countdown.textContent=`${years} años · ${days} días · ${[hours,minutes,seconds].map(n=>String(n).padStart(2,'0')).join(':')}`;
+   countdown.textContent=`${days} días y ${[hours,minutes,seconds].map(n=>String(n).padStart(2,'0')).join(':')} horas`;
  }
  tickOffer();
  const offerInterval=window.setInterval(tickOffer,1000);
