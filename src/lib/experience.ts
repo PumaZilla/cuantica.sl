@@ -70,9 +70,19 @@ export function initExperience() {
     if (photo.closest('[aria-hidden="true"]')) toggle.tabIndex = -1;
     toggle.setAttribute('aria-label', `Mostrar foto alternativa de ${name}`);
     toggle.setAttribute('aria-pressed', 'false');
-    toggle.addEventListener(
+    card.addEventListener(
       'click',
-      () => {
+      (event) => {
+        if (!(event.target instanceof Element)) return;
+        const control = event.target.closest(
+          'a,button,input,select,textarea,summary,[contenteditable="true"]',
+        );
+        if (control && control !== toggle) return;
+        if (
+          !toggle.contains(event.target) &&
+          !matchMedia('(hover: none), (pointer: coarse)').matches
+        )
+          return;
         const active = activePortrait !== card;
         clearPortrait();
         if (active) {
