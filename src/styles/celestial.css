@@ -42,8 +42,13 @@ html.hero-scroll-locked,html.hero-scroll-locked body{overflow:hidden;overscroll-
 
 /* Balance the two desktop lines and use the instruction-note treatment on mobile. */
 @media(min-width:681px){
- .statement-left .statement-second{font-size:var(--statement-size)}
- .statement-right .statement-second{font-size:calc(var(--statement-size) - 6px)}
+ .statement-face,.statement-shadow{display:flex;flex-direction:column;gap:.06em;line-height:1}
+ .statement-left .statement-face,.statement-left .statement-shadow{align-items:flex-start}
+ .statement-right .statement-face,.statement-right .statement-shadow{align-items:flex-end}
+ .cosmic-statement br{display:none}
+ .statement-face>span,.statement-shadow>span{letter-spacing:-.015em}
+ .statement-left .statement-second{font-size:1.257em}
+ .statement-right .statement-second{font-size:.702em}
 }
 @media(max-width:680px){
  .cosmic-statement{padding:16px 10px;background:var(--paper);border:2px solid var(--surface);box-shadow:5px 5px 0 var(--surface);color:var(--surface);opacity:var(--left-opacity,1);transform:translateY(calc(var(--left-rise,0) * -32svh));will-change:transform,opacity}
