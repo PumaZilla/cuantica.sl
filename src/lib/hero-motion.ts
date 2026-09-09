@@ -16,13 +16,25 @@ export function initHeroMotion(signal: AbortSignal) {
   let reversePrepared = false;
   let messageTimer = 0;
   const messages = [
-    'Convenciendo al gato de que existe…',
-    'Inventando problemas para nuestras soluciones…',
-    'Esperando la aprobación de un electrón…',
-    'Recalculando daños colaterales…',
-    'El futuro está llegando. Ha perdido el bus.',
+    'Convenciendo al gato de que existe',
+    'Inventando problemas para nuestras soluciones',
+    'Esperando la aprobación de un electrón',
+    'Recalculando daños colaterales',
+    'El futuro está llegando, ha perdido el bus',
+    'Sincronizando la tostadora cuántica con el multiverso',
+    'Consultando con el departamento de consecuencias imprevistas',
   ];
-  let messageIndex = 0;
+  let messageIndex = -1;
+
+  function pickRandomMessage(): string {
+    let next = Math.floor(Math.random() * messages.length);
+    if (messages.length > 1 && next === messageIndex) {
+      next = (next + 1) % messages.length;
+    }
+    messageIndex = next;
+    return messages[next];
+  }
+
   let preparation: AbortController | null = null;
   let loaderTimer = 0;
   function loading(on: boolean) {
@@ -35,11 +47,14 @@ export function initHeroMotion(signal: AbortSignal) {
     if (on) {
       loader.hidden = false;
       loader.classList.remove('is-leaving');
+      const message = document.querySelector<HTMLElement>(
+        '#hero-loader-message',
+      );
+      if (message) message.textContent = pickRandomMessage();
       messageTimer = window.setInterval(() => {
-        const message = document.querySelector('#hero-loader-message');
-        messageIndex = (messageIndex + 1) % messages.length;
-        if (message) message.textContent = messages[messageIndex];
-      }, 4000);
+        const msg = document.querySelector<HTMLElement>('#hero-loader-message');
+        if (msg) msg.textContent = pickRandomMessage();
+      }, 3500);
     } else {
       loader.classList.add('is-leaving');
       loaderTimer = window.setTimeout(() => {
