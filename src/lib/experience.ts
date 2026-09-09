@@ -70,26 +70,54 @@ export function initExperience() {
     if (photo.closest('[aria-hidden="true"]')) toggle.tabIndex = -1;
     toggle.setAttribute('aria-label', `Mostrar foto alternativa de ${name}`);
     toggle.setAttribute('aria-pressed', 'false');
+    function isPortraitTarget(target: EventTarget | null) {
+      if (!(target instanceof Element)) return false;
+      const control = target.closest(
+        'a,button,input,select,textarea,summary,[contenteditable="true"]',
+      );
+      return !control || control === toggle;
+    }
+    const togglePortrait = () => {
+      const active = activePortrait !== card;
+      clearPortrait();
+      if (active) {
+        activePortrait = card;
+        card.classList.add('is-portrait-active');
+        toggle.setAttribute('aria-pressed', 'true');
+      }
+    };
+    let handledPress = false;
+    card.addEventListener(
+      'pointerdown',
+      (event) => {
+        handledPress = false;
+        if (
+          !event.isPrimary ||
+          event.pointerType === 'mouse' ||
+          !isPortraitTarget(event.target)
+        )
+          return;
+        togglePortrait();
+        handledPress = true;
+      },
+      { signal: abort.signal },
+    );
     card.addEventListener(
       'click',
       (event) => {
-        if (!(event.target instanceof Element)) return;
-        const control = event.target.closest(
-          'a,button,input,select,textarea,summary,[contenteditable="true"]',
-        );
-        if (control && control !== toggle) return;
+        // Touch generates a click after release; keyboard clicks still toggle.
+        if (handledPress && event.detail !== 0) {
+          handledPress = false;
+          return;
+        }
+        handledPress = false;
+        if (!isPortraitTarget(event.target)) return;
         if (
-          !toggle.contains(event.target) &&
+          !toggle.contains(event.target as Node) &&
           !matchMedia('(hover: none), (pointer: coarse)').matches
         )
           return;
-        const active = activePortrait !== card;
-        clearPortrait();
-        if (active) {
-          activePortrait = card;
-          card.classList.add('is-portrait-active');
-          toggle.setAttribute('aria-pressed', 'true');
-        }
+        togglePortrait();
       },
       { signal: abort.signal },
     );

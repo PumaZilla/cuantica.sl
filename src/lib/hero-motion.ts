@@ -1,3 +1,5 @@
+import { preloadHeroVideos } from './hero-preload';
+
 export function initHeroMotion(signal: AbortSignal) {
   const root = document.documentElement;
   const story = document.querySelector<HTMLElement>('.celestial')!;
@@ -6,6 +8,71 @@ export function initHeroMotion(signal: AbortSignal) {
   const forward = story.querySelector<HTMLVideoElement>('#hero-motion')!;
   const backward = story.querySelector<HTMLVideoElement>('#hero-reverse')!;
   const videos = [forward, backward];
+  const loader = document.querySelector<HTMLElement>('#hero-loader');
+  const pageContent = document.querySelectorAll<HTMLElement>(
+    'main, .footer, .skip-link',
+  );
+  let prepared = false;
+  let reversePrepared = false;
+  let messageTimer = 0;
+  const messages = [
+    'Convenciendo al gato de que existe…',
+    'Inventando problemas para nuestras soluciones…',
+    'Esperando la aprobación de un electrón…',
+    'Recalculando daños colaterales…',
+    'El futuro está llegando. Ha perdido el bus.',
+  ];
+  let messageIndex = 0;
+  let preparation: AbortController | null = null;
+  let loaderTimer = 0;
+  function loading(on: boolean) {
+    pageContent.forEach((element) => {
+      element.inert = on;
+    });
+    if (!loader) return;
+    clearTimeout(loaderTimer);
+    clearInterval(messageTimer);
+    if (on) {
+      loader.hidden = false;
+      loader.classList.remove('is-leaving');
+      messageTimer = window.setInterval(() => {
+        const message = document.querySelector('#hero-loader-message');
+        messageIndex = (messageIndex + 1) % messages.length;
+        if (message) message.textContent = messages[messageIndex];
+      }, 4000);
+    } else {
+      loader.classList.add('is-leaving');
+      loaderTimer = window.setTimeout(() => {
+        loader.hidden = true;
+      }, 450);
+    }
+  }
+  function prepare() {
+    if (prepared || preparation || reduced || failed) return;
+    loading(true);
+    const controller = new AbortController();
+    preparation = controller;
+    preloadHeroVideos([forward], AbortSignal.any([signal, controller.signal]))
+      .then(() => {
+        if (controller.signal.aborted || signal.aborted) return;
+        prepared = true;
+        loading(false);
+        // Prioritize entry; download the return trip after the forward file.
+        void preloadHeroVideos(
+          [backward],
+          AbortSignal.any([signal, controller.signal]),
+        )
+          .then(() => {
+            reversePrepared = true;
+          })
+          .catch(() => {
+            reversePrepared = false;
+          });
+      })
+      .catch(() => {
+        if (!controller.signal.aborted && !signal.aborted) fail();
+      });
+  }
   const preference = matchMedia('(prefers-reduced-motion: reduce)');
   const toggles = [
     ...document.querySelectorAll<HTMLButtonElement>(
@@ -56,15 +123,6 @@ export function initHeroMotion(signal: AbortSignal) {
       v.classList.toggle('is-current', v === video);
     });
   }
-  function load(video = forward) {
-    if (reduced || failed || video.getAttribute('src')) return;
-    video.muted = true;
-    video.src =
-      matchMedia('(max-width: 680px)').matches && video.dataset.srcMobile
-        ? video.dataset.srcMobile
-        : video.dataset.src!;
-    video.load();
-  }
   function labels(frame: number) {
     // Keep the approved text timing relative to the original complete sequence.
     const progress = ((frame - first) / (192 - first)) * 0.94;
@@ -96,12 +154,13 @@ export function initHeroMotion(signal: AbortSignal) {
     moveTo(direction === 'down' ? topOf(shop) : topOf(story));
     setState(direction === 'down' ? 'released' : 'idle');
     unlock();
-    // Prepare the return trip only after the opening sequence has finished.
-    if (direction === 'down') load(backward);
   }
   function fail() {
     run++;
     failed = true;
+    preparation?.abort();
+    loading(false);
+    labels(first);
     videos.forEach((v) => {
       v.pause();
     });
@@ -125,7 +184,14 @@ export function initHeroMotion(signal: AbortSignal) {
     raf = requestAnimationFrame(tick);
   }
   function begin(nextDirection: typeof direction) {
-    if (locked() || reduced || failed) return;
+    if (
+      locked() ||
+      reduced ||
+      failed ||
+      !prepared ||
+      (nextDirection === 'up' && !reversePrepared)
+    )
+      return;
     direction = nextDirection;
     active = direction === 'down' ? forward : backward;
     const thisRun = ++run;
@@ -134,7 +200,6 @@ export function initHeroMotion(signal: AbortSignal) {
     lockedY = scrollY;
     setState('loading');
     root.classList.add('hero-scroll-locked');
-    load(active);
     // Also bounds waiting on an unavailable video or a stalled connection.
     timeout = window.setTimeout(fail, 18000);
     active.currentTime = 0;
@@ -154,7 +219,9 @@ export function initHeroMotion(signal: AbortSignal) {
       });
   }
   function enabled() {
-    return !reduced && !failed && !document.querySelector('dialog[open]');
+    return (
+      prepared && !reduced && !failed && !document.querySelector('dialog[open]')
+    );
   }
   function intercept(event: Event, delta: number) {
     if (locked()) {
@@ -172,6 +239,7 @@ export function initHeroMotion(signal: AbortSignal) {
     } else if (
       delta < 0 &&
       state === 'released' &&
+      reversePrepared &&
       shop.getBoundingClientRect().top >= -2 &&
       scrollY > topOf(story) + 2
     ) {
@@ -254,6 +322,12 @@ export function initHeroMotion(signal: AbortSignal) {
       }
       const upward = scrollY < previousY;
       previousY = scrollY;
+      if (scrollY <= topOf(story) + 2 && state === 'released') {
+        setState('idle');
+        forward.currentTime = 0;
+        show(forward);
+        labels(first);
+      }
       if (scrollY > topOf(shop) - 2 && state === 'idle') setState('released');
       // Catch a wheel/touch step that crosses the shop boundary from further down.
       if (
@@ -285,7 +359,7 @@ export function initHeroMotion(signal: AbortSignal) {
     video.addEventListener(
       'error',
       () => {
-        fail();
+        if (video === forward || locked()) fail();
       },
       { signal },
     );
@@ -320,7 +394,17 @@ export function initHeroMotion(signal: AbortSignal) {
       show(forward);
       labels(first);
     }
-    load();
+    if (reduced || failed) {
+      if (!prepared) {
+        preparation?.abort();
+        preparation = null;
+      }
+      loading(false);
+    } else if (prepared) {
+      loading(false);
+    } else {
+      prepare();
+    }
   }
   toggles.forEach((toggle) => {
     toggle.addEventListener(
@@ -374,6 +458,13 @@ export function initHeroMotion(signal: AbortSignal) {
   signal.addEventListener(
     'abort',
     () => {
+      clearTimeout(loaderTimer);
+      clearInterval(messageTimer);
+      preparation?.abort();
+      pageContent.forEach((element) => {
+        element.inert = false;
+      });
+      if (loader) loader.hidden = true;
       run++;
       videos.forEach((v) => {
         v.pause();
