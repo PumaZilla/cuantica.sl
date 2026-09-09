@@ -1,15 +1,15 @@
-import davidPortrait from '../assets/team/linkedin/david-waist-neutral.png?url';
-import davidAlternate from '../assets/team/linkedin/david-hover-reference.png?url';
-import kikePortrait from '../assets/team/linkedin/kike-waist-reference-shirt.png?url';
-import kikeAlternate from '../assets/team/linkedin/kike-hover-closed-eyes.webp?url';
-import iriaPortrait from '../assets/team/linkedin/iria-waist.png?url';
-import iriaAlternate from '../assets/team/linkedin/iria-hover-facepalm-lowered.png?url';
-import natiPortrait from '../assets/team/linkedin/nati-waist-arms-down.png?url';
-import natiAlternate from '../assets/team/linkedin/nati-hover.webp?url';
-import paulaPortrait from '../assets/team/linkedin/paula-waist.png?url';
-import paulaAlternate from '../assets/team/linkedin/paula-hover-v2.webp?url';
-import santiPortrait from '../assets/team/linkedin/santi-waist.png?url';
-import santiAlternate from '../assets/team/linkedin/santi-hover.webp?url';
+import davidPortrait from '../assets/team/linkedin/david-waist-neutral-optimized.webp?url';
+import davidAlternate from '../assets/team/linkedin/david-hover-reference-optimized.webp?url';
+import kikePortrait from '../assets/team/linkedin/kike-waist-reference-shirt-optimized.webp?url';
+import kikeAlternate from '../assets/team/linkedin/kike-hover-closed-eyes-optimized.webp?url';
+import iriaPortrait from '../assets/team/linkedin/iria-waist-optimized.webp?url';
+import iriaAlternate from '../assets/team/linkedin/iria-hover-facepalm-lowered-optimized.webp?url';
+import natiPortrait from '../assets/team/linkedin/nati-waist-arms-down-optimized.webp?url';
+import natiAlternate from '../assets/team/linkedin/nati-hover-optimized.webp?url';
+import paulaPortrait from '../assets/team/linkedin/paula-waist-optimized.webp?url';
+import paulaAlternate from '../assets/team/linkedin/paula-hover-v2-optimized.webp?url';
+import santiPortrait from '../assets/team/linkedin/santi-waist-optimized.webp?url';
+import santiAlternate from '../assets/team/linkedin/santi-hover-optimized.webp?url';
 
 export const team = [
   {

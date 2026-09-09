@@ -41,7 +41,7 @@ Preserve likeness to supplied photographs and episode references. Start portrait
 
 Change only what was requested. Preserve the smile, eyes, clothing, background color, and texture unless they are specifically being edited. Inspect generated results before integration. Recurring props, especially Kike's intercom, must match their references.
 
-Keep only assets used by the website in `src/assets/`. Save new versions with clear names, update their imports, and move superseded originals and production references to the external archive. Do not request nonexistent hover images or invent portraits for empty slots. Keep archived source footage and references intact. The original `T108.mov` is preserved in the external archive under `episode-sources/`; the website imports `src/assets/episodes/T108.mp4`, preserving its 1080p50 H.264 video with browser-compatible AAC audio.
+Keep only assets used by the website in `src/assets/`. Save new versions with clear names, update their imports, and move superseded originals and production references to the external archive. Do not request nonexistent hover images or invent portraits for empty slots. Keep archived source footage and references intact. The original `T108.mov` is preserved in the external archive under `episode-sources/`; the website imports `src/assets/episodes/T108-optimized.mp4`, a compressed 1080p50 H.264 delivery copy with browser-compatible AAC audio. High-bitrate media originals are preserved in the external archive under `performance-originals/`; use them for future re-encoding.
 
 Preserve the current hero motion behavior, fallbacks, and reduced-motion preferences. Do not restore a historical scroll implementation without a request.
 

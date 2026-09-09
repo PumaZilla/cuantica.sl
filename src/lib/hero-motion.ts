@@ -56,15 +56,14 @@ export function initHeroMotion(signal: AbortSignal) {
       v.classList.toggle('is-current', v === video);
     });
   }
-  function load() {
-    if (reduced || failed) return;
-    videos.forEach((video) => {
-      if (!video.getAttribute('src')) {
-        video.muted = true;
-        video.src = video.dataset.src!;
-        video.load();
-      }
-    });
+  function load(video = forward) {
+    if (reduced || failed || video.getAttribute('src')) return;
+    video.muted = true;
+    video.src =
+      matchMedia('(max-width: 680px)').matches && video.dataset.srcMobile
+        ? video.dataset.srcMobile
+        : video.dataset.src!;
+    video.load();
   }
   function labels(frame: number) {
     // Keep the approved text timing relative to the original complete sequence.
@@ -97,6 +96,8 @@ export function initHeroMotion(signal: AbortSignal) {
     moveTo(direction === 'down' ? topOf(shop) : topOf(story));
     setState(direction === 'down' ? 'released' : 'idle');
     unlock();
+    // Prepare the return trip only after the opening sequence has finished.
+    if (direction === 'down') load(backward);
   }
   function fail() {
     run++;
@@ -133,7 +134,7 @@ export function initHeroMotion(signal: AbortSignal) {
     lockedY = scrollY;
     setState('loading');
     root.classList.add('hero-scroll-locked');
-    load();
+    load(active);
     // Also bounds waiting on an unavailable video or a stalled connection.
     timeout = window.setTimeout(fail, 18000);
     active.currentTime = 0;

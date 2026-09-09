@@ -1,5 +1,5 @@
-import bobbyPortrait from '../assets/team/linkedin/bobby-waist.png?url';
-import bobbyAlternate from '../assets/team/linkedin/bobby-hover-v2.webp?url';
+import bobbyPortrait from '../assets/team/linkedin/bobby-waist-optimized.webp?url';
+import bobbyAlternate from '../assets/team/linkedin/bobby-hover-v2-optimized.webp?url';
 
 const supportingSocials = {
   instagram: 'https://www.instagram.com/santivieito/',

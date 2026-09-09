@@ -42,4 +42,12 @@ During the September 9, 2026 reorganization, sketches, references, previous vers
 
 ## Episode media
 
-The shared player uses season 1, episode 8: `src/assets/episodes/T108.mp4` and `T108-poster.jpg`. Labels and duration live in `src/content/site.ts`. The MP4 preserves the original 1080p50 H.264 video and converts only the PCM audio to AAC for browser playback. The original MOV is retained outside the repository in `../cuanticasl-archive-20260909/episode-sources/T108.mov`.
+The shared player uses season 1, episode 8: `src/assets/episodes/T108-optimized.mp4` and `T108-poster.jpg`. Labels and duration live in `src/content/site.ts`. The delivery MP4 uses H.264 at the original 1080p50 resolution and frame rate, with AAC audio and fast-start metadata. It is compressed for streaming; the previous high-bitrate MP4 is retained in the external performance archive. The original MOV is retained outside the repository in `../cuanticasl-archive-20260909/episode-sources/T108.mov`.
+
+## Media delivery
+
+Images are pre-encoded as WebP at quality 85: portraits up to 900 px wide, products up to 1000 px, decorations up to 640 px, and the hero poster at 2560 px. Explicit `?url` imports preserve these delivery bytes. Below-the-fold images use native lazy loading.
+
+Hero videos retain the 24 fps frame sequence and forward/reverse timing. Desktop files use 1080p H.264 (CRF 22); mobile files use 720p H.264 (CRF 24). All video variants use fast-start metadata. Only the forward hero loads initially; the reverse loads after the opening sequence or on demand. Reduced-motion users do not load either video. The episode loads only when its player is opened.
+
+Original media is preserved in `../cuanticasl-archive-20260909/performance-originals/`, mirroring the asset directories. Future revisions should start from those originals rather than recompressing delivery assets.
