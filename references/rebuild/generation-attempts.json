@@ -1,0 +1,26 @@
+{
+  "image": {
+    "model": "nano_banana_pro",
+    "aspect_ratio": "16:9",
+    "resolution": "2k",
+    "prompt": "Cinematic advertising photograph for a deadpan Spanish science comedy. <<<6e96e56d-1a5e-4118-a7b2-fe61c7f3d7b6>>> is the exact man, preserve his face, age, distinctive oversized black glasses, thinning brown hair, navy blazer and red/white striped shirt. Wide environmental composition: CEO stands confidently slightly RIGHT of center, from waist up, looking straight at camera with quiet absurd self belief. Behind him a huge beautiful circular brushed aluminum experimental scientific machine, amber orange practical light in the circular aperture, messy retrofuturist research lab, beige analog electronics, cables. In foreground lower right a tiny ordinary toaster absurdly connected to huge machinery. Rich cinematic lighting, warm ivory fluorescent ceiling, deep petrol shadow, orange light reflected on glasses, realistic analogue film grain. Wide shot with lab visible on both sides, subject whole head and chest comfortably inside central 45 percent for mobile crop. No words, no text, no logos. Beautiful composed movie still, not illustration, not futuristic spacesuit, no facial beautification."
+  },
+  "video": {
+    "model": "seedance_2_0",
+    "aspect_ratio": "16:9",
+    "duration": 6,
+    "resolution": "1080p",
+    "mode": "std",
+    "generate_audio": false,
+    "medias": [
+      {
+        "role": "start_image",
+        "value": "8203ae4e-5e18-4a15-95ba-964e4e16da10"
+      }
+    ],
+    "prompt": "One continuous shot preserving EXACTLY the provided first frame's man, face, huge black glasses, hairstyle, striped shirt, navy blazer, lab architecture, round metal machine, toaster and composition. Locked camera, no cuts or zoom. The man stays still and maintains a confident deadpan look directly at camera, barely breathing, absolutely no talking or lip movement and no head rotation. Behind him the orange circular aperture slowly powers up from warm amber to stronger warm orange then settles, small analogue indicators light up in sequence. One faint wisp of steam rises from the toaster in lower right in final two seconds. No explosions, no flashing or strobing, no surreal distortion, no new objects. Restrained believable cinematic motion for a luxury website. Preserve exact facial identity every frame. No text."
+  },
+  "status": "Completed but rejected for face identity. Not used in website.",
+  "imageJob": "8203ae4e-5e18-4a15-95ba-964e4e16da10",
+  "videoJob": "73bbcf6a-3c2b-4b2c-9cc6-80bde9fc8ca4"
+}

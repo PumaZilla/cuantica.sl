@@ -1,0 +1,13 @@
+{
+  "count": 60,
+  "width": 1280,
+  "height": 720,
+  "pattern": "/media/vision-v2/frame-{index}.webp",
+  "padding": 3,
+  "poster": "/media/david-original.webp",
+  "source": "cap.mov",
+  "startSeconds": 23,
+  "durationSeconds": 3,
+  "fps": 20,
+  "bytes": 1582326
+}
