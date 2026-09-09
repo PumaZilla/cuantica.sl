@@ -394,3 +394,11 @@
 .method-manifesto > .mark-corner{top:2px;right:var(--pad)}
 .team > .mark-bracket{bottom:64px}
 @media(max-width:680px){.method-manifesto > .mark-corner{top:2px}.team > .mark-bracket{bottom:54px}}
+
+/* Alternate takes from the team photo session. */
+.team .person-photo img{transition:opacity .18s ease;transform:none}
+.team .person-photo .person-photo-alternate{position:absolute;inset:0;opacity:0;pointer-events:none}
+.team .person-number,.team .person-badge{z-index:2}
+@media(hover:hover){.team .person:hover .person-photo-alternate{opacity:1}}
+.team .person:focus-within .person-photo-alternate{opacity:1}
+@media(prefers-reduced-motion:reduce){.team .person-photo img{transition:none}}
