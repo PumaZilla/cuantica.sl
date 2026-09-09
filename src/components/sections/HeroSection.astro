@@ -18,7 +18,7 @@ import reverseVideo from '../../assets/hero/hero-reverse-optimized.mp4?url';
   { side: 'left', first: 'Inventamos', second: 'el futuro' },
   { side: 'right', first: 'Perdonad', second: 'las molestias' },
 ].map(statement => <span class={`statement-${statement.side}`}>
-  {[true, false].map(shadow => <span class={shadow ? 'statement-shadow' : 'statement-face'} aria-hidden={shadow ? 'true' : undefined}>{statement.first}<br/>{' '}{statement.second}</span>)}
+  {[true, false].map(shadow => <span class={shadow ? 'statement-shadow' : 'statement-face'} aria-hidden={shadow ? 'true' : undefined}><span class="statement-first">{statement.first}</span><br/>{' '}<span class="statement-second">{statement.second}</span></span>)}
 </span>)}</h1>
 </div>
 </section>
