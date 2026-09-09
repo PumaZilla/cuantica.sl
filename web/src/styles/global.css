@@ -108,7 +108,7 @@
 .tv-shop .shop-heading{padding-top:12px}
 .tv-shop .shop-heading h2{font-family:Impact,'Arial Black',sans-serif;text-transform:uppercase;font-weight:900;letter-spacing:-.015em;font-size:clamp(38px,5.5vw,88px);line-height:1.04;color:var(--paper);-webkit-text-stroke:2px var(--surface);paint-order:stroke fill;text-shadow:4px 4px 0 var(--surface);transform:skew(-3deg);transform-origin:left}
 .tv-hype{display:flex;justify-content:space-between;align-items:center;gap:20px;margin:0 0 28px}
-.tv-hype>strong{font:900 clamp(24px,3vw,44px)/1 Impact,'Arial Black',sans-serif;background:var(--ad-yellow);color:var(--ad-black);padding:16px 22px;border:3px solid var(--ad-black);box-shadow:5px 5px 0 var(--ad-black);transform:rotate(-2deg)}
+.tv-hype>strong{font:900 clamp(24px,3vw,44px)/1 Impact,'Arial Black',sans-serif;background:#ff9636;color:var(--ad-black);padding:16px 22px;border:3px solid var(--ad-black);box-shadow:5px 5px 0 var(--ad-black);transform:rotate(-2deg)}
 .tv-timer{display:flex;align-items:center;gap:15px;max-width:310px}.tv-timer small{font:700 10px/1.4 monospace}.tv-timer b{font:700 38px/1 monospace;background:var(--ad-black);color:var(--ad-yellow);padding:10px;white-space:nowrap}
 .tv-shop .experiment,.tv-shop .experiment+.experiment{border:3px solid var(--ad-black);box-shadow:7px 7px 0 var(--ad-black)}
 .tv-shop .experiment-top{font-family:'Arial Black',var(--body);font-weight:900}
@@ -247,7 +247,7 @@
 /* Team dossiers retain the portrait grid, with stronger editorial framing. */
 .team .section-label{border-bottom:2px solid var(--surface);padding-bottom:18px;font-weight:700}
 .team .section-heading h2{font-weight:700;letter-spacing:-.045em}
-.team .section-heading .serif-word{font-family:var(--display);font-style:normal;font-weight:700}
+#equipo .section-heading .serif-word{font-family:var(--display);font-style:normal;font-weight:700;color:inherit}
 .team-grid{gap:24px}
 .team .person{border:2px solid var(--surface);box-shadow:5px 5px 0 var(--mist);padding:0 0 16px;min-width:0}
 .team .person-photo{border-bottom:2px solid var(--surface)}
@@ -369,11 +369,11 @@
 
 /* Make room for the cat without changing the composition's internal spacing. */
 @media(min-width:681px){
- .method-manifesto .method-composition{position:relative;left:30px}
- .method-manifesto .method-heading{position:relative;left:30px}
+ .method-manifesto .method-composition{position:relative;left:60px}
+ .method-manifesto .method-heading{position:relative;left:60px}
 }
 @media(max-width:680px){
- .method-manifesto .method-composition,.method-manifesto .method-heading{position:relative;left:10px;width:calc(100% - 10px)}
+ .method-manifesto .method-composition,.method-manifesto .method-heading{position:relative;left:20px;width:calc(100% - 20px)}
 }
 
 /* Match the breathing room on either side of the manifesto. */
@@ -389,3 +389,8 @@
 @media(max-width:680px){.team .section-heading>p{transform:translateY(-6px) rotate(-3deg);max-width:90%;margin-inline:auto}}
 
 .team .person-photo img{filter:none;object-position:center top}
+
+/* Raise the remaining method and team corner marks. */
+.method-manifesto > .mark-corner{top:2px;right:var(--pad)}
+.team > .mark-bracket{bottom:64px}
+@media(max-width:680px){.method-manifesto > .mark-corner{top:2px}.team > .mark-bracket{bottom:54px}}

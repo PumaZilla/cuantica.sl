@@ -12,7 +12,7 @@ export const team = [
   { name:'David', role:'CEO & visionario', image:'david', line:'Él ve el futuro.', aside:'El presupuesto, ya si eso.', description:'Fundador. Innovador. Convencido de que la humanidad necesita exactamente lo que acaba de ocurrírsele.' },
   { name:'Kike', role:'El hacker', image:'kike', line:'Todo bajo control.', aside:'Excepto su jefe.', description:'Si tiene una contraseña, puede entrar. Si es una reunión con David, todavía no sabe cómo salir.' },
   { name:'Paula', role:'La de redes', image:'paula', line:'Esto va a ser viral.', aside:'Por las razones equivocadas.', description:'Transforma los accidentes de laboratorio en contenido. En esta empresa nunca le falta material.' },
-  { name:'Raquel', role:'La científica', image:'raquel', line:'La voz de la ciencia.', aside:'Nadie la está escuchando.', description:'Pone a prueba las ideas de David. Y David pone a prueba su paciencia. Es una relación experimental.' },
+  { name:'Nati', role:'La científica', image:'nati', line:'La voz de la ciencia.', aside:'Nadie la está escuchando.', description:'Pone a prueba las ideas de David. Y David pone a prueba su paciencia. Es una relación experimental.' },
   { name:'Bobby', role:'El perro', image:'bobby', line:'El mejor del equipo.', aside:'Sin saber qué es un equipo.', description:'Una incorporación difícil de explicar. Recursos Humanos sigue buscando la casilla correcta.' },
 ];
 export const experiments = [
