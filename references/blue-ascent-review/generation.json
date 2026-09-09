@@ -1,0 +1,77 @@
+{
+  "checkpoint": "b56b7d0",
+  "approvalStatus": "PENDING_USER_OK_DO_NOT_GENERATE_VIDEO_OR_IMPLEMENT_NEW_HERO",
+  "palette": {
+    "sky": "#73B5DB",
+    "night": "#0B1D2C",
+    "editorial": "#EDF4F8",
+    "exactOfficialColor": false
+  },
+  "firstAttempt": {
+    "jobId": "ce655217-3686-4f10-8144-b5a766531491",
+    "params": {
+      "model": "gpt_image_2",
+      "aspect_ratio": "16:9",
+      "resolution": "2k",
+      "quality": "high",
+      "medias": [
+        {
+          "role": "image",
+          "value": "d9c9e641-217b-4471-b139-27f45e24f700"
+        },
+        {
+          "role": "image",
+          "value": "ba6926e9-8e60-4f1f-820e-8577db6affc1"
+        }
+      ],
+      "prompt": "OPENING KEYFRAME for a continuous camera pullback in an absurd science comedy website. Photoreal cinematic image, 16:9. The reference photos show the SAME real man DAVID. His exact recognisable face is paramount: huge thick black square glasses, broad high forehead, receding fine brown hair, elongated narrow face, long slim nose, thin lips, real skin age and asymmetric features. Preserve this actor's face; NOT a generic handsome CEO, NOT Steve Jobs, NOT a younger man. Keep his navy blazer and red-white striped T-shirt. Chest-up CLOSE PORTRAIT, his face is large and readable, at horizontal 53%, eyes at vertical 32%; head occupies roughly 30% image height, chest continues out of bottom frame. His stance has the self-assured quiet visionary mood of a famous tech founder portrait: upper body gently turned in three-quarter pose, head tilted only slightly upward, gaze toward a distant point ABOVE the lens, thoughtful calm expression, mouth relaxed closed or nearly closed, no exaggerated grin. Preserve his actual facial structure when changing eye direction. Hands absent below crop. Space beyond him: elegant seamless deep BLUE NIGHT #0B1D2C to #173C56, very soft desaturated SKY BLUE #73B5DB nebula glow behind upper body, sparse tiny stars, NO warm beige/gold halo, NO orange, NO pink background, no religious symbols. Soft neutral facial key light with sky-blue rim, natural skin not painted blue. The imaginary orbiting inventions are OUTSIDE the initial tight camera crop; at most tiny indistinct hints at extreme bottom, no important objects required initially. Camera is close now and will pull far back later. Subject must be centered for 9:16 crop, not shoved to the right: keep face within central 20% of canvas. LEFT outer 30% calm dark blue negative space for a short website headline and episode button; upper 12% quiet dark space for logo. Cinematic luxury editorial composition, realistic actor, restrained light, no busy stars, no streaks over face. ABSOLUTELY NO text, logo, typography, UI, watermark. First reference determines facial identity, second confirms it."
+    },
+    "selection": "Superseded: subject too far right and gaze insufficiently upward."
+  },
+  "opening": {
+    "jobId": "2489670c-fb5d-4ddf-8663-4001fcb1526c",
+    "params": {
+      "model": "gpt_image_2",
+      "aspect_ratio": "16:9",
+      "resolution": "2k",
+      "quality": "high",
+      "medias": [
+        {
+          "role": "image",
+          "value": "ce655217-3686-4f10-8144-b5a766531491"
+        },
+        {
+          "role": "image",
+          "value": "d9c9e641-217b-4471-b139-27f45e24f700"
+        }
+      ],
+      "prompt": "Edit image 1 with exactly TWO changes. (1) REPOSITION THE EXISTING MAN TO THE EXACT HORIZONTAL CENTER. His nose must be at x=50% of canvas, not x=68% as now. Preserve his current large chest-up size. There must be space on BOTH sides. (2) Make his gaze clearly UPWARD and slightly toward image-left, like a visionary looking into the distant sky at 30 degrees ABOVE the camera. Slightly raise chin, turn face only 10 degrees left. Pupils visibly look upward, NOT at viewer. Keep his actual face, enormous black glasses, real age, long nose, thin lips, hairline, navy blazer, striped shirt, blue lighting and proportions unchanged. Image 2 confirms his ORIGINAL identity, preserve it; no new casting, no beautification. Preserve the same dark navy/sky-blue galaxy, no text, no UI, no objects. Face centered between x42%-58%, eyes around y30%. Crop chest at bottom. Return same 16:9 cinematic photo. Do not add any person or invention."
+    },
+    "file": "01-inicio-centrado.png"
+  },
+  "ending": {
+    "jobId": "58240c28-ab73-40fd-b666-9a6064ba5705",
+    "params": {
+      "model": "gpt_image_2",
+      "aspect_ratio": "16:9",
+      "resolution": "2k",
+      "quality": "high",
+      "medias": [
+        {
+          "role": "image",
+          "value": "2489670c-fb5d-4ddf-8663-4001fcb1526c"
+        },
+        {
+          "role": "image",
+          "value": "d9c9e641-217b-4471-b139-27f45e24f700"
+        },
+        {
+          "role": "image",
+          "value": "4697810f-27f1-40e6-bd4f-82d25ba993a7"
+        }
+      ],
+      "prompt": "FINAL KEYFRAME of the same continuous scene as IMAGE 1. Same exact David, same navy blazer, red-white striped shirt, black glasses, natural face and upward-left gaze, same deep navy blue and sky blue galaxy and lighting. CAMERA HAS DOLLIED FAR BACK from that tight chest-up portrait, and DAVID HAS ASCENDED upward. This is NOT a new portrait composition. Image 2 confirms original facial identity. Image 3 is ONLY a reference for the four inventions and full-body wardrobe, NOT its warm background or its pose. David is now fully visible and SMALL, floating at horizontal CENTER x50%, head at y16%, white shoes at y49%, whole body occupies just ONE THIRD of frame HEIGHT. Dark trousers and same white sneakers. Same facial gaze and head angle as image1; calm visionary facial expression, never looking down at viewer. Arms held naturally slightly away from his body with relaxed open hands, not a crucifix. Four inventions ascend with him in a loose spiralling constellation close around his body: chrome retro toaster near x40% y35%, orange ginger cat near x59% y24%, intricate orange mechanical mecha near x59% y46%, pink heart-shaped glass love potion near x43% y51%. Preserve recognizable distinct objects, no duplicates. Objects smaller than David, all inside central horizontal 35%-65% of frame for mobile crop. Subtle soft cool blue dust trails stretch DOWNWARD beneath the group suggesting upward ascent; do not create rocket exhaust or bright beams. CAMERA framing reveals a MUCH WIDER infinite blue space than image1, with soft sparse distant stars. He and the inventions are suspended high, the entire bottom 35% and outer left/right thirds are mostly quiet empty navy #0B1D2C and muted blue #173C56; SKY BLUE #73B5DB soft nebula glow behind the group. NO beige, gold or orange in the galaxy, natural skin and warm colored objects only. Minimalist photographic cosmic visual, no floor, no planet, no horizon, no second person. Exact same actor, same glasses and facial identity from the references, no beautification. No text, logo, caption, watermark, UI. This MUST show a strong camera pullback and upward displacement versus the close-up in image1, David SMALL at upper center, not large at center bottom."
+    },
+    "file": "02-final.png"
+  }
+}

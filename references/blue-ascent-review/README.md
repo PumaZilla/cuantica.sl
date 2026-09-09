@@ -1,5 +1,7 @@
 # Revisión pendiente — David, azul y ascenso
 
+Nueva propuesta con estrellas y polvo cósmico: `07-david-universo-2k-web.mp4` (2560×1440, 8 s, 24 fps, sin audio), generada de nuevo con MiniMax H3 y referencias nuevas. Metadatos en `universe-2k-v2-generation.json`. Aún no integrada. La prueba `06` se descartó por fondo demasiado parecido al anterior y alejamiento excesivo. El usuario abandonó el reescalado 4K; no hay herramienta disponible para cancelar ese trabajo remoto, no usar su resultado. Checkpoint aprobado guardado en `b9ed338`.
+
 Edición de arranque: se omiten los índices 2–28, ambos incluidos. La secuencia de reproducción es 0, 1, 29…209; precarga y scroll inverso usan la misma lista. Archivos originales conservados.
 
 Calidad HD: la web sirve ahora `/media/david-orbits-hd/`, fotogramas 1920×1080 extraídos directamente del máster original, WebP calidad 94. Escritorio y móvil usan la misma fuente Full HD; canvas hasta DPR 2. Se mantienen corte en 209 y ausencia de filtro. Antes se servía 1600×900 / 960×540 desde la copia comprimida para navegador.

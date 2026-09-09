@@ -1,0 +1,13 @@
+{
+  "checkpoint": "b9ed338",
+  "jobId": "0f2a2f76-79d2-4378-b4c6-3be6c1edf590",
+  "sourceJobId": "d55aaa60-6b50-4609-a315-3be69d787296",
+  "model": "bytedance_video_upscale",
+  "resolution": "4k",
+  "fps": 24,
+  "preset": "aigc",
+  "model_version": "pro",
+  "status": "ABANDONED_BY_USER_NO_CANCELLATION_TOOL_AVAILABLE_DO_NOT_USE",
+  "editing": "Preserve source-frame selection 0, 1, 27 through 209; 160 ms dissolve across the cut, immediate scroll start.",
+  "note": "Enhanced upscale of approved 1080p footage, not native 4K generation. If recreating later, directly sequence upward distant gaze followed by direct eye contact; omit wandering gaze."
+}

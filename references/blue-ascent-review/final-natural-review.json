@@ -1,0 +1,26 @@
+{
+  "jobId": "f3dfec1f-5b6b-4c66-8cfa-fe82d5785918",
+  "approvalStatus": "APPROVED_BY_USER",
+  "file": "08-final-david-natural.png",
+  "params": {
+    "model": "gpt_image_2",
+    "resolution": "2k",
+    "quality": "high",
+    "aspect_ratio": "16:9",
+    "medias": [
+      {
+        "role": "image",
+        "value": "52895838-c505-435e-bbed-7a0233d54da0"
+      },
+      {
+        "role": "image",
+        "value": "d9c9e641-217b-4471-b139-27f45e24f700"
+      },
+      {
+        "role": "image",
+        "value": "ef21f562-3fdb-448e-8678-26d5c56fdf09"
+      }
+    ],
+    "prompt": "Precise edit of IMAGE 1, the final cosmic shot. Preserve the exact star-filled blue universe, six objects and their positions, David's full-body scale, central position, navy blazer, red-white striped shirt, dark trousers and white shoes. ONLY correct David's unhealthy gaunt appearance, face/head angle and skin lighting. IMAGE 2 shows his actual real actor identity and healthy natural facial proportions: match that man, same age, long nose, hairline and large thick square black eyeglasses. IMAGE 3 shows the wanted natural complexion and face fullness. Make him look alive, charismatic, relaxed and quietly delighted by his genius. Restore his normal cheek volume, normal jaw and neck proportions, remove artificially hollow cheeks and black eye sockets. Natural warm peach/olive skin with subtle rosy blood circulation in cheeks, nose, lips and hands, genuine human skin texture. A soft neutral-to-warm frontal portrait key light fills the face and neck; sky-blue light only as a delicate rim from background. No gray, chalk-white, cyan or corpse-like skin. Crucially REDUCE the extreme backward head tilt: chin raised only 15-20 degrees, face in gentle three-quarter view with both eyes and facial features visible, eyes clearly gazing upward into the distance. Do not show mainly underside of chin or stretched exposed neck. A very subtle confident closed-mouth smile, bright attentive eyes, natural eyelids, no blank stare or rolled-back eyes. Preserve his actor likeness, do not recast as a younger handsome generic CEO, do not turn him muscular or obese, do not over-smooth skin. Relax shoulders and hands slightly, keep floating open-palmed pose and sense of ascending. Exactly six original objects: toaster, cat, heart love potion, small microscope, LED swimming cap, vintage tabletop gooseneck intercom. No additional objects, no changes to galaxy, no text/UI, no wings or halo. Keep exact wide framing and generous side space. High photographic detail."
+  }
+}

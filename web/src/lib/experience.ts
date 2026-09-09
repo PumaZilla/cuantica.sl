@@ -12,6 +12,7 @@ export function initExperience() {
  let raf = 0, alive = true, visible = false, current = -1, wanted = 0;
  let manifest: {count:number; width:number; height:number; pattern:string; padding:number} | null = null;
  let manifestRequested = false;
+ let cacheLimit = 20;
  let playbackFrames: number[] = [];
  let wantedPosition = 0;
  const cutSnapshot = document.createElement('canvas');
@@ -33,6 +34,8 @@ export function initExperience() {
    fetch(matchMedia('(max-width: 680px)').matches ? story.dataset.mobileManifest! : story.dataset.manifest!,{signal:abort.signal}).then(r=>{if(!r.ok)throw Error('Missing sequence');return r.json();}).then(data=>{
      if(!Number.isInteger(data.count)||data.count<1||typeof data.pattern!=='string')throw Error('Invalid sequence');
      manifest=data;
+     // Bound decoded image memory as source resolution increases.
+     cacheLimit=Math.max(5,Math.min(20,Math.floor(160*1024*1024/(data.width*data.height*4))));
      // Remove frames 2–26; resume at 27 without changing the closing frame.
      playbackFrames=Array.from({length:lastFrame()+1},(_,index)=>index).filter(index=>index<2||index>=27);
      schedule();
@@ -67,7 +70,7 @@ export function initExperience() {
  }
  function pump(){
    if(!manifest||reduced||!visible||document.hidden||!alive)return;
-   const offsets=[0,1,-1,2,-2,3,-3,4,-4,5,-5,6,-6,7,-7];
+   const offsets=[0,1,-1,2,-2,3,-3,4,-4,5,-5,6,-6,7,-7].slice(0,cacheLimit);
    for(const offset of offsets){
      if(pending.size>=4)break;
      const index=playbackFrames[wantedPosition+offset];
@@ -77,7 +80,7 @@ export function initExperience() {
      fetch(url,{signal:abort.signal}).then(r=>{if(!r.ok)throw Error(String(r.status));return r.blob();}).then(createImageBitmap).then(bitmap=>{
        if(!alive){bitmap.close();return;}
        cache.set(index,bitmap);
-       if(cache.size>20){const keys=[...cache.keys()].sort((a,b)=>Math.abs(b-wanted)-Math.abs(a-wanted));while(cache.size>20){const k=keys.shift()!;cache.get(k)?.close();cache.delete(k);}}
+       if(cache.size>cacheLimit){const keys=[...cache.keys()].sort((a,b)=>Math.abs(b-wanted)-Math.abs(a-wanted));while(cache.size>cacheLimit){const k=keys.shift()!;cache.get(k)?.close();cache.delete(k);}}
      }).catch(()=>{failures.set(index,(failures.get(index)||0)+1);}).finally(()=>{pending.delete(index);schedule();});
    }
  }

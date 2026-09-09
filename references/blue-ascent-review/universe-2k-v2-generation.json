@@ -1,0 +1,62 @@
+{
+  "jobId": "545eed3f-c5c1-4ae2-8773-314b882130ec",
+  "status": "COMPLETED_REVIEW_CANDIDATE",
+  "browserFile": "07-david-universo-2k-web.mp4",
+  "validation": "2560x1440, 24 fps, 8 seconds. Starfield and cosmic dust remain visible; sampled sequence shows direct look then upward gaze and clear orbital movement without drawn rings; final closer framing retained. Browser copy is video stream copy with audio removed. Not yet integrated.",
+  "params": {
+    "model": "minimax_h3",
+    "duration": 8,
+    "resolution": "2K",
+    "aspect_ratio": "16:9",
+    "medias": [
+      {
+        "role": "start_image",
+        "value": "ef21f562-3fdb-448e-8678-26d5c56fdf09"
+      },
+      {
+        "role": "end_image",
+        "value": "52895838-c505-435e-bbed-7a0233d54da0"
+      }
+    ],
+    "prompt": "Animate these exact start and end keyframes as ONE continuous crisp photoreal cinematic 8-second shot. Preserve exact actor face, glasses, hairline, striped shirt, blazer and six props. Preserve the newly detailed star-filled universe: thousands of visible pin-sharp stars, layered blue nebula dust clouds, deep black gaps. Reveal real depth through slow parallax of near dust and far stars as the camera dollies backward; do not flatten background or fade stars away. No colored fog over David, no beauty smoothing, no blur filters. Camera retreats smoothly FROM THE FIRST INSTANT, no opening hold, no cuts. At start David looks upward into infinity exactly as image1. Within the FIRST HALF SECOND he shifts his gaze directly to the lens in one decisive clean movement: no scanning, no side glances or wandering gaze. Hold direct eye contact with a restrained smug genius half-smile until 1.5s. At 1.5-2s he raises his chin and eyes upward again, opens relaxed palms and begins ascending gracefully. From 2-8s he rises while camera withdraws only enough to reach EXACT image2 framing: do not go farther or make him smaller than image2. Six existing objects travel in distinct elliptical three-dimensional orbits around his waist like a graceful atomic system: toaster, cat, pink heart potion, small microscope, LED swimming cap and vintage tabletop intercom. The objects themselves change sides of David, sweep in front of his legs on near orbital halves, go behind his torso on far halves, emerge on opposite side with perspective depth. Different inclined orbital planes and staggered phases. Face stays clear. One smooth revolution, arrive at exact final positions. No duplicate objects, no extra balls, NO drawn paths, lines or rings; the orbit trajectories are invisible. Objects keep their forms, cat anatomy remains natural. David is the stable central nucleus, he never spins, camera never orbits or rolls. Keep stars and cosmic clouds visible across the whole shot and all the way to final frame. Preserve high-frequency facial detail and material textures. No text, captions, logos, UI, dialogue or music."
+  },
+  "openingJob": "ef21f562-3fdb-448e-8678-26d5c56fdf09",
+  "closingJob": "52895838-c505-435e-bbed-7a0233d54da0",
+  "keyframeParams": {
+    "a": {
+      "model": "gpt_image_2",
+      "aspect_ratio": "16:9",
+      "resolution": "2k",
+      "quality": "high",
+      "medias": [
+        {
+          "role": "image",
+          "value": "2489670c-fb5d-4ddf-8663-4001fcb1526c"
+        },
+        {
+          "role": "image",
+          "value": "d9c9e641-217b-4471-b139-27f45e24f700"
+        }
+      ],
+      "prompt": "Photoreal cinematic image for a Cuantica SL website video. Preserve the SAME actual man David from the reference, exact recognizable face, huge square black glasses, receding brown hair, navy blazer and red-white striped shirt. CRITICAL BACKGROUND REPLACEMENT: create a visibly magnificent deep outer-space panorama filled with SHARP VISIBLE WHITE STARS of varied sizes and brightness, distant stellar clusters, intricate blue/cyan cosmic dust lanes and billowing nebula clouds on multiple depth planes, deep midnight gaps. Clearly recognizable as a star-filled universe, NOT plain navy gradient and NOT merely a blue halo behind his head. Detailed space across the entire image, restrained elegant astronomy photography. Clear neutral skin detail, sharp glasses, no blue veil over subject, no soft-focus filter. Maintain dark quiet areas at far left and right for white text. No baked-in text or UI. Opening frame: centered large chest-up portrait, face at x50%, looking UPWARD into infinity with eyes visibly raised, calm visionary expression. Same pose and size as reference1. No inventions visible yet. Natural detailed real face from reference2. Stars and cosmic clouds behind him visible at both sides. No wings."
+    },
+    "b": {
+      "model": "gpt_image_2",
+      "aspect_ratio": "16:9",
+      "resolution": "2k",
+      "quality": "high",
+      "medias": [
+        {
+          "role": "image",
+          "value": "611c553e-7f96-4a32-a6a2-0fde37b2fae2"
+        },
+        {
+          "role": "image",
+          "value": "d9c9e641-217b-4471-b139-27f45e24f700"
+        }
+      ],
+      "prompt": "Photoreal cinematic image for a Cuantica SL website video. Preserve the SAME actual man David from the reference, exact recognizable face, huge square black glasses, receding brown hair, navy blazer and red-white striped shirt. CRITICAL BACKGROUND REPLACEMENT: create a visibly magnificent deep outer-space panorama filled with SHARP VISIBLE WHITE STARS of varied sizes and brightness, distant stellar clusters, intricate blue/cyan cosmic dust lanes and billowing nebula clouds on multiple depth planes, deep midnight gaps. Clearly recognizable as a star-filled universe, NOT plain navy gradient and NOT merely a blue halo behind his head. Detailed space across the entire image, restrained elegant astronomy photography. Clear neutral skin detail, sharp glasses, no blue veil over subject, no soft-focus filter. Maintain dark quiet areas at far left and right for white text. No baked-in text or UI. Closing frame: ENLARGE the man and entire six-object constellation relative to reference1. David head at y12%, white shoes at y80%, body occupies TWO THIRDS of image height, EXACT horizontal center x50%. Floating upward, chin and eyes toward the heavens, relaxed open hands. Six distinct small inventions: chrome toaster at x35% y32%, LED swimming cap at x62% y18%, ginger cat at x69% y42%, small laboratory microscope x32% y66%, pink heart-shaped love potion x40% y79%, vintage black tabletop intercom with two silver knobs, gray control panel and tall gooseneck microphone x65% y80%. Copy exact props from reference1. Nothing else. They fit within image boundaries; no duplicates or robot. Do not leave David small like reference1: camera is MUCH CLOSER, the man must occupy 68% of image height. Stars and blue cosmic clouds distinctly visible throughout surrounding space."
+    }
+  },
+  "file": "07-david-universo-2k.mp4"
+}
