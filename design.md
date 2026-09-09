@@ -78,3 +78,33 @@ Revisadas visualmente contra las referencias y convertidas a WebP de 900 px en e
 Sustituidos `ceo.webp`, `hacker.webp` y `ascent.webp`. Añadida versión `?v=2` a sus URL y a la precarga del CEO para que el navegador no conserve los retratos anteriores. El resto de personajes y el motor de animación se mantienen.
 
 Prompts, referencias, trabajos, errores de cuota y método de composición guardados en `references/identity-v2.json`. Compilación correcta y verificación visual en 1440 × 900 y 390 × 844. Cargan ambos retratos y el ascenso, sin errores HTTP ni desbordamiento horizontal. La revisión se guarda en un segundo commit separado del punto de retorno.
+
+## 12 · Dirección synthwave y personajes en movimiento
+Nueva petición: paleta morado, naranja y azul; personajes como foco principal desde el borde inferior hacia el centro; secuencia de expresiones y poses con sensación de vídeo. Se abandona la composición lateral de retrato editorial y el verde ácido. La identidad de Kike y del CEO de la revisión anterior queda como referencia aprobada.
+
+Consulta actual de Higgsfield: plan gratuito y 0,5 créditos; no alcanza para nuevas generaciones de poses. Se investiga una secuencia de gestos reales extraídos del episodio para mantener la identidad, con procesamiento de medios en Higgsfield. La nueva composición y el motor visual se desarrollan independientemente de esa limitación.
+
+## 13 · Ampliación de saldo y producción de vídeo real
+El usuario amplía el saldo y pide continuar. Verificación de cuenta: plan Ultra y 3000,5 créditos disponibles. Esta ampliación resuelve la limitación del paso 12. Se retoma la producción en Higgsfield con los rostros que el usuario ya ha aprobado.
+
+Cinco bucles de cinco segundos en Kling 3.0 Pro, sin sonido, con el mismo retrato como primer y último fotograma. Actuación contenida y cómica: el CEO sonríe y se ajusta las gafas; Kike sonríe, mira de lado y encoge los hombros; la científica reacciona con cejas y cabeza; redes cambia de mirada y sonríe; el hombre-perro levanta las manos como patas. Revisadas hojas de contacto de cinco instantes por personaje. Se conservan caras, gafas, ropa y el carácter humano del perro.
+
+Nuevo CEO a cuerpo entero en Nano Banana, usando su retrato aprobado y el fotograma frontal original. A partir de él se genera un sexto vídeo en Kling: flota, abre los brazos y levanta la mirada. El scroll controla su avance temporal y su desplazamiento hacia el espacio. Todos los trabajos han terminado correctamente. Prompts e identificadores: `references/synthwave-generations.json`.
+
+## 14 · Composición synthwave y siluetas
+Nueva paleta: fondo morado `#130820`, naranja `#ff915b`, azul `#75cfff` y violeta `#ad76ff`. Titulares centrales grandes, sol naranja estriado, horizonte luminoso, suelo en perspectiva y órbitas discretas. Se recolorean también manifiesto, episodio, controles y favicon. Los personajes parten del borde inferior y ocupan la zona central; el texto descriptivo queda en los márgenes en escritorio y encima del personaje en móvil.
+
+La primera integración con modo de mezcla «lighten» dejaba ver las líneas del fondo a través de las chaquetas y el pelo. Se sustituye por una máscara de silueta por fotograma, procesada en el sandbox de Higgsfield. La prueba inicial con rembg/ONNX confundía partes de la camiseta del CEO y del disfraz del perro con el fondo. Se corrigió combinando esa máscara con otra obtenida del fondo negro real del clip: eliminación del negro conectado a los bordes, relleno de huecos interiores y suavizado de contorno. La unión conserva tanto la ropa oscura como el disfraz completo. El procedimiento se conserva en `tools/prepare-alpha.py`. Color y máscara se empaquetan juntos en un MP4 H.264: el navegador recompone la transparencia con WebGL. Así las gafas, el pelo y la ropa oscura conservan su opacidad y la máscara siempre está sincronizada con el gesto. Las imágenes de reserva son WebP transparentes extraídos del primer fotograma.
+
+El motor reproduce solo los retratos visibles, prepara el siguiente y detiene los clips al salir del escenario, ocultar la pestaña o abrir el episodio. Los fundidos son reversibles al hacer scroll. Con movimiento reducido o sin WebGL se muestran los retratos estáticos. El ascenso usa un vídeo de cinco segundos con fotogramas clave próximos para responder al scroll en ambos sentidos.
+
+## 15 · Validación de la revisión synthwave
+- Compilación Astro final correcta y `git diff --check` sin incidencias.
+- Siete capítulos verificados a 320, 390, 768 y 1440 px; escena accesible correcta y sin desbordamiento horizontal. Recorrido con vídeo revisado a 390, 768 y 1440 px.
+- Confirmado avance real del vídeo del CEO; un único clip se reproduce en cada capítulo estable y los demás quedan pausados. Durante un fundido pueden coexistir los dos clips implicados.
+- Movimiento reducido: todos los vídeos pausados. Escenario fuera de pantalla: todos pausados. Sin WebGL: se muestra el WebP transparente y no se solicita el clip del personaje.
+- Ascenso probado al 97% del recorrido: vídeo en 4,65 s, datos disponibles y sin búsqueda pendiente. La descripción se desvanece al despegar para dejar libre el paso del CEO.
+- Reproductor del episodio: reproducción real del original de 368,48 s; Escape cierra y el evento de cierre pausa el vídeo.
+- Recorrido instrumentado sin excepciones JavaScript ni respuestas HTTP de error. Versionadas las URL finales para descartar los vídeos provisionales de la caché.
+- Inspección visual final de CEO y perro en escritorio y móvil, con las máscaras corregidas. Capturas en `references/synth-*-final.png`.
+- Los seis clips con máscaras y sus seis imágenes de reserva ocupan aproximadamente 4,7 MB en conjunto. Se conservan los retratos aprobados anteriores y el episodio original.
