@@ -51,7 +51,6 @@ export function initExperience() {
       dialog.showModal();
     }
   }));
-  document.querySelector('#quantum-switch-episode')?.addEventListener('click',()=>showEpisode());
   document.querySelector('#close-player')!.addEventListener('click',()=>dialog.close());
   dialog.addEventListener('click',event=>{if(event.target===dialog){const b=dialog.getBoundingClientRect();if(event.clientX<b.left||event.clientX>b.right||event.clientY<b.top||event.clientY>b.bottom)dialog.close();}});
   dialog.addEventListener('close',()=>{video.pause();opener?.focus({preventScroll:true});});
