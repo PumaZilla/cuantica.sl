@@ -2,14 +2,14 @@
 import '../styles/global.css';
 import '../styles/celestial.css';
 import Brand from '../components/Brand.astro';
-import { site, team, experiments, heroChapters } from '../content/site';
+import { site, team, experiments } from '../content/site';
 ---
 <!doctype html>
 <html lang="es">
 <head>
 <meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
-<meta name="theme-color" content="#121713"/><title>Cuántica SL — El universo de David.</title>
-<meta name="description" content={site.description}/><meta property="og:title" content="Cuántica SL — El universo de David."/><meta property="og:description" content={site.description}/><meta property="og:image" content={site.hero}/>
+<meta name="theme-color" content="#0b1d2c"/><title>{site.name} — {site.title}</title>
+<meta name="description" content={site.description}/><meta property="og:title" content={`${site.name} — ${site.title}`}/><meta property="og:description" content={site.description}/><meta property="og:image" content={site.hero}/>
 <link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet"/>
@@ -19,24 +19,13 @@ import { site, team, experiments, heroChapters } from '../content/site';
 <body>
 <a class="skip-link" href="#episodio">Saltar al episodio</a>
 <main>
-<section class="celestial film-scroll" id="inicio" aria-label="El universo de David" data-manifest={site.heroManifest}>
+<section class="celestial film-scroll" id="inicio" aria-label="El universo de Cuántica SL" data-manifest={site.heroManifest} data-mobile-manifest={site.heroMobileManifest} data-end-frame="209">
 <span id="vision" class="vision-anchor" aria-hidden="true"></span>
 <div class="film-stage cosmic-stage">
-<img class="film-poster" src={site.hero} width="1920" height="1080" alt="David, como un inventor celestial, rodeado de una tostadora, un gato, un robot mecha y una poción del amor en un universo oscuro" fetchpriority="high"/>
+<img class="film-poster" src={site.hero} width="1920" height="1080" alt="David, CEO de Cuántica SL, asciende rodeado de los inventos de la empresa en un universo azul" fetchpriority="high"/>
 <canvas id="film-canvas" aria-hidden="true"></canvas>
-<div class="cosmic-shade" aria-hidden="true"></div>
-<header class="header cosmic-header"><Brand/><nav aria-label="Navegación principal"><a href="#vision">La visión</a><a href="#inventos">Los inventos</a><a href="#equipo">El equipo</a></nav><button class="button button-small" data-play>Ver episodio <span aria-hidden="true">↗</span></button></header>
-<div class="cosmic-kicker mono"><span><i class="dot"></i> CUÁNTICA SL / EL ORIGEN DE TODO</span><span>UNA WEBSERIE DE COMEDIA</span></div>
-<div class="cosmic-copy">
-{heroChapters.map((chapter,i)=><div class="cosmic-chapter" data-hero-chapter={i} hidden={i!==0} aria-hidden={i!==0}>
-<p class="mono chapter-eyebrow">{chapter.eyebrow}</p>
-{i===0?<h1>{chapter.title}<br/><span class="serif-word">{chapter.emphasis}</span></h1>:<h2>{chapter.title}<br/><span class="serif-word">{chapter.emphasis}</span></h2>}
-<p class="cosmic-description">{chapter.description}</p>
-</div>)}
-</div>
-<div class="cosmic-side mono" aria-hidden="true"><span>DAVID</span><span>CEO. CREADOR.<br/>MODESTIA PENDIENTE.</span><i></i></div>
-<div class="cosmic-bottom"><a href="#inventos" class="cosmic-skip"><span class="scroll-orbit" aria-hidden="true">↓</span><span>DESLIZA PARA EXPLORAR<br/><small>O SALTA A LOS INVENTOS ↘</small></span></a><span class="mono cosmic-status" aria-hidden="true"><span id="cosmic-chapter-number">01</span> / 03 <span class="cosmic-status-title">LA VISIÓN</span></span><button class="cosmic-motion mono" id="hero-motion-toggle" aria-pressed="false" aria-label="Reducir el movimiento del universo">PAUSAR MOVIMIENTO ◫</button></div>
-<div class="film-progress" aria-hidden="true"><i></i></div>
+<header class="header cosmic-header"><Brand/></header>
+<h1 class="cosmic-statement"><span class="statement-left">Sociedad<br/>limitada.</span><span class="statement-right">Experimentos<br/>sin control.</span></h1>
 </div>
 </section>
 <section class="manifesto section-wrap" id="inventos">
@@ -46,10 +35,10 @@ import { site, team, experiments, heroChapters } from '../content/site';
 <p class="lab-note mono">CONCEPTOS DEL UNIVERSO DE FICCIÓN. NO DISPONIBLES EN TIENDAS. MEJOR ASÍ.</p>
 </section>
 <section class="belief"><span class="mono">EL MÉTODO CUÁNTICA</span><p>Primero cambiamos el mundo.<br/><span>Luego leemos las instrucciones.</span></p><span class="belief-star" aria-hidden="true">✳</span></section>
-<section class="team section-wrap" id="equipo"><div class="section-label"><span>02 — EL FACTOR HUMANO</span><span>4 PERSONAS. 1 PERRO. NINGÚN PLAN B.</span></div><div class="section-heading"><h2>Toda gran visión necesita<br/>a alguien que <span class="serif-word">la aguante.</span></h2><p>Conoce a las mentes detrás del futuro.<br/>Y a quienes recogen después.</p></div>
-<div class="team-grid">{team.map((person,i)=><article class="person"><div class="person-photo"><img src={`/media/team/${person.image}.webp`} alt={`${person.name}, ${person.role}`} width="600" height="800" loading="lazy"/><span class="person-number mono">{String(i+1).padStart(2,'0')}</span><span class="person-badge">{i===0?'EL ORIGEN DE TODO':i===4?'BUEN CHICO*':'CUÁNTICA / PERSONAL'}</span></div><div class="person-title"><h3>{person.name}</h3><span aria-hidden="true">↗</span></div><p class="mono person-role">{person.role}</p><p class="person-line">{person.line}<br/><span>{person.aside}</span></p><details><summary>Conocer a {person.name}<span aria-hidden="true">+</span></summary><p>{person.description}</p></details></article>)}</div>
+<section class="team section-wrap" id="equipo"><div class="section-label"><span>02 — EL FACTOR HUMANO</span><span>4 PERSONAS. 1 PERRO. NINGÚN PLAN B.</span></div><div class="section-heading"><h2>Grandes ideas.<br/>Gente <span class="serif-word">haciendo lo que puede.</span></h2><p>Cinco formas de entender el futuro.<br/>Ninguna de ponerse de acuerdo.</p></div>
+<div class="team-grid">{team.map((person,i)=><article class="person"><div class="person-photo"><img src={`/media/team/${person.image}.webp`} alt={`${person.name}, ${person.role}`} width="600" height="800" loading="lazy"/><span class="person-number mono">{String(i+1).padStart(2,'0')}</span><span class="person-badge">{i===0?'DIRECCIÓN GENERAL':i===4?'BUEN CHICO*':'CUÁNTICA / PERSONAL'}</span></div><div class="person-title"><h3>{person.name}</h3><span aria-hidden="true">↗</span></div><p class="mono person-role">{person.role}</p><p class="person-line">{person.line}<br/><span>{person.aside}</span></p><details><summary>Conocer a {person.name}<span aria-hidden="true">+</span></summary><p>{person.description}</p></details></article>)}</div>
 </section>
-<section class="episode-section section-wrap" id="episodio"><div class="section-label"><span>03 — DE LA TEORÍA A LA COMEDIA</span><span><i class="dot"></i> EPISODIO DISPONIBLE</span></div><div class="episode-grid"><div><p class="mono">CUÁNTICA SL / LA WEBSERIE</p><h2>La teoría<br/>es brillante.<br/><span class="serif-word">Mira la práctica.</span></h2><p class="episode-description">Una empresa de aparatos científicos imposibles.<br/>Un jefe con demasiada fe en sí mismo.<br/>¿Qué podría salir bien?</p><button class="button" data-play>Ver el episodio completo <span aria-hidden="true">▶</span></button><p class="mono episode-duration">06:08 MIN · COMEDIA · EN ESPAÑOL</p></div><button class="episode-preview" data-play aria-label="Reproducir el episodio de Cuántica SL"><img src={site.poster} width="960" height="540" alt="David en la oficina, en una escena del episodio" loading="lazy"/><span class="play-circle" aria-hidden="true">▶</span><span class="preview-label mono">MENOS POWERPOINT. MÁS PLAY. <span>↗</span></span></button></div></section>
+<section class="episode-section section-wrap" id="episodio"><div class="section-label"><span>03 — DE LA TEORÍA A LA COMEDIA</span><span><i class="dot"></i> EPISODIO DISPONIBLE</span></div><div class="episode-grid"><div><p class="mono">CUÁNTICA SL / LA WEBSERIE</p><h2>La teoría<br/>es brillante.<br/><span class="serif-word">Mira la práctica.</span></h2><p class="episode-description">Una empresa de aparatos científicos imposibles.<br/>Un equipo que viene a trabajar y acaba haciendo historia.<br/>¿Qué podría salir bien?</p><button class="button" data-play>Ver el episodio completo <span aria-hidden="true">▶</span></button><p class="mono episode-duration">06:08 MIN · COMEDIA · EN ESPAÑOL</p></div><button class="episode-preview" data-play aria-label="Reproducir el episodio de Cuántica SL"><img src={site.poster} width="960" height="540" alt="David en la oficina, en una escena del episodio" loading="lazy"/><span class="play-circle" aria-hidden="true">▶</span><span class="preview-label mono">MENOS POWERPOINT. MÁS PLAY. <span>↗</span></span></button></div></section>
 </main>
 <footer class="footer"><div><Brand/><p>Sociedad limitada.<br/>Imaginación ilimitada.</p></div><a href="#inicio">Volver al principio <span aria-hidden="true">↑</span></a><div class="footer-bottom mono"><span>© 2026 CUÁNTICA SL — UNA EMPRESA DE FICCIÓN. POR SUERTE.</span><button id="motion-toggle" aria-pressed="false">Reducir movimiento</button></div></footer>
 <dialog id="episode-dialog" aria-labelledby="player-title"><div class="player-heading"><h2 id="player-title">Cuántica SL — El episodio</h2><button id="close-player" aria-label="Cerrar reproductor">Cerrar ×</button></div><video id="episode-player" controls playsinline preload="none" poster={site.poster} data-src={site.episode}></video><p id="player-error" hidden>No se ha podido reproducir. <a href={site.episode} download>Descargar el episodio</a>.</p></dialog>

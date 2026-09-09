@@ -1,9 +1,10 @@
 export const site = {
   name: 'Cuántica SL',
-  title: 'El futuro no se inventa solo.',
+  title: 'Sociedad limitada. Experimentos sin control.',
   description: 'Una webserie de comedia sobre una empresa que fabrica aparatos científicos descabellados. Mucha visión. Alguna que otra consecuencia.',
-  hero: '/media/celestial/poster.webp',
-  heroManifest: '/media/celestial/manifest.json',
+  hero: '/media/david-orbits-hd/poster.webp',
+  heroManifest: '/media/david-orbits-hd/manifest.json',
+  heroMobileManifest: '/media/david-orbits-hd/manifest.json',
   episode: '/media/episode.mp4',
   poster: '/media/episode-poster.jpg',
 };
@@ -18,10 +19,4 @@ export const experiments = [
  { code:'Q–001', name:'Tostadora cuántica', category:'DESAYUNO EXPERIMENTAL', description:'La tostada está cruda y quemada a la vez. Hasta que la miras. Entonces solo está quemada.', status:'En fase de desayuno', symbol:'toast' },
  { code:'Q–002', name:'Router del más allá', category:'TELECOMUNICACIÓN ESPIRITUAL', description:'Conecta con otra dimensión. La cobertura en la sala de reuniones sigue pendiente.', status:'Buscando señal…', symbol:'signal' },
  { code:'Q–003', name:'Traductor de ladridos', category:'INTELIGENCIA CANINA', description:'Por fin sabrás qué piensa tu perro. Puede que prefirieras no saberlo.', status:'Bobby no hace declaraciones', symbol:'dog' },
-];
-
-export const heroChapters = [
- { eyebrow:'01 / LA VISIÓN', title:'El futuro empieza', emphasis:'por él.', description:'David no tiene los pies en la Tierra. Su empresa tampoco.' },
- { eyebrow:'02 / LA CREACIÓN', title:'Una mente.', emphasis:'Demasiadas ideas.', description:'Una tostadora. Un gato. Un mecha. Una poción del amor. Todo tenía sentido en su cabeza.' },
- { eyebrow:'03 / EL UNIVERSO CUÁNTICA', title:'Sociedad limitada.', emphasis:'Universo ilimitado.', description:'Y un equipo que, de alguna manera, tiene que hacer que esto funcione.' },
 ];
