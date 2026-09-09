@@ -40,8 +40,9 @@ html.hero-scroll-locked,html.hero-scroll-locked body{overflow:hidden;overscroll-
 .statement-shadow{position:absolute;inset:0;z-index:-1;pointer-events:none;user-select:none;color:#000;-webkit-text-fill-color:#000;-webkit-text-stroke:0;paint-order:normal;text-shadow:1px 1px 0 #000,2px 2px 0 #000,3px 3px 0 #000,4px 4px 0 #000,5px 5px 0 #000,6px 6px 0 #000}
 @media(max-width:680px){.statement-shadow{text-shadow:1px 1px 0 #000,2px 2px 0 #000,3px 3px 0 #000,3px 4px 0 #000}}
 
-/* Balance the two desktop lines and use the instruction-note treatment on mobile. */
+/* Match desktop line widths and center each block independently. */
 @media(min-width:681px){
+ .cosmic-statement>.statement-left,.cosmic-statement>.statement-right{bottom:calc(50% - 10px);translate:0 50%}
  .statement-face,.statement-shadow{display:flex;flex-direction:column;gap:.06em;line-height:1}
  .statement-left .statement-face,.statement-left .statement-shadow{align-items:flex-start}
  .statement-right .statement-face,.statement-right .statement-shadow{align-items:flex-end}
@@ -51,8 +52,7 @@ html.hero-scroll-locked,html.hero-scroll-locked body{overflow:hidden;overscroll-
  .statement-right .statement-second{font-size:.702em}
 }
 @media(max-width:680px){
- .cosmic-statement{padding:16px 10px;background:var(--paper);border:2px solid var(--surface);box-shadow:5px 5px 0 var(--surface);color:var(--surface);opacity:var(--left-opacity,1);transform:translateY(calc(var(--left-rise,0) * -32svh));will-change:transform,opacity}
- .cosmic-statement>.statement-left,.cosmic-statement>.statement-right{-webkit-text-stroke:0;opacity:1;transform:none;will-change:auto}
+ .cosmic-statement{rotate:-2deg;opacity:var(--left-opacity,1);transform:translateY(calc(var(--left-rise,0) * -32svh));will-change:transform,opacity}
+ .cosmic-statement>.statement-left,.cosmic-statement>.statement-right{-webkit-text-stroke:1px #000;opacity:1;transform:none;will-change:auto}
  .reduced .cosmic-statement{opacity:1;transform:none;will-change:auto}
- .cosmic-statement .statement-shadow{display:none}
 }
