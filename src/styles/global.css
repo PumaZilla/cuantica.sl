@@ -106,7 +106,7 @@
 .tv-shop .tv-strip{border:3px solid var(--ad-black);box-shadow:5px 5px 0 var(--ad-black)}
 .tv-shop .tv-strip>span:nth-child(2){background:var(--ad-yellow);color:var(--ad-black);padding:8px 12px;transform:rotate(-2deg);font-size:15px}
 .tv-shop .shop-heading{padding-top:12px}
-.tv-shop .shop-heading h2{font-family:Impact,'Arial Black',sans-serif;text-transform:uppercase;font-weight:900;letter-spacing:-.015em;font-size:clamp(38px,5.5vw,88px);line-height:1.04;color:var(--paper);-webkit-text-stroke:4px #000;paint-order:stroke fill;text-shadow:6px 6px 0 #000;transform:skew(-3deg);transform-origin:left}
+.tv-shop .shop-heading h2{font-family:Impact,'Arial Black',sans-serif;text-transform:uppercase;font-weight:900;letter-spacing:-.015em;font-size:clamp(38px,5.5vw,88px);line-height:1.04;color:var(--paper);-webkit-text-stroke:2px var(--surface);paint-order:stroke fill;text-shadow:6px 6px 0 #000;transform:skew(-3deg);transform-origin:left}
 .tv-hype{display:flex;justify-content:space-between;align-items:center;gap:20px;margin:0 0 28px}
 .tv-hype>strong{font:900 clamp(24px,3vw,44px)/1 Impact,'Arial Black',sans-serif;background:#ff9636;color:var(--ad-black);padding:16px 22px;border:3px solid var(--ad-black);box-shadow:5px 5px 0 var(--ad-black);transform:rotate(-2deg)}
 .tv-timer{display:flex;align-items:center;gap:15px;max-width:310px}.tv-timer small{font:700 10px/1.4 monospace}.tv-timer b{font:700 38px/1 monospace;background:var(--ad-black);color:var(--ad-yellow);padding:10px;white-space:nowrap}
@@ -128,7 +128,7 @@
 .tv-shop .product-buy:hover{background:#b5ff36;color:var(--ad-black);transform:rotate(-1deg) translateY(-2px)}
 .tv-shop .product-buy:focus-visible{outline:3px solid var(--surface);outline-offset:7px}
 .tv-shop .tv-guarantee{border-top:4px solid var(--surface)}
-@media(max-width:680px){.tv-shop .shop-heading h2{font-size:clamp(34px,9vw,52px);text-shadow:3px 4px 0 #000;-webkit-text-stroke:2.5px #000}.tv-shop .tv-strip>span:nth-child(2){font-size:10px}.tv-hype{align-items:stretch;flex-direction:column;gap:18px}.tv-hype>strong{font-size:28px;padding:14px}.tv-timer{max-width:none;justify-content:space-between}.tv-timer b{font-size:30px}.tv-shop .experiments{gap:32px}.tv-shop .product-buy{font-size:34px}}
+@media(max-width:680px){.tv-shop .shop-heading h2{font-size:clamp(34px,9vw,52px);text-shadow:3px 4px 0 #000;-webkit-text-stroke:2px var(--surface)}.tv-shop .tv-strip>span:nth-child(2){font-size:10px}.tv-hype{align-items:stretch;flex-direction:column;gap:18px}.tv-hype>strong{font-size:28px;padding:14px}.tv-timer{max-width:none;justify-content:space-between}.tv-timer b{font-size:30px}.tv-shop .experiments{gap:32px}.tv-shop .product-buy{font-size:34px}}
 
 /* Six homemade inventions and a deliberately absurd long-running offer. */
 .tv-shop .tv-strip>span:nth-child(2){margin-left:auto;text-align:right}
