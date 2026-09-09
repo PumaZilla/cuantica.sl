@@ -2,7 +2,7 @@
 import '../styles/global.css';
 const crew = [
  { id:'vision', role:'EL VISIONARIO', department:'DIRECCIÓN GENERAL', title:['El futuro','tiene cara.'], text:'Y unas gafas bastante grandes. Conoce al hombre que está dispuesto a cambiarlo todo. Excepto de opinión.', foot:'CEO, fundador y próximo paso de la evolución.', image:'ceo', stat:'∞', unit:'VISIÓN DE FUTURO' },
- { id:'hacker', role:'KIKE / EL INFORMÁTICO', department:'SISTEMAS / O ALGO ASÍ', title:['Acceso','ilimitado.'], text:'Puede entrar en cualquier sistema. Salir de una reunión ya es otra cosa.', foot:'La única contraseña que no sabe es «vacaciones».', image:'hacker', stat:'404', unit:'LÍMITES NO ENCONTRADOS' },
+ { id:'hacker', role:'EL HACKER', department:'SISTEMAS / O ALGO ASÍ', title:['Acceso','ilimitado.'], text:'Puede entrar en cualquier sistema. Salir de una reunión ya es otra cosa.', foot:'La única contraseña que no sabe es «vacaciones».', image:'hacker', stat:'404', unit:'LÍMITES NO ENCONTRADOS' },
  { id:'cientifica', role:'LA CIENTÍFICA', department:'INVESTIGACIÓN Y DESARROLLO', title:['Todo tiene','una fórmula.'], text:'Incluso el desastre. Ella pone la ciencia. Los demás ponen a prueba su paciencia.', foot:'La razón en una empresa que la ha perdido.', image:'cientifica', stat:'99,9', unit:'% DE PACIENCIA AGOTADA' },
  { id:'redes', role:'LA DE REDES', department:'COMUNICACIÓN INTERDIMENSIONAL', title:['Si no se sube,','no existe.'], text:'Convierte cada crisis en contenido. Y aquí el calendario editorial se escribe solo.', foot:'Haciendo viral lo que debería ser confidencial.', image:'redes', stat:'#1', unit:'EN GESTIÓN DE CRISIS' },
  { id:'perro', role:'EL PERRO', department:'TALENTO NO CONVENCIONAL', title:['Un perfil','muy distinto.'], text:'No ladra a las ideas nuevas. Bueno, a algunas sí. El fichaje que nadie sabe muy bien cómo explicar.', foot:'Recursos humanos todavía está buscando la categoría.', image:'perro', stat:'100', unit:'% BUEN CHICO. EN TEORÍA.' },
@@ -14,14 +14,14 @@ const crew = [
  <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#130820" />
+  <meta name="theme-color" content="#080909" />
   <meta name="description" content="Cuántica SL. Una webserie de comedia sobre una empresa de ciencia, grandes ideas y consecuencias imprevisibles. Entra en nuestra órbita." />
   <title>Cuántica SL — El futuro tiene cara.</title>
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="preload" href="/media/motion/ceo.webp?v=synth-1" as="image" />
+  <link rel="preload" href="/media/portraits/ceo.webp?v=2" as="image" />
  </head>
  <body>
   <a class="skip-link" href="#episodio">Saltar al episodio</a>
@@ -32,18 +32,13 @@ const crew = [
   <main>
    <div class="story" id="story">
     <div class="stage" id="stage">
-     <div class="synth-atmosphere" aria-hidden="true"><div class="synth-sun"></div><div class="horizon-glow"></div><div class="synth-grid"></div><div class="giant-word">CUÁNTICA</div></div>
      <canvas id="universe" aria-hidden="true"></canvas>
-     <div class="coordinate coordinate-top" aria-hidden="true">SEÑAL CUÁNTICA · CANAL <span id="specimen">001</span><i></i> EN OTRA FRECUENCIA</div>
-     <div class="orbital-field" aria-hidden="true"><div class="orbit orbit-a"></div><div class="orbit orbit-b"></div><div class="orbit orbit-c"></div><div class="orbit-mark">+</div><span class="orbit-label">CIENCIA FUERA DE ÓRBITA</span></div>
+     <div class="coordinate coordinate-top" aria-hidden="true">CUÁNTICA LABS · ESPÉCIMEN <span id="specimen">001</span><i></i> SISTEMA INESTABLE</div>
+     <div class="orbital-field" aria-hidden="true"><div class="orbit orbit-a"></div><div class="orbit orbit-b"></div><div class="orbit orbit-c"></div><div class="orbit-mark">+</div><span class="orbit-label">POTENCIAL SIN DEMOSTRAR</span></div>
      <div class="portrait-stage" id="portraits" aria-hidden="true">
-      {['ceo','hacker','cientifica','redes','perro'].map((name,i)=><div class:list={['character-film',{'initial':i===0}]} data-portrait={name}>
-       <img class="portrait" src={`/media/motion/${name}.webp?v=synth-1`} alt="" width="900" height="1200" decoding="async" loading={i===0?'eager':'lazy'} />
-       <canvas class="character-canvas"></canvas>
-       <video class="character-video" data-film={name} data-src={`/media/motion/${name}.mp4?v=synth-1`} muted loop playsinline preload="none"></video>
-      </div>)}
+      {['ceo','hacker','cientifica','redes','perro'].map((name,i)=><img class:list={['portrait',{'initial':i===0}]} data-portrait={name} src={`/media/portraits/${name}.webp${['ceo','hacker'].includes(name) ? '?v=2' : ''}`} alt="" width="900" height="1200" decoding="async" loading={i===0?'eager':'lazy'} />)}
      </div>
-     <div class="ascent-visual" id="ascent-visual" aria-hidden="true"><img src="/media/motion/ascent.webp?v=synth-1" alt="" width="900" height="1200" loading="lazy"/><canvas class="character-canvas"></canvas><video id="ascent-video" data-src="/media/motion/ascent.mp4?v=synth-1" muted playsinline preload="none"></video></div>
+     <div class="ascent-visual" id="ascent-visual" aria-hidden="true"><img src="/media/portraits/ascent.webp?v=2" alt="" width="900" height="1200" loading="lazy"/></div>
      <div class="scene-copy">
       {crew.map((person,i)=><section class:list={['scene',{'is-active':i===0}]} data-scene={i} data-role={person.role} data-department={person.department} data-stat={person.stat} data-unit={person.unit} data-image={person.image} aria-hidden={i!==0}>
        <p class="eyebrow"><span class="status-dot"></span> {String(i+1).padStart(2,'0')} / {person.role}</p>
@@ -60,7 +55,7 @@ const crew = [
       <a href="#orbita" data-chapter="6" aria-label="7. Ascenso espacial"><span>07</span><i></i></a>
      </nav>
      <div class="stage-bottom"><a href="#hacker" id="scroll-next" class="scroll-cue"><span class="down-arrow">↓</span><span>DESLIZA PARA CAMBIAR<br/>DE MENTE.</span></a><span class="series-label">UNA WEBSERIE DE COMEDIA.<br/><span>UNA EMPRESA MUY EN SERIO.</span></span><div class="progress-info"><span id="progress-number">00</span><span> / 100</span><div class="progress-track"><i id="progress-bar"></i></div></div></div>
-     <div class="edge-word" aria-hidden="true">REALIDAD ALTERNATIVA / SEÑAL EN DIRECTO</div>
+     <div class="edge-word" aria-hidden="true">NO HAY PLAN B. HAY I+D.</div>
     </div>
     <div class="story-anchors" aria-hidden="true">{crew.map((p,i)=><div id={p.id} style={`top:${i*100/7}%`}></div>)}<div id="orbita" style="top:85.714%"></div></div>
    </div>
