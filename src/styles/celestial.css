@@ -60,7 +60,18 @@ html.hero-scroll-locked,html.hero-scroll-locked body{overflow:hidden;overscroll-
 /* One pair encloses the entire two-line aside on desktop. */
 @media(min-width:681px){
  .statement-right .statement-face,.statement-right .statement-shadow{width:max-content;margin-left:auto;padding-inline:.7em}
- .statement-right .statement-parenthesis{position:absolute;top:50%;translate:0 -50%;font-family:Arial,sans-serif;font-weight:400;font-size:1.95em;line-height:1}
+ .statement-right .statement-parenthesis{position:absolute;top:50%;translate:0 calc(-50% - .07em);scale:1 .84;font-family:Arial,sans-serif;font-weight:400;font-size:1.95em;line-height:1}
  .statement-right .parenthesis-open{left:0}
  .statement-right .parenthesis-close{right:0}
 }
+
+/* Hold the first view until the forward hero video is available locally. */
+html:has(.hero-loader:not([hidden]):not(.is-leaving)){overflow:hidden}
+.hero-loader{position:fixed;inset:0;z-index:200;display:grid;place-items:center;background:var(--paper);opacity:1;transition:opacity .45s ease}
+.hero-loader[hidden]{display:none}
+.hero-loader.is-leaving{opacity:0;pointer-events:none}
+.hero-loader-logo{width:clamp(120px,24vw,190px);height:auto;overflow:visible;transform-origin:50% 100%;animation:loader-bounce 4s ease-in-out infinite}
+@keyframes loader-bounce{0%,70%,100%{transform:translateY(0) scale(1)}75%{transform:translateY(0) scale(1.05,.95)}83%{transform:translateY(-28px) scale(.98,1.02)}91%{transform:translateY(0) scale(1.08,.92)}96%{transform:translateY(-2px) scale(1)}}
+.hero-loader-content{display:flex;flex-direction:column;align-items:center;gap:32px;color:var(--surface);padding:24px;width:100%;text-align:center}
+#hero-loader-message{font-family:monospace;font-size:clamp(12px,2.8vw,14px);line-height:1.5;min-height:3em;max-width:34ch;margin:0}
+@media(prefers-reduced-motion:reduce){.hero-loader-logo{animation:none}.hero-loader{transition:none}}
