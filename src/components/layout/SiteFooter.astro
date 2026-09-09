@@ -1,7 +1,7 @@
 ---
 import Brand from '../Brand.astro';
-import fecytLogo from '../../assets/brand/logo-ministerio-ciencia-fecyt.png?url';
-import ceoAbertoLogo from '../../assets/brand/logo-ceo-aberto.png?url';
+import fecytLogo from '../../assets/brand/logo-ministerio-ciencia-fecyt.svg?url';
+import ceoAbertoLogo from '../../assets/brand/logo-ceo-aberto.svg?url';
 ---
 <footer class="footer">
   <div>
@@ -11,12 +11,8 @@ import ceoAbertoLogo from '../../assets/brand/logo-ceo-aberto.png?url';
   <div class="footer-collab">
     <span class="footer-collab-label mono">Con la colaboración de</span>
     <div class="footer-collab-logos">
-      <div class="footer-logo-badge">
-        <img src={fecytLogo} alt="Gobierno de España - Ministerio de Ciencia e Innovación - FECYT" class="footer-logo-fecyt" width="105" height="38" loading="lazy" />
-      </div>
-      <div class="footer-logo-badge">
-        <img src={ceoAbertoLogo} alt="Ceo Aberto" class="footer-logo-ceo" width="38" height="38" loading="lazy" />
-      </div>
+      <img src={fecytLogo} alt="Gobierno de España - Ministerio de Ciencia e Innovación - FECYT" class="footer-logo-fecyt" width="145" height="28" loading="lazy" />
+      <img src={ceoAbertoLogo} alt="Ceo Aberto" class="footer-logo-ceo" width="28" height="28" loading="lazy" />
     </div>
   </div>
   <div class="footer-bottom mono">
