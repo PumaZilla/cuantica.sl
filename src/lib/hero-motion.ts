@@ -59,10 +59,7 @@ export function initHeroMotion(signal: AbortSignal) {
   function load(video = forward) {
     if (reduced || failed || video.getAttribute('src')) return;
     video.muted = true;
-    video.src =
-      matchMedia('(max-width: 680px)').matches && video.dataset.srcMobile
-        ? video.dataset.srcMobile
-        : video.dataset.src!;
+    video.src = video.dataset.src!;
     video.load();
   }
   function labels(frame: number) {
