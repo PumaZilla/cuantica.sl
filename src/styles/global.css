@@ -487,9 +487,8 @@
   .shop-placeholder{display:flex;align-items:center;justify-content:center;border:3px dashed var(--dust);background:rgba(168,188,208,0.08);color:var(--dust);padding:40px 24px;box-sizing:border-box;text-align:center;min-height:100%;transition:border-color .2s,color .2s,background-color .2s}
   .shop-placeholder:hover{border-color:var(--surface);color:var(--surface);background:rgba(18,29,45,0.04)}
 }
-.shop-placeholder-inner{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;max-width:280px}
-.shop-placeholder-symbol{color:inherit;opacity:0.6;margin-bottom:2px}
-.shop-placeholder-code{font-size:12px;letter-spacing:2px;opacity:0.75;color:inherit}
-.shop-placeholder-title{font-family:Impact,'Arial Black',sans-serif;font-size:clamp(30px,2.6vw,40px);text-transform:uppercase;line-height:1.05;letter-spacing:-0.01em;color:inherit;margin:0}
-.shop-placeholder-desc{font-family:var(--body);font-size:17px;line-height:1.4;color:inherit;opacity:0.85;margin:0;font-weight:500}
+.shop-placeholder-inner{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:14px;max-width:320px;margin:auto}
+.shop-placeholder-title{font-family:Impact,'Arial Black',sans-serif;font-size:clamp(32px,2.8vw,44px);text-transform:uppercase;line-height:1.05;letter-spacing:-0.01em;color:inherit;margin:0;text-align:center}
+.shop-placeholder-desc{font-family:var(--body);font-size:clamp(16px,1.4vw,19px);line-height:1.45;color:inherit;opacity:0.85;margin:0;font-weight:500;text-align:center}
+
 
