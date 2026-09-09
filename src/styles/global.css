@@ -426,7 +426,7 @@
 /* Slow seamless supporting-cast carousel. */
 .supporting-cast{position:relative}
 .supporting-pause{display:block;margin:-16px 0 20px auto;padding:6px 10px;border:1px solid var(--surface);background:transparent;color:var(--surface);font-size:10px;cursor:pointer}
-.supporting-viewport{overflow:clip;touch-action:pan-y pinch-zoom;padding:0 0 8px}
+.supporting-viewport{overflow:clip;touch-action:pan-y pinch-zoom;padding:0 0 8px;-webkit-mask-image:linear-gradient(to right,transparent,#000 clamp(24px,6vw,80px),#000 calc(100% - clamp(24px,6vw,80px)),transparent);mask-image:linear-gradient(to right,transparent,#000 clamp(24px,6vw,80px),#000 calc(100% - clamp(24px,6vw,80px)),transparent)}
 .supporting-track{display:flex;width:max-content;animation:supporting-drift 85s linear infinite}
 .supporting-track .supporting-grid{display:flex;gap:16px;padding-right:16px;flex-shrink:0}
 .supporting-track .supporting-person{flex:0 0 180px;width:180px}
