@@ -25,18 +25,36 @@ export function initExperience() {
  const abort = new AbortController();
  initHeroMotion(abort.signal);
  initSupportingCarousel(abort.signal);
- const dialog=document.querySelector<HTMLDialogElement>('#episode-dialog')!;
- const video=document.querySelector<HTMLVideoElement>('#episode-player')!;
- const error=document.querySelector<HTMLElement>('#player-error')!;
- let opener:HTMLElement|null=null;
- document.querySelectorAll<HTMLButtonElement>('[data-play]').forEach(button=>button.addEventListener('click',()=>{
-   opener=button;error.hidden=true;
-   if(!video.getAttribute('src'))video.src=video.dataset.src!;
-   dialog.showModal();video.play().catch(()=>{/* Native controls remain available if playback needs another gesture. */});
- }));
- document.querySelector('#close-player')!.addEventListener('click',()=>dialog.close());
- dialog.addEventListener('click',event=>{if(event.target===dialog){const b=dialog.getBoundingClientRect();if(event.clientX<b.left||event.clientX>b.right||event.clientY<b.top||event.clientY>b.bottom)dialog.close();}});
- dialog.addEventListener('close',()=>{video.pause();opener?.focus({preventScroll:true});});
- video.addEventListener('error',()=>{error.hidden=false;});
+  const dialog=document.querySelector<HTMLDialogElement>('#episode-dialog')!;
+  const video=document.querySelector<HTMLVideoElement>('#episode-player')!;
+  const error=document.querySelector<HTMLElement>('#player-error')!;
+  const quantumNotice=document.querySelector<HTMLElement>('#quantum-notice');
+  const playerMeta=document.querySelector<HTMLElement>('#player-meta');
+  let opener:HTMLElement|null=null;
+  function showEpisode(){
+    if(quantumNotice)quantumNotice.hidden=true;
+    video.hidden=false;
+    if(playerMeta)playerMeta.textContent=playerMeta.dataset.episodeLabel||'Temporada 1, Episodio 8';
+    if(!video.getAttribute('src'))video.src=video.dataset.src!;
+    dialog.showModal();
+    video.play().catch(()=>{/* Native controls remain available if playback needs another gesture. */});
+  }
+  document.querySelectorAll<HTMLButtonElement>('[data-play]').forEach(button=>button.addEventListener('click',()=>{
+    opener=button;error.hidden=true;
+    if(button.dataset.play==='episode'){
+      showEpisode();
+    }else{
+      video.pause();
+      video.hidden=true;
+      if(quantumNotice)quantumNotice.hidden=false;
+      if(playerMeta)playerMeta.textContent=button.dataset.productName||'Video cuántico';
+      dialog.showModal();
+    }
+  }));
+  document.querySelector('#quantum-switch-episode')?.addEventListener('click',()=>showEpisode());
+  document.querySelector('#close-player')!.addEventListener('click',()=>dialog.close());
+  dialog.addEventListener('click',event=>{if(event.target===dialog){const b=dialog.getBoundingClientRect();if(event.clientX<b.left||event.clientX>b.right||event.clientY<b.top||event.clientY>b.bottom)dialog.close();}});
+  dialog.addEventListener('close',()=>{video.pause();opener?.focus({preventScroll:true});});
+  video.addEventListener('error',()=>{error.hidden=false;});
  window.addEventListener('pagehide',event=>{if(event.persisted)return;clearInterval(offerInterval);abort.abort();},{once:true});
 }

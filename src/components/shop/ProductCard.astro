@@ -2,5 +2,6 @@
 import type { products } from '../../content/products';
 interface Props { item: (typeof products)[number] }
 const { item } = Astro.props;
+const isEpisode = item.code === 'Q–008';
 ---
-<article class="experiment"><div class="experiment-top"><span>{item.offer}</span><span class="mono">{item.code}</span></div><div class="product-photo"><img src={item.image} alt={item.alt} width="1024" height="1024" loading="lazy"/><span class="tv-seal">{item.seal}</span></div><h3>{item.name}</h3><p class="tv-promise">{item.promise}</p><div class="tv-price"><span>ANTES <s>{item.oldPrice}</s></span><strong>{item.price}<small>€*</small></strong></div><button class="button product-buy" type="button" data-play aria-label={`Comprar ${item.name}`} aria-haspopup="dialog">COMPRA YA <span aria-hidden="true">↗</span></button></article>
+<article class="experiment"><div class="experiment-top"><span>{item.offer}</span><span class="mono">{item.code}</span></div><div class="product-photo"><img src={item.image} alt={item.alt} width="1024" height="1024" loading="lazy"/><span class="tv-seal">{item.seal}</span></div><h3>{item.name}</h3><p class="tv-promise">{item.promise}</p><div class="tv-price"><span>ANTES <s>{item.oldPrice}</s></span><strong>{item.price}<small>€*</small></strong></div><button class="button product-buy" type="button" data-play={isEpisode ? 'episode' : 'quantum'} data-product-name={item.name} aria-label={`Comprar ${item.name}`} aria-haspopup="dialog">COMPRA YA <span aria-hidden="true">↗</span></button></article>
