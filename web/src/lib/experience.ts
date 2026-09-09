@@ -15,16 +15,12 @@ export function initExperience() {
  let cacheLimit = 20;
  let playbackFrames: number[] = [];
  let wantedPosition = 0;
- const cutSnapshot = document.createElement('canvas');
- const cutContext = cutSnapshot.getContext('2d');
- let cutStarted: number | null = null;
- const cutDuration = 160;
  const cache = new Map<number, ImageBitmap>();
  const pending = new Set<number>();
  const failures = new Map<number,number>();
  const abort = new AbortController();
  const clamp = (n:number) => Math.min(1,Math.max(0,n));
- // User-selected closing composition: frame 209 (8.708 seconds).
+ // Play the approved continuous take through its final frame.
  const requestedEndFrame = Number(story.dataset.endFrame);
  const lastFrame = () => manifest ? Math.min(manifest.count-1, Number.isInteger(requestedEndFrame) && requestedEndFrame >= 0 ? requestedEndFrame : manifest.count-1) : 0;
  function schedule(){ if (!raf && alive) raf=requestAnimationFrame(render); }
@@ -36,8 +32,7 @@ export function initExperience() {
      manifest=data;
      // Bound decoded image memory as source resolution increases.
      cacheLimit=Math.max(5,Math.min(20,Math.floor(160*1024*1024/(data.width*data.height*4))));
-     // Remove frames 2–26; resume at 27 without changing the closing frame.
-     playbackFrames=Array.from({length:lastFrame()+1},(_,index)=>index).filter(index=>index<2||index>=27);
+     playbackFrames=Array.from({length:lastFrame()+1},(_,index)=>index);
      schedule();
    }).catch(()=>{/* The generated still remains a usable background if media cannot load. */});
  }
@@ -50,20 +45,18 @@ export function initExperience() {
      toggle.textContent=reduced?'Activar movimiento':'Reducir movimiento';
      toggle.setAttribute('aria-label',reduced?'Activar el movimiento del universo':'Reducir el movimiento del universo');
    }
-   canvas.style.opacity='0';current=-1;cutStarted=null;
+   canvas.style.opacity='0';current=-1;
    if(keepStage&&onStage)window.scrollTo({top:window.scrollY+rect.top,behavior:'instant'});
    loadManifest();schedule();
  }
  toggles.forEach(toggle=>toggle.addEventListener('click',()=>{reduced=!reduced;try{localStorage.setItem('cuantica-reduced',String(reduced));}catch{}setMotion(true);}));
  preference.addEventListener('change',event=>{reduced=event.matches;setMotion(true);},{signal:abort.signal});
- function paint(bitmap:ImageBitmap, blend=1){
+ function paint(bitmap:ImageBitmap){
    if(!ctx)return;
    const w=canvas.width,h=canvas.height;
    const scale=Math.max(w/bitmap.width,h/bitmap.height);
    // One shared centered crop for poster and frames: David remains the mobile focal point.
    ctx.clearRect(0,0,w,h);
-   if(blend<1)ctx.drawImage(cutSnapshot,0,0,w,h);
-   ctx.globalAlpha=blend;
    ctx.drawImage(bitmap,(w-bitmap.width*scale)/2,(h-bitmap.height*scale)/2,bitmap.width*scale,bitmap.height*scale);
    ctx.globalAlpha=1;
    canvas.style.opacity='1';
@@ -103,19 +96,8 @@ export function initExperience() {
    // Start immediately on scroll; retain only the 6% closing hold.
    if(cache.size){
      const nearest=cache.has(wanted)?wanted:[...cache.keys()].sort((a,b)=>Math.abs(a-wanted)-Math.abs(b-wanted))[0];
-     // Brief dissolve only across the removed interval, in either scroll direction.
-     const crossesCut=current>=0&&((current<=1&&nearest>=27)||(current>=27&&nearest<=1));
-     if(crossesCut&&cutContext){
-       cutSnapshot.width=canvas.width;cutSnapshot.height=canvas.height;
-       cutContext.drawImage(canvas,0,0);
-       cutStarted=performance.now();
-     }
-     if(current!==nearest||cutStarted!==null){
-       const elapsed=cutStarted===null?1:clamp((performance.now()-cutStarted)/cutDuration);
-       const blend=elapsed*elapsed*(3-2*elapsed);
-       paint(cache.get(nearest)!,blend);current=nearest;
-       stage.dataset.cutBlend=blend.toFixed(3);
-       if(elapsed<1)schedule();else cutStarted=null;
+     if(current!==nearest){
+       paint(cache.get(nearest)!);current=nearest;
      }
    }
    stage.dataset.frame=String(current);
@@ -123,7 +105,7 @@ export function initExperience() {
    pump();
  }
  const observer=new IntersectionObserver(entries=>{visible=entries[0].isIntersecting;if(visible)schedule();},{rootMargin:'200px'});observer.observe(story);
- const resize=new ResizeObserver(()=>{const ratio=Math.min(devicePixelRatio,2);canvas.width=Math.round(stage.clientWidth*ratio);canvas.height=Math.round(stage.clientHeight*ratio);current=-1;cutStarted=null;schedule();});resize.observe(stage);
+ const resize=new ResizeObserver(()=>{const ratio=Math.min(devicePixelRatio,2);canvas.width=Math.round(stage.clientWidth*ratio);canvas.height=Math.round(stage.clientHeight*ratio);current=-1;schedule();});resize.observe(stage);
  window.addEventListener('scroll',schedule,{passive:true,signal:abort.signal});
  document.addEventListener('visibilitychange',schedule,{signal:abort.signal});
  setMotion();

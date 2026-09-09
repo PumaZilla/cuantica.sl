@@ -17,3 +17,13 @@ dist/
 /old/previous-web/public/media/
 /references/*-generated-v2.png
 /references/identity-v2/
+
+# Local production masters and intermediate visual reviews (approved assets are tracked).
+/references/**/*.mp4
+/references/**/*.png
+/references/**/*.jpg
+/references/**/*.webp
+/references/rebuild/source-before/
+/references/rebuild/source-sequence-with-cut/
+/references/synthwave/
+/web/public/media/david-orbits/

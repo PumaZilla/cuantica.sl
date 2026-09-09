@@ -2,9 +2,9 @@ export const site = {
   name: 'Cuántica SL',
   title: 'Sociedad limitada. Experimentos sin control.',
   description: 'Una webserie de comedia sobre una empresa que fabrica aparatos científicos descabellados. Mucha visión. Alguna que otra consecuencia.',
-  hero: '/media/david-orbits-hd/poster.webp',
-  heroManifest: '/media/david-orbits-hd/manifest.json',
-  heroMobileManifest: '/media/david-orbits-hd/manifest.json',
+  hero: '/media/david-universe-4k/poster.webp',
+  heroManifest: '/media/david-universe-4k/manifest.json',
+  heroMobileManifest: '/media/david-universe-4k/manifest.json',
   episode: '/media/episode.mp4',
   poster: '/media/episode-poster.jpg',
 };

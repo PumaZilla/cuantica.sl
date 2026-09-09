@@ -1,4 +1,12 @@
-# Revisión pendiente — David, azul y ascenso
+# David — universo 4K aprobado
+
+## Versión actual
+
+Vídeo Seedance 2.0 aprobado por el usuario e incorporado al hero: `09-david-seedance2-4k.mp4`, 3840×2160, 8,04 segundos y 24 fps. Trabajo `c957fa53-3935-4078-abf7-7c62ea76f0d2`; parámetros y referencias en `09-seedance2-4k-generation.json`. La web sirve todos sus fotogramas en `/media/david-universe-4k/`, WebP calidad 90, resolución original 3840×2160. Sin cortes ni fundidos heredados de la toma anterior. Se conservan el texto secuencial, el recorte central, el desplazamiento inmediato y el breve cierre. El usuario aprobó la toma con sus artefactos puntuales de generación.
+
+Los másteres y capturas de trabajo permanecen en local, ignorados por Git; los fotogramas de producción, referencias aprobadas y metadatos sí están versionados. Checkpoint previo a esta integración: `830936b`.
+
+## Histórico (las aprobaciones y configuraciones siguientes han sido sustituidas)
 
 Nueva propuesta con estrellas y polvo cósmico: `07-david-universo-2k-web.mp4` (2560×1440, 8 s, 24 fps, sin audio), generada de nuevo con MiniMax H3 y referencias nuevas. Metadatos en `universe-2k-v2-generation.json`. Aún no integrada. La prueba `06` se descartó por fondo demasiado parecido al anterior y alejamiento excesivo. El usuario abandonó el reescalado 4K; no hay herramienta disponible para cancelar ese trabajo remoto, no usar su resultado. Checkpoint aprobado guardado en `b9ed338`.
 

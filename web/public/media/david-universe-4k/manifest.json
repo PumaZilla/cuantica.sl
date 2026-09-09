@@ -1,0 +1,10 @@
+{
+  "count": 193,
+  "width": 3840,
+  "height": 2160,
+  "pattern": "/media/david-universe-4k/frames/frame-{index}.webp",
+  "padding": 3,
+  "fps": 24,
+  "bytes": 159320472,
+  "poster": "/media/david-universe-4k/poster.webp"
+}
