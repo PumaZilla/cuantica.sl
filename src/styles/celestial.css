@@ -60,7 +60,7 @@ html.hero-scroll-locked,html.hero-scroll-locked body{overflow:hidden;overscroll-
 /* One pair encloses the entire two-line aside on desktop. */
 @media(min-width:681px){
  .statement-right .statement-face,.statement-right .statement-shadow{width:max-content;margin-left:auto;padding-inline:.7em}
- .statement-right .statement-parenthesis{position:absolute;top:50%;translate:0 -50%;font-size:1.95em;line-height:1}
+ .statement-right .statement-parenthesis{position:absolute;top:50%;translate:0 -50%;font-family:Arial,sans-serif;font-weight:400;font-size:1.95em;line-height:1}
  .statement-right .parenthesis-open{left:0}
  .statement-right .parenthesis-close{right:0}
 }
