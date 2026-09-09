@@ -5,6 +5,10 @@
 
 ---
 
+## Repository language
+
+Use English for all repository documentation, code comments, identifiers, branch names, commit messages, and pull request descriptions. Audience-facing website content remains in Spanish, including accessible labels and character names.
+
 ## The golden rules
 
 These rules are non-negotiable. Violating any of them will require the
