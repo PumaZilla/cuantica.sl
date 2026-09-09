@@ -33,6 +33,32 @@ export function initExperience() {
   const abort = new AbortController();
   initHeroMotion(abort.signal);
   initSupportingCarousel(abort.signal);
+  let activePortrait: HTMLElement | null = null;
+  function clearPortrait() {
+    activePortrait?.classList.remove('is-portrait-active');
+    activePortrait
+      ?.querySelector('.portrait-toggle')
+      ?.setAttribute('aria-pressed', 'false');
+    activePortrait = null;
+  }
+  document.addEventListener(
+    'pointerdown',
+    (event) => {
+      if (
+        event.target instanceof Node &&
+        !activePortrait?.contains(event.target)
+      )
+        clearPortrait();
+    },
+    { signal: abort.signal },
+  );
+  document.addEventListener(
+    'keydown',
+    (event) => {
+      if (event.key === 'Escape') clearPortrait();
+    },
+    { signal: abort.signal },
+  );
   document.querySelectorAll<HTMLElement>('.person-photo').forEach((photo) => {
     if (!photo.querySelector('.person-photo-alternate')) return;
     const card = photo.closest<HTMLElement>('.person, .supporting-person');
@@ -47,8 +73,13 @@ export function initExperience() {
     toggle.addEventListener(
       'click',
       () => {
-        const active = card.classList.toggle('is-portrait-active');
-        toggle.setAttribute('aria-pressed', String(active));
+        const active = activePortrait !== card;
+        clearPortrait();
+        if (active) {
+          activePortrait = card;
+          card.classList.add('is-portrait-active');
+          toggle.setAttribute('aria-pressed', 'true');
+        }
       },
       { signal: abort.signal },
     );
