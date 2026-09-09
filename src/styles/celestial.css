@@ -17,9 +17,9 @@
  .cosmic-header{left:22px;right:22px;height:86px}
  .cosmic-header .brand{font-size:27px}
  .cosmic-statement{font-size:clamp(22px,6vw,34px)}
- .cosmic-statement>span{bottom:12%;width:calc(50% - 30px)}
- .cosmic-statement>.statement-left{left:22px;bottom:calc(55% - 10px)}
- .cosmic-statement>.statement-right{right:22px;bottom:calc(55% - 10px)}
+ .cosmic-statement>.statement-left,.cosmic-statement>.statement-right{bottom:25%;width:calc(50% - 30px)}
+ .cosmic-statement>.statement-left{left:22px}
+ .cosmic-statement>.statement-right{right:22px}
 }
 @media(max-height:550px) and (min-width:681px){.cosmic-header{height:76px}.cosmic-statement{font-size:36px}.cosmic-statement>span{bottom:15%}}
 
