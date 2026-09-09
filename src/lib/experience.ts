@@ -33,6 +33,27 @@ export function initExperience() {
   const abort = new AbortController();
   initHeroMotion(abort.signal);
   initSupportingCarousel(abort.signal);
+  document.querySelectorAll<HTMLElement>('.person-photo').forEach((photo) => {
+    if (!photo.querySelector('.person-photo-alternate')) return;
+    const card = photo.closest<HTMLElement>('.person, .supporting-person');
+    if (!card) return;
+    const name = photo.querySelector('img')?.alt || 'este personaje';
+    const toggle = document.createElement('button');
+    toggle.type = 'button';
+    toggle.className = 'portrait-toggle';
+    if (photo.closest('[aria-hidden="true"]')) toggle.tabIndex = -1;
+    toggle.setAttribute('aria-label', `Mostrar foto alternativa de ${name}`);
+    toggle.setAttribute('aria-pressed', 'false');
+    toggle.addEventListener(
+      'click',
+      () => {
+        const active = card.classList.toggle('is-portrait-active');
+        toggle.setAttribute('aria-pressed', String(active));
+      },
+      { signal: abort.signal },
+    );
+    photo.append(toggle);
+  });
   const dialog = document.querySelector<HTMLDialogElement>('#episode-dialog')!;
   const video = document.querySelector<HTMLVideoElement>('#episode-player')!;
   const error = document.querySelector<HTMLElement>('#player-error')!;

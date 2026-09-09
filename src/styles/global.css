@@ -128,7 +128,7 @@
 .tv-shop .product-buy:hover{background:#b5ff36;color:var(--ad-black);transform:rotate(-1deg) translateY(-2px)}
 .tv-shop .product-buy:focus-visible{outline:3px solid var(--surface);outline-offset:7px}
 .tv-shop .tv-guarantee{border-top:4px solid var(--surface)}
-@media(max-width:680px){.tv-shop .shop-heading h2{font-size:clamp(34px,9vw,52px);text-shadow:2px 3px 0 var(--surface);-webkit-text-stroke:1.5px}.tv-shop .tv-strip>span:nth-child(2){font-size:10px}.tv-hype{align-items:stretch;flex-direction:column;gap:18px}.tv-hype>strong{font-size:28px;padding:14px}.tv-timer{max-width:none;justify-content:space-between}.tv-timer b{font-size:30px}.tv-shop .experiments{gap:32px}.tv-shop .product-buy{font-size:34px}}
+@media(max-width:680px){.tv-shop .shop-heading h2{font-size:clamp(34px,9vw,52px);text-shadow:2px 3px 0 var(--surface);-webkit-text-stroke:1px #000}.tv-shop .tv-strip>span:nth-child(2){font-size:10px}.tv-hype{align-items:stretch;flex-direction:column;gap:18px}.tv-hype>strong{font-size:28px;padding:14px}.tv-timer{max-width:none;justify-content:space-between}.tv-timer b{font-size:30px}.tv-shop .experiments{gap:32px}.tv-shop .product-buy{font-size:34px}}
 
 /* Six homemade inventions and a deliberately absurd long-running offer. */
 .tv-shop .tv-strip>span:nth-child(2){margin-left:auto;text-align:right}
@@ -174,7 +174,7 @@
 
 /* A curious visitor peeks in from the shop's right edge. */
 .tv-shop{overflow:clip}
-.tv-shop .shop-heading{position:relative}
+.tv-shop .shop-heading{position:relative;isolation:isolate}
 .shop-peeking-cat{position:absolute;width:clamp(130px,14vw,210px);max-width:none;height:auto;right:calc(-1 * var(--pad) - 26px);bottom:0;pointer-events:none;user-select:none}
 @media(max-width:680px){.tv-shop .shop-heading{padding-bottom:104px}.shop-peeking-cat{width:118px;right:calc(-1 * var(--pad) - 18px);bottom:0}}
 
@@ -315,7 +315,7 @@
 .method-manifesto{padding-top:32px;padding-bottom:40px;row-gap:4px}
 .method-manifesto .method-heading{transform:translateY(-16px)}
 .method-manifesto .method-bottom-corner{top:auto;right:auto;bottom:26px;left:26px;transform:rotate(180deg) scale(.75)}
-@media(max-width:680px){.tv-shop{padding-bottom:26px}.method-manifesto{padding-top:26px;padding-bottom:36px;row-gap:18px}.method-manifesto .method-heading{transform:none}.method-manifesto .method-bottom-corner{bottom:16px;left:16px}}
+@media(max-width:680px){.tv-shop{padding-bottom:26px}.method-manifesto{padding-top:26px;padding-bottom:36px;row-gap:18px}.method-manifesto .method-heading{transform:none;margin-top:10px}.method-manifesto .method-bottom-corner{bottom:16px;left:16px}}
 
 /* Keep the statement and floating note together in a centered composition. */
 .method-manifesto .method-composition,.method-manifesto .method-heading{width:min(100%,1080px);margin-inline:auto}
@@ -348,7 +348,7 @@
 .method-peeking-cat{position:absolute;width:clamp(130px,14vw,210px);height:auto;left:-55px;top:38%;transform:scaleX(-1) rotate(-30deg);pointer-events:none;user-select:none}
 @media(max-width:680px){.method-peeking-cat{width:100px;left:-32px;top:auto;bottom:55px}.method-manifesto .method-note{width:78%}}
 
-.shop-peeking-bobby{position:absolute;width:clamp(220px,22vw,320px);max-width:none;height:auto;right:calc(-1 * var(--pad));bottom:-20px;pointer-events:none;mask-image:linear-gradient(to right,transparent 35%,black 60%),linear-gradient(to bottom,transparent,black 12%,black 86%,transparent);mask-composite:intersect}
+.shop-peeking-bobby{position:absolute;z-index:-1;width:clamp(220px,22vw,320px);max-width:none;height:auto;right:calc(-1 * var(--pad));bottom:-20px;pointer-events:none;mask-image:linear-gradient(to right,transparent 35%,black 60%),linear-gradient(to bottom,transparent,black 12%,black 86%,transparent);mask-composite:intersect}
 @media(max-width:680px){.shop-peeking-bobby{width:170px;bottom:-5px}}
 @media(max-width:680px){.shop-peeking-bobby{width:125px;bottom:-8px}}
 
@@ -400,7 +400,7 @@
 .team .person-photo .person-photo-alternate{position:absolute;inset:0;opacity:0;pointer-events:none}
 .team .person-number,.team .person-badge{z-index:2}
 @media(hover:hover){.team .person:hover .person-photo-alternate{opacity:1}}
-.team .person:focus-within .person-photo-alternate{opacity:1}
+.team .person:has(.person-social:focus-visible) .person-photo-alternate,.team .is-portrait-active .person-photo-alternate{opacity:1}
 @media(prefers-reduced-motion:reduce){.team .person-photo img{transition:none}}
 
 /* Main ensemble and supporting cast. */
@@ -459,7 +459,7 @@
 .person-social[href]:hover{background:var(--frame-color);box-shadow:2px 2px 0 var(--surface);transform:rotate(-3deg)}
 .team .team-grid .person-line{margin:0 14px;font-size:14px;line-height:1.6}
 @media(hover:hover){.team .team-grid .person:hover .person-frame{opacity:1}}
-.team .team-grid .person:focus-within .person-frame{opacity:1}
+.team .team-grid .person:has(:focus-visible) .person-frame,.team .team-grid .person.is-portrait-active .person-frame{opacity:1}
 @media(max-width:680px){
  .team .team-grid{gap:22px 12px}
  .team .team-grid .person{padding:0 0 14px}
@@ -519,3 +519,8 @@ dialog video[hidden],.quantum-notice[hidden]{display:none!important}
 
 
 
+
+/* Portraits can be toggled by touch or keyboard without intercepting social links. */
+.portrait-toggle{position:absolute;inset:0;z-index:1;width:100%;height:100%;padding:0;border:0;background:transparent}
+.portrait-toggle:focus-visible{outline:3px solid var(--surface);outline-offset:-6px}
+.team .person-number{pointer-events:none}
