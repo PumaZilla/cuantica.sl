@@ -1,0 +1,28 @@
+---
+import { supportingCast } from '../../content/supporting-cast';
+import PersonSocials from '../PersonSocials.astro';
+---
+<section class="supporting-cast" aria-labelledby="supporting-heading">
+  <div class="supporting-heading-row"><h3 id="supporting-heading">Con la cuestionable ayuda de...</h3>
+  <button class="supporting-pause mono" aria-pressed="false">Pausar carrusel</button></div>
+  <div class="supporting-viewport" tabindex="0" aria-label="Personajes secundarios"><div class="supporting-track">
+  {[false,true].map(duplicate => <div class="supporting-grid" aria-hidden={duplicate ? "true" : undefined}>
+    {supportingCast.map(person => <article class="supporting-person">
+      <div class="person-photo">
+        {person.image && <img src={person.image} alt={person.name} width="600" height="800" loading="lazy"/>}
+        {person.alternateImage && <img class="person-photo-alternate" src={person.alternateImage} alt="" aria-hidden="true" width="600" height="800" loading="lazy"/>}
+      </div>
+      <div class="supporting-tag mono"><div><strong>{person.name}</strong><span>{person.role}</span></div>{(person.instagram != null || person.linkedin != null) && <div class="supporting-socials"><PersonSocials name={person.name} instagram={person.instagram} linkedin={person.linkedin} tabIndex={duplicate ? -1 : undefined}/></div>}</div>
+    </article>)}
+  </div>)}
+  </div></div>
+</section>
+<script>
+const pause = document.querySelector<HTMLButtonElement>('.supporting-pause');
+pause?.addEventListener('click', () => {
+  const paused = pause.getAttribute('aria-pressed') !== 'true';
+  pause.setAttribute('aria-pressed', String(paused));
+  pause.textContent = paused ? 'Reanudar carrusel' : 'Pausar carrusel';
+  document.querySelector('.supporting-cast')?.classList.toggle('is-paused', paused);
+});
+</script>

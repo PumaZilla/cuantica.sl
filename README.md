@@ -25,15 +25,21 @@ npm run preview
 ## Structure
 
 - `src/pages/`: main page and visual direction page.
-- `src/content/site.ts`: cast, inventions, and site data.
-- `src/components/`: shared branding and UI components.
+- `src/content/`: separate site, team, supporting-cast, and product modules.
+- `src/layouts/`: document shell and metadata.
+- `src/components/`: sections and reusable cast, shop, episode, and layout components.
 - `src/styles/`: page and hero styles.
 - `src/lib/`: hero, carousel, and player behavior.
-- `public/`: static images, videos, and other assets.
+- `src/assets/`: team, product, episode, hero, brand, and decorative media imported by the app.
+- `public/`: favicon and files requiring stable public URLs.
 - `dist/`: generated build output, excluded from version control.
 
-Hero videos are `public/media/hero-forward.mp4` and `public/media/hero-reverse.mp4`. The episode is served from `public/media/episode.mp4`. Cast portraits live in `public/media/team/linkedin/`.
+Hero videos live in `src/assets/hero/`, episode media in `src/assets/episodes/`, and cast portraits in `src/assets/team/linkedin/`. Explicit `?url` imports preserve media quality and generate deployment URLs; only active media is kept in the source tree.
 
 ## Production archive
 
-During the September 9, 2026 reorganization, sketches, references, previous versions, historical tools, and `cap.mov` were moved to `../cuanticasl-archive-20260909/`. They remain available as local production material and are not required to run or build the website.
+During the September 9, 2026 reorganization, sketches, references, previous versions, historical tools, and `cap.mov` were moved to `../cuanticasl-archive-20260909/`. They remain available as local production material and are not required to run or build the website. Unused web assets and legacy frame sequences are stored in its `unused-web-assets/` subdirectory. Hero frame settings now live in `src/content/hero.ts`.
+
+## Episode media
+
+The shared player uses season 1, episode 8: `src/assets/episodes/T108.mp4` and `T108-poster.jpg`. Labels and duration live in `src/content/site.ts`. The MP4 preserves the original 1080p50 H.264 video and converts only the PCM audio to AAC for browser playback. The original MOV is retained outside the repository in `../cuanticasl-archive-20260909/episode-sources/T108.mov`.

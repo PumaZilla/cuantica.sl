@@ -1,0 +1,17 @@
+---
+import Brand from '../Brand.astro';
+import { site } from '../../content/site';
+import { heroMotion } from '../../content/hero';
+import forwardVideo from '../../assets/hero/hero-forward.mp4?url';
+import reverseVideo from '../../assets/hero/hero-reverse.mp4?url';
+---
+<section class="celestial film-scroll" id="inicio" aria-label="El universo de Cuántica SL" data-start-frame={heroMotion.startFrame} data-release-frame={heroMotion.releaseFrame} data-end-frame={heroMotion.endFrame} data-fps={heroMotion.fps}>
+<span id="vision" class="vision-anchor" aria-hidden="true"></span>
+<div class="film-stage cosmic-stage">
+<img class="film-poster" src={site.hero} width="1920" height="1080" alt="David, CEO de Cuántica SL, asciende rodeado de los inventos de la empresa en un universo azul" fetchpriority="high"/>
+<video id="hero-motion" class="hero-video" data-src={forwardVideo} muted playsinline preload="auto" disablepictureinpicture aria-hidden="true" tabindex="-1"></video>
+<video id="hero-reverse" class="hero-video" data-src={reverseVideo} muted playsinline preload="auto" disablepictureinpicture aria-hidden="true" tabindex="-1"></video>
+<header class="header cosmic-header"><Brand/></header>
+<h1 class="cosmic-statement"><span class="statement-left">Inventamos<br/>el futuro</span><span class="statement-right">Perdonad<br/>las molestias</span></h1>
+</div>
+</section>

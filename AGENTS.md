@@ -29,9 +29,11 @@ Use corporate and scientific language with absurd humor: extraordinary invention
 
 The main cast is David (CEO), Kike (hacker), Iria (researcher), Nati (scientist), Paula (social media), and Santi (intern). Nati is the character previously called Raquel. Bobby belongs to the supporting cast.
 
-The supporting cast includes Antonio, Madre de Kike, Igor, Pitonisa, Sr. Bioverde, Srta. Gerania, and Bobby 2.0. The shop features a quantum transporter, brain stimulator, toaster, love elixir, facial emotion analyzer, and bioluminescent plant.
+The supporting cast includes Antonio, Madre de Kike, Igor, Pitonisa, Sr. Bioverde, Srta. Gerania, and Bobby 2.0. The shop features a quantum transporter, brain stimulator, toaster, love elixir, facial emotion analyzer, bioluminescent plant, and other fictional inventions defined in the product module.
 
-Use `src/content/site.ts` and the page template as the source of truth for current order, labels, copy, links, prices, and media paths. Do not recreate older content from memory.
+Use the domain modules in `src/content/` and section components as the source of truth for current order, labels, copy, links, prices, and media paths. Do not recreate older content from memory.
+
+The shared episode player shows season 1, episode 8. Its video, poster, label, and duration are defined in `src/content/site.ts`. Episode filenames use the `T108` convention (season 1, two-digit episode 08).
 
 ## Media workflow
 
@@ -39,21 +41,26 @@ Preserve likeness to supplied photographs and episode references. Start portrait
 
 Change only what was requested. Preserve the smile, eyes, clothing, background color, and texture unless they are specifically being edited. Inspect generated results before integration. Recurring props, especially Kike's intercom, must match their references.
 
-Save clearly named asset versions, retain originals, and update the actual path used by the page. Do not request nonexistent hover images or invent portraits for empty slots. Keep archived source footage and references intact.
+Keep only assets used by the website in `src/assets/`. Save new versions with clear names, update their imports, and move superseded originals and production references to the external archive. Do not request nonexistent hover images or invent portraits for empty slots. Keep archived source footage and references intact. The original `T108.mov` is preserved in the external archive under `episode-sources/`; the website imports `src/assets/episodes/T108.mp4`, preserving its 1080p50 H.264 video with browser-compatible AAC audio.
 
 Preserve the current hero motion behavior, fallbacks, and reduced-motion preferences. Do not restore a historical scroll implementation without a request.
 
 ## Project map
 
-- `src/pages/index.astro`: sections, headings, cards, media selection, and episode modal.
-- `src/content/site.ts`: site, cast, social links, and product data.
-- `src/components/`: shared branding and UI components.
+- `src/pages/index.astro`: page composition; keep section markup in components.
+- `src/layouts/SiteLayout.astro`: shared document shell, metadata, fonts, and styles.
+- `src/content/`: separate site, team, supporting-cast, and product data modules with explicit asset imports.
+- `src/components/sections/`: hero, shop, method, team, and episode sections.
+- `src/components/team/`, `shop/`, `episode/`, and `layout/`: reusable cards, carousel, modal, and footer.
+- `src/components/`: shared brand and social-link components.
 - `src/styles/global.css`: page and section styles; inspect accumulated overrides and breakpoints.
 - `src/styles/celestial.css`: hero styling and responsive behavior.
 - `src/lib/experience.ts`: experience initialization and general interactions.
 - `src/lib/hero-motion.ts`: forward and reverse hero video behavior.
+- `src/content/hero.ts`: original frame rate and start, release, and end frame configuration.
 - `src/lib/supporting-carousel.ts`: supporting-cast carousel interactions.
-- `public/media/`: served media; portraits live in `team/linkedin/`.
+- `src/assets/`: media grouped into `team/`, `products/`, `episodes/`, `hero/`, `brand/`, and `decor/`. Import assets explicitly with `?url` to preserve original bytes and let Vite emit valid URLs. Only imported variants are emitted.
+- `public/`: favicon and files that require stable public URLs. Legacy frame sequences have been archived. Do not construct paths to `src/assets` as public URLs.
 - `flake.nix` and `.envrc`: local development environment.
 
 The application runs from the repository root. Historical source footage, references, and prototypes are archived outside the repository and are not build dependencies. This file contains the consolidated project guidance; there is no separate `docs/` guide.

@@ -1,0 +1,11 @@
+---
+import PersonSocials from '../PersonSocials.astro';
+import type { team } from '../../content/team';
+interface Props { person: (typeof team)[number] }
+const { person } = Astro.props;
+---
+<article class="person">
+<svg class="person-frame" viewBox="0 0 400 600" preserveAspectRatio="none" aria-hidden="true"><path d="M8 13 L391 5 L394 589 L5 595 L8 13 M13 8 L397 12 L388 598"/></svg>
+<div class="person-photo">{person.image && <><img src={person.image} alt={`${person.name}, ${person.role}`} width="600" height="800" loading="lazy"/><img class="person-photo-alternate" src={person.alternateImage} alt="" aria-hidden="true" width="600" height="800" loading="lazy" decoding="async"/></>}<span class="person-number mono">{person.tag}</span></div>
+<div class="person-title"><h3>{person.name}</h3><PersonSocials name={person.name} instagram={person.instagram} linkedin={person.linkedin}/></div>
+<p class="person-line">{person.line}<br/><span>{person.aside}</span></p></article>

@@ -1,0 +1,10 @@
+---
+import { team } from '../../content/team';
+import PersonCard from '../team/PersonCard.astro';
+import SupportingCast from '../team/SupportingCast.astro';
+---
+<section class="team section-wrap" id="equipo"><span class="section-mark mark-bracket" aria-hidden="true"></span><div class="team-divider" aria-hidden="true"></div><div class="section-heading"><h2>Seis formas de entender la ciencia.<br/><span class="serif-word">Ninguna para ponerse de acuerdo.</span></h2></div>
+<div class="team-grid">{team.map(person => <PersonCard person={person} />)}</div>
+
+<SupportingCast />
+</section>
