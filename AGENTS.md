@@ -27,9 +27,9 @@ Use corporate and scientific language with absurd humor: extraordinary invention
 
 ## Content
 
-The main cast is David (CEO), Kike (hacker), Iria (researcher), Nati (scientist), Paula (social media), and Santi (intern). Nati is the character previously called Raquel. Bobby belongs to the supporting cast.
+The main cast is David (CEO), Kike (hacker), Iria (researcher), Nati (scientist), Paula (social media), and Santi (intern). Nati is the character previously called Raquel. Bobi belongs to the supporting cast.
 
-The supporting cast includes Antonio, Madre de Kike, Igor, Pitonisa, Sr. Bioverde, Srta. Gerania, and Bobby 2.0. The shop features a quantum transporter, brain stimulator, toaster, love elixir, facial emotion analyzer, bioluminescent plant, and other fictional inventions defined in the product module.
+The supporting cast includes Antonio, Madre de Kike, Igor, Pitonisa, Sr. Bioverde, Srta. Gerania, and Bobi 2.0. The shop features a quantum transporter, brain stimulator, toaster, love elixir, facial emotion analyzer, bioluminescent plant, and other fictional inventions defined in the product module.
 
 Use the domain modules in `src/content/` and section components as the source of truth for current order, labels, copy, links, prices, and media paths. Do not recreate older content from memory.
 
@@ -50,7 +50,7 @@ Preserve the current hero motion behavior, fallbacks, and reduced-motion prefere
 - `src/pages/index.astro`: page composition; keep section markup in components.
 - `src/layouts/SiteLayout.astro`: shared document shell, metadata, fonts, and styles.
 - `src/content/`: separate site, team, supporting-cast, and product data modules with explicit asset imports.
-- `src/components/sections/`: hero, shop, method, team, and episode sections.
+- `src/components/sections/`: hero, shop, method, and team sections.
 - `src/components/team/`, `shop/`, `episode/`, and `layout/`: reusable cards, carousel, modal, and footer.
 - `src/components/`: shared brand and social-link components.
 - `src/styles/global.css`: page and section styles; inspect accumulated overrides and breakpoints.

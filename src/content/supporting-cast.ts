@@ -12,5 +12,5 @@ export const supportingCast = [
   { name:'Pitonisa', ...supportingSocials, role:'Clandestina', image:null, alternateImage:null },
   { name:'Sr. Bioverde', ...supportingSocials, role:'C.A.C.A', image:null, alternateImage:null },
   { name:'Srta. Gerania', instagram:'', linkedin:'', role:'Secretaria', image:null, alternateImage:null },
-  { name:'Bobby 2.0', ...supportingSocials, role:'Mascota', image:bobbyPortrait, alternateImage:bobbyAlternate },
+  { name:'Bobi 2.0', ...supportingSocials, role:'Mascota', image:bobbyPortrait, alternateImage:bobbyAlternate },
 ];
