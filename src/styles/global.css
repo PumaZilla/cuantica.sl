@@ -508,16 +508,22 @@ dialog video[hidden],.quantum-notice[hidden]{display:none!important}
 .footer-logo-fecyt{height:28px;width:auto;display:block;object-fit:contain}
 .footer-logo-ceo{height:28px;width:auto;display:block;object-fit:contain}
 .footer-back-top{display:inline-flex;align-items:center;gap:8px;font-size:9px;color:var(--mist)}
+.footer-back-top span{display:inline-block;font-family:system-ui,-apple-system,sans-serif;font-weight:600;line-height:1;transition:transform .2s}
 .footer-back-top:hover{color:var(--paper)}
+.footer-back-top:hover span{transform:translateY(-2px)}
 @media(max-width:680px){
-  .footer{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,1fr);gap:24px 16px}
-  .footer>div:first-child{flex-direction:column;align-items:flex-start;gap:12px;width:auto;min-width:0}
-  .footer .brand.brand-official{width:100%;max-width:210px;padding:0}
-  .footer p{margin-top:0;transform:none}
-  .footer-collab{align-items:flex-start;width:auto;min-width:0;margin-top:0}
-  .footer-collab-label{font-size:8px;letter-spacing:.6px}
-  .footer-collab-logos{gap:12px;max-width:100%}
-  .footer-bottom{grid-column:1/-1;flex-direction:column;align-items:flex-start;gap:14px}
+  .footer{display:grid;grid-template-columns:1fr auto;align-items:start;gap:24px 16px;padding:36px 22px 28px}
+  .footer>div:first-child{flex-direction:column;align-items:flex-start;gap:8px;width:auto;min-width:0}
+  .footer .brand.brand-official{font-size:24px;width:100%;max-width:210px;padding:0}
+  .footer p{margin-top:0;font-size:11px;line-height:1.45;transform:none}
+  .footer-collab{align-items:flex-end;width:auto;min-width:0;margin-top:0;text-align:right}
+  .footer-collab-label{font-size:8px;letter-spacing:1px;white-space:nowrap}
+  .footer-collab-logos{justify-content:flex-end;gap:12px;max-width:100%}
+  .footer-logo-fecyt{height:24px}
+  .footer-logo-ceo{height:24px}
+  .footer-bottom{grid-column:1/-1;flex-direction:column-reverse;align-items:flex-end;gap:14px;padding-top:18px}
+  .footer-bottom span{font-size:7.5px;letter-spacing:.6px;line-height:1.5;width:100%;text-align:left}
+  .footer-back-top{font-size:8px;letter-spacing:.8px;text-transform:uppercase;white-space:nowrap}
 }
 
 
