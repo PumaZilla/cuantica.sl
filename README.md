@@ -22,6 +22,18 @@ npm run build
 npm run preview
 ```
 
+## Deployment paths
+
+Local development and production builds default to the domain root (`/`). The GitHub Pages workflow reads the configured Pages URL and automatically sets the origin and base path, supporting project subdirectories, root sites, and custom domains without code changes.
+
+For another host serving a subdirectory, set `BASE_PATH` when building. `SITE_URL` optionally supplies the public origin:
+
+```sh
+SITE_URL=https://example.com BASE_PATH=/cuantica/ npm run build
+```
+
+Leading and trailing slashes are normalized. Rebuild when changing the deployment path: generated links and media URLs include that path.
+
 ## Structure
 
 - `src/pages/`: main page and visual direction page.
