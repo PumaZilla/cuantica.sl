@@ -124,40 +124,17 @@ export function initExperience() {
     photo.append(toggle);
   });
   const dialog = document.querySelector<HTMLDialogElement>('#episode-dialog')!;
-  const video = document.querySelector<HTMLVideoElement>('#episode-player')!;
-  const error = document.querySelector<HTMLElement>('#player-error')!;
-  const quantumNotice = document.querySelector<HTMLElement>('#quantum-notice');
   const playerMeta = document.querySelector<HTMLElement>('#player-meta');
   let opener: HTMLElement | null = null;
-  function showEpisode() {
-    if (quantumNotice) quantumNotice.hidden = true;
-    video.hidden = false;
-    if (playerMeta)
-      playerMeta.textContent =
-        playerMeta.dataset.episodeLabel || 'Temporada 1, Episodio 8';
-    if (!video.getAttribute('src')) video.src = video.dataset.src!;
-    dialog.showModal();
-    video.play().catch(() => {
-      /* Native controls remain available if playback needs another gesture. */
-    });
-  }
   document
     .querySelectorAll<HTMLButtonElement>('[data-play]')
     .forEach((button) => {
       button.addEventListener('click', () => {
         opener = button;
-        error.hidden = true;
-        if (button.dataset.play === 'episode') {
-          showEpisode();
-        } else {
-          video.pause();
-          video.hidden = true;
-          if (quantumNotice) quantumNotice.hidden = false;
-          if (playerMeta)
-            playerMeta.textContent =
-              button.dataset.productName || 'Video cuántico';
-          dialog.showModal();
-        }
+        if (playerMeta)
+          playerMeta.textContent =
+            button.dataset.productName || 'Video cuántico';
+        dialog.showModal();
       });
     });
   document
@@ -176,11 +153,7 @@ export function initExperience() {
     }
   });
   dialog.addEventListener('close', () => {
-    video.pause();
     opener?.focus({ preventScroll: true });
-  });
-  video.addEventListener('error', () => {
-    error.hidden = false;
   });
   window.addEventListener(
     'pagehide',

@@ -1,6 +1,4 @@
 import heroPoster from '../assets/hero/poster-optimized.webp?url';
-import episodeVideo from '../assets/episodes/T108-optimized.mp4?url';
-import episodePoster from '../assets/episodes/T108-poster.jpg?url';
 
 export const site = {
   name: 'Cuántica SL',
@@ -8,8 +6,4 @@ export const site = {
   description:
     'Una webserie de comedia sobre una empresa que fabrica aparatos científicos descabellados. Mucha visión. Alguna que otra consecuencia.',
   hero: heroPoster,
-  episode: episodeVideo,
-  episodeLabel: 'Temporada 1, Episodio 8',
-  episodeDuration: '06:08',
-  poster: episodePoster,
 };
