@@ -1,6 +1,6 @@
 # Cuántica S.L.
 
-Promotional website for a comedy webseries about a company building absurd scientific inventions. Astro generates a static site with a cosmic hero, a fictional shop that opens the episode, and interactive cast portraits. Audience-facing content is in Spanish; repository documentation and code comments are in English.
+Promotional website for a comedy webseries about a company building absurd scientific inventions. Astro generates a static site with a cosmic hero, a fictional shop that opens a quantum availability notice, and interactive cast portraits. Audience-facing content is in Spanish; repository documentation and code comments are in English.
 
 ## Development
 
@@ -54,12 +54,12 @@ During the September 9, 2026 reorganization, sketches, references, previous vers
 
 ## Episode media
 
-The shared player uses season 1, episode 8: `src/assets/episodes/T108-optimized.mp4` and `T108-poster.jpg`. Labels and duration live in `src/content/site.ts`. The delivery MP4 uses H.264 at the original 1080p50 resolution and frame rate, with AAC audio and fast-start metadata. It is compressed for streaming; the previous high-bitrate MP4 is retained in the external performance archive. The original MOV is retained outside the repository in `../cuanticasl-archive-20260909/episode-sources/T108.mov`.
+The unpublished episode is retained in the repository only: `src/assets/episodes/T108-optimized.mp4` and `T108-poster.jpg`. Neither file is imported by the site or emitted in production builds. All shop buttons show the same quantum availability notice; there is no episode player or download link. The delivery MP4 uses H.264 at the original 1080p50 resolution and frame rate, with AAC audio and fast-start metadata. It is compressed for streaming; the previous high-bitrate MP4 is retained in the external performance archive. The original MOV is retained outside the repository in `../cuanticasl-archive-20260909/episode-sources/T108.mov`.
 
 ## Media delivery
 
 Images are pre-encoded as WebP at quality 85: portraits up to 900 px wide, products up to 1000 px, decorations up to 640 px, and the hero poster at 2560 px. Explicit `?url` imports preserve these delivery bytes. Below-the-fold images use native lazy loading.
 
-Hero videos retain the 24 fps frame sequence and forward/reverse timing. Desktop and mobile use the same 1080p H.264 files (CRF 22), keeping the centered portrait crop sharp. All video variants use fast-start metadata. A loading screen prioritizes the forward video, downloads it completely into a local Blob URL, and waits for decoding before fading out. The reverse video downloads in the background afterward; scrolling remains native until it is ready. Playback uses complete in-memory files rather than the network. A forward loading failure or a 60-second timeout reveals the static hero. The vector cat bounces every four seconds alongside rotating Spanish loading messages. Reduced-motion users do not load either video. The episode loads only when its player is opened.
+Hero videos retain the 24 fps frame sequence and forward/reverse timing. Desktop and mobile use the same 1080p H.264 files (CRF 22), keeping the centered portrait crop sharp. All video variants use fast-start metadata. A loading screen prioritizes the forward video, downloads it completely into a local Blob URL, and waits for decoding before fading out. The reverse video downloads in the background afterward; scrolling remains native until it is ready. Playback uses complete in-memory files rather than the network. A forward loading failure or a 60-second timeout reveals the static hero. The vector cat bounces every four seconds alongside rotating Spanish loading messages. Reduced-motion users do not load either video. The unpublished episode and its poster are excluded from the build.
 
 Original media is preserved in `../cuanticasl-archive-20260909/performance-originals/`, mirroring the asset directories. Future revisions should start from those originals rather than recompressing delivery assets.

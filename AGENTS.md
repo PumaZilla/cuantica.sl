@@ -12,7 +12,7 @@ Preserve pending user changes. Inspect current code and assets before editing: t
 
 This is the Spanish promotional website for **Cuántica S.L.**, a comedy webseries about a company producing absurd scientific inventions. The story centers on the company and its ensemble. David, the visionary CEO, leads the visual introduction.
 
-Use corporate and scientific language with absurd humor: extraordinary inventions, manufactured needs, and questionable consequences. The shop is fictional; purchase buttons open an episode modal. Do not introduce real checkout, accounts, or external services without a request.
+Use corporate and scientific language with absurd humor: extraordinary inventions, manufactured needs, and questionable consequences. The shop is fictional; purchase buttons open a quantum availability notice. Do not introduce real checkout, accounts, or external services without a request.
 
 ## Visual direction
 
@@ -33,7 +33,7 @@ The supporting cast includes Antonio, Madre de Kike, Igor, Pitonisa, Sr. Bioverd
 
 Use the domain modules in `src/content/` and section components as the source of truth for current order, labels, copy, links, prices, and media paths. Do not recreate older content from memory.
 
-The shared episode player shows season 1, episode 8. Its video, poster, label, and duration are defined in `src/content/site.ts`. Episode filenames use the `T108` convention (season 1, two-digit episode 08).
+Season 1, episode 8 and its poster are retained in `src/assets/episodes/` at the user’s request, but must remain unimported and excluded from production builds. Do not expose playback, download links, or episode metadata until publication is explicitly requested. Episode filenames use the `T108` convention (season 1, two-digit episode 08).
 
 ## Media workflow
 
@@ -41,7 +41,7 @@ Preserve likeness to supplied photographs and episode references. Start portrait
 
 Change only what was requested. Preserve the smile, eyes, clothing, background color, and texture unless they are specifically being edited. Inspect generated results before integration. Recurring props, especially Kike's intercom, must match their references.
 
-Keep only assets used by the website in `src/assets/`. Save new versions with clear names, update their imports, and move superseded originals and production references to the external archive. Do not request nonexistent hover images or invent portraits for empty slots. Keep archived source footage and references intact. The original `T108.mov` is preserved in the external archive under `episode-sources/`; the website imports `src/assets/episodes/T108-optimized.mp4`, a compressed 1080p50 H.264 delivery copy with browser-compatible AAC audio. High-bitrate media originals are preserved in the external archive under `performance-originals/`; use them for future re-encoding.
+Keep only assets used by the website in `src/assets/`. Save new versions with clear names, update their imports, and move superseded originals and production references to the external archive. Do not request nonexistent hover images or invent portraits for empty slots. Keep archived source footage and references intact. The original `T108.mov` is preserved in the external archive under `episode-sources/`; the repository retains the unpublished `src/assets/episodes/T108-optimized.mp4`, a compressed 1080p50 H.264 delivery copy with browser-compatible AAC audio. High-bitrate media originals are preserved in the external archive under `performance-originals/`; use them for future re-encoding.
 
 Preserve the current hero motion behavior, fallbacks, and reduced-motion preferences. Do not restore a historical scroll implementation without a request.
 
