@@ -1,4 +1,4 @@
-import heroPoster from '../assets/hero/poster-optimized.webp?url';
+import heroPoster from '../assets/hero/poster-delivery.avif?url';
 
 export const site = {
   name: 'Cuántica SL',
