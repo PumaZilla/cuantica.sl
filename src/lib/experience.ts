@@ -2,6 +2,9 @@ import { initHeroMotion } from './hero-motion';
 import { initSupportingCarousel } from './supporting-carousel';
 
 export function initExperience() {
+  const abort = new AbortController();
+  initHeroMotion(abort.signal);
+  initSupportingCarousel(abort.signal);
   const countdown = document.querySelector<HTMLElement>('#offer-countdown');
   const daySeconds = 86400;
   const now = new Date();
@@ -30,9 +33,6 @@ export function initExperience() {
   }
   tickOffer();
   const offerInterval = window.setInterval(tickOffer, 1000);
-  const abort = new AbortController();
-  initHeroMotion(abort.signal);
-  initSupportingCarousel(abort.signal);
   let activePortrait: HTMLElement | null = null;
   function clearPortrait() {
     activePortrait?.classList.remove('is-portrait-active');
