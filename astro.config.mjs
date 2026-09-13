@@ -6,5 +6,6 @@ export default defineConfig({
   site: process.env.SITE_URL || undefined,
   base: basePath ? `/${basePath}/` : '/',
   trailingSlash: 'always',
+  build: { inlineStylesheets: 'always' },
   devToolbar: { enabled: false },
 });
