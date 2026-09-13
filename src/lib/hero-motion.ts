@@ -121,6 +121,19 @@ export function initHeroMotion(signal: AbortSignal) {
   let run = 0;
   let startY = 0;
   let endY = 0;
+  let storyBottom = 0;
+  function measureGeometry() {
+    const y = scrollY;
+    const storyRect = story.getBoundingClientRect();
+    const shopRect = shop.getBoundingClientRect();
+    startY = y + storyRect.top;
+    endY = y + shopRect.top;
+    storyBottom = y + storyRect.bottom;
+  }
+  measureGeometry();
+  const geometryObserver = new ResizeObserver(measureGeometry);
+  geometryObserver.observe(story);
+  geometryObserver.observe(shop);
   const clamp = (n: number) => Math.min(1, Math.max(0, n));
   const ease = (n: number) => {
     const t = clamp(n);
@@ -128,7 +141,6 @@ export function initHeroMotion(signal: AbortSignal) {
   };
   const locked = () =>
     state === 'loading' || state === 'playing' || state === 'reversing';
-  const topOf = (el: HTMLElement) => scrollY + el.getBoundingClientRect().top;
   function setState(next: typeof state) {
     state = next;
     stage.dataset.motionState = next;
@@ -166,7 +178,7 @@ export function initHeroMotion(signal: AbortSignal) {
     const finalFrame = direction === 'down' ? last : first;
     labels(finalFrame);
     stage.dataset.frame = String(finalFrame);
-    moveTo(direction === 'down' ? topOf(shop) : topOf(story));
+    moveTo(direction === 'down' ? endY : startY);
     setState(direction === 'down' ? 'released' : 'idle');
     unlock();
   }
@@ -210,8 +222,6 @@ export function initHeroMotion(signal: AbortSignal) {
     direction = nextDirection;
     active = direction === 'down' ? forward : backward;
     const thisRun = ++run;
-    startY = topOf(story);
-    endY = topOf(shop);
     lockedY = scrollY;
     setState('loading');
     root.classList.add('hero-scroll-locked');
@@ -244,19 +254,15 @@ export function initHeroMotion(signal: AbortSignal) {
       return;
     }
     if (!enabled() || delta === 0) return;
-    if (
-      delta > 0 &&
-      state === 'idle' &&
-      Math.abs(story.getBoundingClientRect().top) < 2
-    ) {
+    if (delta > 0 && state === 'idle' && Math.abs(startY - scrollY) < 2) {
       event.preventDefault();
       begin('down');
     } else if (
       delta < 0 &&
       state === 'released' &&
       reversePrepared &&
-      shop.getBoundingClientRect().top >= -2 &&
-      scrollY > topOf(story) + 2
+      endY - scrollY >= -2 &&
+      scrollY > startY + 2
     ) {
       event.preventDefault();
       begin('up');
@@ -337,20 +343,20 @@ export function initHeroMotion(signal: AbortSignal) {
       }
       const upward = scrollY < previousY;
       previousY = scrollY;
-      if (scrollY <= topOf(story) + 2 && state === 'released') {
+      if (scrollY <= startY + 2 && state === 'released') {
         setState('idle');
         forward.currentTime = 0;
         show(forward);
         labels(first);
       }
-      if (scrollY > topOf(shop) - 2 && state === 'idle') setState('released');
+      if (scrollY > endY - 2 && state === 'idle') setState('released');
       // Catch a wheel/touch step that crosses the shop boundary from further down.
       if (
         upward &&
         enabled() &&
         state === 'released' &&
-        shop.getBoundingClientRect().top >= 0 &&
-        scrollY > topOf(story) + 2
+        endY - scrollY >= 0 &&
+        scrollY > startY + 2
       )
         begin('up');
     },
@@ -380,15 +386,14 @@ export function initHeroMotion(signal: AbortSignal) {
     );
   });
   function motion(keepStage = false) {
-    const onStage =
-      story.getBoundingClientRect().top <= 0 &&
-      story.getBoundingClientRect().bottom > innerHeight * 0.5;
+    const y = scrollY;
+    const onStage = startY - y <= 0 && storyBottom - y > innerHeight * 0.5;
     run++;
     videos.forEach((v) => {
       v.pause();
     });
     unlock();
-    setState(scrollY > topOf(story) + 2 ? 'released' : 'idle');
+    setState(y > startY + 2 ? 'released' : 'idle');
     root.classList.toggle('reduced', reduced);
     for (const toggle of toggles) {
       toggle.setAttribute('aria-pressed', String(reduced));
@@ -403,7 +408,7 @@ export function initHeroMotion(signal: AbortSignal) {
       );
     }
     if (keepStage && onStage) {
-      moveTo(topOf(story));
+      moveTo(startY);
       setState('idle');
       forward.currentTime = 0;
       show(forward);
@@ -442,14 +447,7 @@ export function initHeroMotion(signal: AbortSignal) {
     },
     { signal },
   );
-  window.addEventListener(
-    'resize',
-    () => {
-      startY = topOf(story);
-      endY = topOf(shop);
-    },
-    { signal },
-  );
+  window.addEventListener('resize', measureGeometry, { signal });
   document.addEventListener(
     'visibilitychange',
     () => {
@@ -473,6 +471,7 @@ export function initHeroMotion(signal: AbortSignal) {
   signal.addEventListener(
     'abort',
     () => {
+      geometryObserver.disconnect();
       clearTimeout(loaderTimer);
       clearInterval(messageTimer);
       preparation?.abort();
@@ -488,7 +487,6 @@ export function initHeroMotion(signal: AbortSignal) {
     },
     { once: true },
   );
-  setState(state);
-  labels(first);
   motion();
+  labels(first);
 }
