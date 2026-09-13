@@ -1,3 +1,19 @@
+import productImage8w640 from '../assets/products/frankenpet-pixel-studio-640.webp?url';
+import productImage8w480 from '../assets/products/frankenpet-pixel-studio-480.webp?url';
+import productImage7w640 from '../assets/products/genfit-particles-640.webp?url';
+import productImage7w480 from '../assets/products/genfit-particles-480.webp?url';
+import productImage6w640 from '../assets/products/planta-no-text-640.webp?url';
+import productImage6w480 from '../assets/products/planta-no-text-480.webp?url';
+import productImage5w640 from '../assets/products/analizador-no-text-640.webp?url';
+import productImage5w480 from '../assets/products/analizador-no-text-480.webp?url';
+import productImage4w640 from '../assets/products/elixir-no-text-640.webp?url';
+import productImage4w480 from '../assets/products/elixir-no-text-480.webp?url';
+import productImage3w640 from '../assets/products/tostadora-reflejo-limpio-640.webp?url';
+import productImage3w480 from '../assets/products/tostadora-reflejo-limpio-480.webp?url';
+import productImage2w640 from '../assets/products/estimulador-neutral-640.webp?url';
+import productImage2w480 from '../assets/products/estimulador-neutral-480.webp?url';
+import productImage1w640 from '../assets/products/teletransportador-no-text-640.webp?url';
+import productImage1w480 from '../assets/products/teletransportador-no-text-480.webp?url';
 import productImage1 from '../assets/products/teletransportador-no-text-optimized.webp?url';
 import productImage2 from '../assets/products/estimulador-neutral-optimized.webp?url';
 import productImage3 from '../assets/products/tostadora-reflejo-limpio-optimized.webp?url';
@@ -15,6 +31,7 @@ export const products = [
     description:
       'Una caja, unas luces y un gato. El destino ya lo decide la física.',
     image: productImage1,
+    imageSrcSet: `${productImage1w480} 480w, ${productImage1w640} 640w, ${productImage1} 1000w`,
     alt: 'Caja de cartón con luces LED y un gato dentro',
     offer: '¡ENVÍO A OTRA DIMENSIÓN!',
     seal: 'GATO NO INCLUIDO',
@@ -29,6 +46,7 @@ export const products = [
     description:
       'Ponte el gorro y enciende las luces. Al menos tendrás una idea brillante.',
     image: productImage2,
+    imageSrcSet: `${productImage2w480} 480w, ${productImage2w640} 640w, ${productImage2} 1000w`,
     alt: 'Gorro de piscina azul con luces LED y cables',
     offer: '¡ENCIENDE TU POTENCIAL!',
     seal: 'AHORA CON MÁS LUCES',
@@ -43,6 +61,7 @@ export const products = [
     description:
       'La tostada perfecta existe. Estamos intentando que salga de esta tostadora.',
     image: productImage3,
+    imageSrcSet: `${productImage3w480} 480w, ${productImage3w640} 640w, ${productImage3} 1000w`,
     alt: 'Tostadora casera modificada con dos tostadas doradas',
     offer: '¡EL DESAYUNO DEL SIGLO!',
     seal: 'CASI PERFECTA',
@@ -57,6 +76,7 @@ export const products = [
     description:
       'Atrae a todo el mundo. A todo el mundo. Luego no digas que no avisamos.',
     image: productImage4,
+    imageSrcSet: `${productImage4w480} 480w, ${productImage4w640} 640w, ${productImage4} 1000w`,
     alt: 'Frasco de corazón con líquido rosa y tapón de corcho',
     offer: '¡ÉXITO DEMASIADO ROTUNDO!',
     seal: 'SIN FILTROS',
@@ -71,6 +91,7 @@ export const products = [
     description:
       'Una app que detecta emociones. Un palo y una cuerda que detectan la gravedad.',
     image: productImage5,
+    imageSrcSet: `${productImage5w480} 480w, ${productImage5w640} 640w, ${productImage5} 1000w`,
     alt: 'Móvil con app de emociones colgado con una cuerda de un palo',
     offer: '¡TU CARA LO DICE TODO!',
     seal: 'PALO INCLUIDO',
@@ -85,6 +106,7 @@ export const products = [
     description:
       'La naturaleza ilumina tu casa. Con ayuda de unas luces de Navidad.',
     image: productImage6,
+    imageSrcSet: `${productImage6w480} 480w, ${productImage6w640} 640w, ${productImage6} 1000w`,
     alt: 'Planta en maceta con luces de Navidad y cables',
     offer: '¡LA FOTOSÍNTESIS INVERSA!',
     seal: 'ECOVERDE Y BRILLANTE',
@@ -99,6 +121,7 @@ export const products = [
     description:
       'Botellas de agua con una etiqueta y mucha ciencia por demostrar. Nútrete con ciencia. Confunde a tu estómago.',
     image: productImage7,
+    imageSrcSet: `${productImage7w480} 480w, ${productImage7w640} 640w, ${productImage7} 1000w`,
     alt: 'Botellas de líquidos rosa, transparente y amarillo con partículas de azúcar flotando en el líquido y etiquetas de Genfit Quantum escritas a mano',
     offer: '¡NUTRICIÓN DE OTRA DIMENSIÓN!',
     seal: 'AHORA CON MÁS QUANTUM',
@@ -113,6 +136,7 @@ export const products = [
     description:
       'Una mascota virtual que simula a la que ya no está. Las mismas manías, ahora en píxeles.',
     image: productImage8,
+    imageSrcSet: `${productImage8w480} 480w, ${productImage8w640} 640w, ${productImage8} 1000w`,
     alt: 'Mascota virtual en pixel art: perro con corazones y cuenco de comida',
     offer: '¡VUELVE A CASA. CASI COMO ANTES!',
     seal: 'CARIÑO RECARGABLE',
