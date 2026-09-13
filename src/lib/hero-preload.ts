@@ -12,7 +12,11 @@ export async function preloadHeroVideos(
   try {
     await Promise.all(
       videos.map(async (video) => {
-        const response = await fetch(video.dataset.src!, { signal: combined });
+        const source =
+          video.dataset.srcWebm && video.canPlayType('video/webm; codecs="vp9"')
+            ? video.dataset.srcWebm
+            : video.dataset.src!;
+        const response = await fetch(source, { signal: combined });
         if (!response.ok)
           throw new Error(`Hero video: HTTP ${response.status}`);
         const blob = await response.blob();
