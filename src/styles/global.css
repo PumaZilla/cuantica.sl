@@ -505,7 +505,7 @@ dialog video[hidden],.quantum-notice[hidden]{display:none!important}
 .footer-collab{display:flex;flex-direction:column;align-items:flex-end;gap:10px;margin-top:10px}
 .footer-collab-label{font-size:9px;letter-spacing:1.2px;color:var(--mist);text-transform:uppercase}
 .footer-collab-logos{display:flex;align-items:center;gap:18px}
-.footer-logo-fecyt{height:28px;width:auto;display:block;object-fit:contain}
+.footer-logo-fecyt{height:36px;width:auto;display:block;object-fit:contain}
 .footer-logo-ceo{height:28px;width:auto;display:block;object-fit:contain}
 .footer-back-top{display:inline-flex;align-items:center;gap:8px;font-size:9px;color:var(--mist)}
 .footer-back-top span{display:inline-block;font-family:system-ui,-apple-system,sans-serif;font-weight:600;line-height:1;transition:transform .2s}
@@ -518,8 +518,8 @@ dialog video[hidden],.quantum-notice[hidden]{display:none!important}
   .footer p{margin-top:0;font-size:11px;line-height:1.45;transform:none}
   .footer-collab{align-items:flex-end;width:auto;min-width:0;margin:auto 0;text-align:right}
   .footer-collab-label{font-size:8px;letter-spacing:1px;white-space:nowrap}
-  .footer-collab-logos{justify-content:flex-end;gap:12px;max-width:100%}
-  .footer-logo-fecyt{height:24px}
+  .footer-collab-logos{flex-direction:column;align-items:flex-end;gap:12px;max-width:100%}
+  .footer-logo-fecyt{width:clamp(140px,43vw,230px);max-width:100%;height:auto}
   .footer-logo-ceo{height:24px}
   .footer-bottom{grid-column:1/-1;flex-direction:column-reverse;align-items:flex-end;gap:14px;padding-top:18px}
   .footer-bottom span{font-size:7.5px;letter-spacing:.6px;line-height:1.5;width:100%;text-align:left}
